@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Star-Excursion-Balance-Test</title>
+    <link rel="stylesheet" href="style.css"> <!-- Verlinkung der CSS-Datei -->
+</head>
+
+<body>
+    <div class="header">
+        <a href="index.html" class="back-link">Zurück</a>
+    </div>
+    <h1>Y-Balance-Test</h1>
+    <div class="instructions"> 
+        <p>Studien zeigen, dass Personen mit Defiziten im Y-Balance-Test ein erhöhtes Risiko für Verletzungen der unteren Extremitäten haben. Dieser Test fordert Dich in Bezug auf die Kraft der unteren Extremitäten, die Gleichgewichtsfähigkeit und die Beweglichkeit heraus.</p>
+    
+        <h2>Ziel:</h2>
+        <ul>
+            <li>Überprüfung der posturalen Kontrolle</li>
+            <li>Aufdecken von Asymmetrien im Seitenvergleich</li>
+        </ul>
+    
+        <h2>Materialbedarf:</h2>
+        <ul>
+            <li>Tape</li>
+            <li>Maßband</li>
+            <li>Messprotokoll</li>
+            <li>Markierungsvorlage</li>
+        </ul>
+    
+        <h2>Testdurchführung:</h2>
+        <ol>
+            <li>Miss die Beinlänge als Referenzwert.</li>
+            <li>Die Testperson steht barfuß auf der Mitte des Y.</li>
+            <li>Leite das Spielbein in verschiedene Richtungen (anterior, posteromedial, posterolateral).</li>
+            <li>Miss den am weitesten vom Kreuzmittelpunkt entfernten Punkt.</li>
+            <li>Wiederhole den Test für beide Beinseiten.</li>
+        </ol>
+    </div>
+    
+    <h2>Auswertung:</h2>
+    <p>Fülle die Tabelle mit den Reichweiten (A, B, C) und den Beinlängen für rechts und links aus:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Spielbein rechts</th>
+                <th>Spielbein links</th>   
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Beinlänge</td>
+                <td><input type="number" id="beinlaengeRechts" required></td>
+                <td><input type="number" id="beinlaengeLinks" required></td>
+            </tr>
+            <tr>
+                <td>Reichweite anterior (A)</td>
+                <td><input type="number" id="reichtA" required></td>
+                <td><input type="number" id="leichtA" required></td>
+                
+                
+                
+            </tr>
+            <tr>
+                <td>Reichweite posteromedial (B)</td>
+                <td><input type="number" id="reichtB" required></td>
+                <td><input type="number" id="leichtB" required></td>  
+            </tr> <tr>
+                <td>Reichweite posterolateral (C)</td>
+                <td><input type="number" id="reichtC" required></td>
+                <td><input type="number" id="leichtC" required></td>
+                
+                
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="button" onclick="berechneGesamtwert()">Auswerten</button>
+
+    <h2>Ergebnis:</h2>
+    <p id="ergebnis"></p>
+
+    <script>
+        function berechneGesamtwert() {
+            var reichtA = parseFloat(document.getElementById('reichtA').value);
+            var reichtB = parseFloat(document.getElementById('reichtB').value);
+            var reichtC = parseFloat(document.getElementById('reichtC').value);
+            var beinlaengeRechts = parseFloat(document.getElementById('beinlaengeRechts').value);
+
+            var leichtA = parseFloat(document.getElementById('leichtA').value);
+            var leichtB = parseFloat(document.getElementById('leichtB').value);
+            var leichtC = parseFloat(document.getElementById('leichtC').value);
+            var beinlaengeLinks = parseFloat(document.getElementById('beinlaengeLinks').value);
+
+            var gesamtwertRechts = (reichtA + reichtB + reichtC) * 100 / (3 * beinlaengeRechts);
+            var gesamtwertLinks = (leichtA + leichtB + leichtC) * 100 / (3 * beinlaengeLinks);
+
+            document.getElementById('ergebnis').innerHTML = 'Gesamtwert Spielbein rechts: ' + gesamtwertRechts.toFixed(2) + '%<br>Gesamtwert Spielbein links: ' + gesamtwertLinks.toFixed(2) + '%';
+        }
+    </script>
+   <div class="footer">
+    <h2>Quelle</h2>
+    <p>
+        Bloch, H., Klein, C., Kühn, N., Luig, P. (2022). Return to Competition – Testmanual zur Beurteilung der Spielfähigkeit
+        nach akuter lateraler Bandverletzung am Sprunggelenk.
+        Hamburg: VBG, S. 26f. Abgerufen am 26. November 2023, von <a href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7">https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7</a>.
+    </p>
+</div>
+</body>
+
+</html>
