@@ -65,6 +65,7 @@ void checkWiFiConnection() {
 void setup() {
   //das eine Debugging
   Serial.begin(115200);
+  delay(100);
   while (!Serial) {
     delay(50); // Warten auf die Initialisierung der seriellen Verbindung
   }
