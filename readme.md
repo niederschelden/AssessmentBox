@@ -19,7 +19,7 @@ Für detaillierte Installationsanweisungen, besuchen Sie bitte [diese Anleitung]
 Eigentlich selbsterklärend. Im Grunde sind es Webseiten die mittels Mobiltelefon, Pad oder Computer über den Browser aufgerufen werden.
 
 ## Lizenz
-GNU General Public License v3.0
+Bisher keine
 
 ---
 
