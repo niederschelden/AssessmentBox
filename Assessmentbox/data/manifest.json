@@ -1,0 +1,30 @@
+{
+    "name": "Assessment Box",
+    "short_name": "AssessBox",
+    "description": "Essential, Compact Toolbox for Streamlined Physiotherapy Assessments",
+    "version": "0.1.0",
+    "author": "Leif Eickhoff",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#f2f2f2",
+    "theme_color": "navy",
+    "icons": [
+      {
+        "src": "icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "scope": "/",
+    "orientation": "portrait-primary",
+    "lang": "de",
+    "dir": "ltr",
+    "repository": "https://github.com/niederschelden/AssessmentBox",
+    "license": "None"
+  }
+  

@@ -28,8 +28,6 @@ Temporary Items
 
 #project specific
 wlanPWD.h
-*.png
-*.ico
 *.zip
 *.mp3
 *.odt
