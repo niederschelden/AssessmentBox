@@ -3,26 +3,26 @@
  */
 body {
   font-family: Arial, sans-serif;
-  /* max-width: 800px; */
-  margin: 1rem auto;
   line-height: 1.5;
+  margin: 0;
 }
 
 header {
-  margin-bottom: 1.25rem;
   position: sticky;
+  top: 0;
+  background-color: #eeeeee;
 }
 
-main {
-  background-color: #c3f000;
+main,
+footer {
+  margin: 1rem auto;
+  width: 45rem;
 }
 
 footer {
   background-color: #f2f2f2;
   padding: 1rem;
   border: 1px solid #ddd;
-  border-radius: 0.5rem;
-  margin: 1.25rem 0;
 }
 
 h1 {
@@ -35,6 +35,11 @@ h2 {
 
 p {
   max-width: 80ch;
+}
+
+img[src="./logo.png"] {
+  aspect-ratio: 1;
+  height: 5rem;
 }
 
 table {
@@ -55,6 +60,7 @@ td[colspan="2"] {
 }
 
 label {
+  font-weight: bolder;
   display: block;
 }
 
