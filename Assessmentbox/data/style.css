@@ -9,13 +9,12 @@ body {
 }
 
 header {
-  background-image: url("./logo.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  height: 300px; /* TODO */
   margin-bottom: 1.25rem;
-  position: relative;
+  position: sticky;
+}
+
+main {
+  background-color: #c3f000;
 }
 
 footer {
@@ -32,6 +31,10 @@ h1 {
 
 h2 {
   color: navy;
+}
+
+p {
+  max-width: 80ch;
 }
 
 table {
