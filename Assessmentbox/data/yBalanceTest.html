@@ -21,80 +21,84 @@
 
   <body>
     <header>
-      <a href="index.html" class="back-link">Zurück</a>
+      <a href="index.html">Zurück</a>
     </header>
 
-    <h1>Y-Balance-Test</h1>
-    <div class="instructions">
-      <p>
-        Studien zeigen, dass Personen mit Defiziten im Y-Balance-Test ein erhöhtes Risiko für Verletzungen der unteren Extremitäten haben. Dieser Test fordert Dich in Bezug auf die Kraft der unteren
-        Extremitäten, die Gleichgewichtsfähigkeit und die Beweglichkeit heraus.
-      </p>
+    <main>
+      <div>
+        <h1>Y-Balance-Test</h1>
+        <p>
+          Studien zeigen, dass Personen mit Defiziten im Y-Balance-Test ein erhöhtes Risiko für Verletzungen der unteren Extremitäten haben. Dieser Test fordert Dich in Bezug auf die Kraft der unteren
+          Extremitäten, die Gleichgewichtsfähigkeit und die Beweglichkeit heraus.
+        </p>
 
-      <h2>Ziel:</h2>
-      <ul>
-        <li>Überprüfung der posturalen Kontrolle</li>
-        <li>Aufdecken von Asymmetrien im Seitenvergleich</li>
-      </ul>
+        <h2>Ziel:</h2>
+        <ul>
+          <li>Überprüfung der posturalen Kontrolle</li>
+          <li>Aufdecken von Asymmetrien im Seitenvergleich</li>
+        </ul>
 
-      <h2>Materialbedarf:</h2>
-      <ul>
-        <li>Tape</li>
-        <li>Maßband</li>
-        <li>Messprotokoll</li>
-        <li>Markierungsvorlage</li>
-      </ul>
+        <h2>Materialbedarf:</h2>
+        <ul>
+          <li>Tape</li>
+          <li>Maßband</li>
+          <li>Messprotokoll</li>
+          <li>Markierungsvorlage</li>
+        </ul>
 
-      <h2>Testdurchführung:</h2>
-      <ol>
-        <li>Miss die Beinlänge als Referenzwert.</li>
-        <li>Die Testperson steht barfuß auf der Mitte des Y.</li>
-        <li>Leite das Spielbein in verschiedene Richtungen (anterior, posteromedial, posterolateral).</li>
-        <li>Miss den am weitesten vom Kreuzmittelpunkt entfernten Punkt.</li>
-        <li>Wiederhole den Test für beide Beinseiten.</li>
-      </ol>
-    </div>
-    <div class="other">
-      <h2>Auswertung:</h2>
-      <p>Fülle die Tabelle mit den Reichweiten (A, B, C) und den Beinlängen für rechts und links aus:</p>
+        <h2>Testdurchführung:</h2>
+        <ol>
+          <li>Miss die Beinlänge als Referenzwert.</li>
+          <li>Die Testperson steht barfuß auf der Mitte des Y.</li>
+          <li>Leite das Spielbein in verschiedene Richtungen (anterior, posteromedial, posterolateral).</li>
+          <li>Miss den am weitesten vom Kreuzmittelpunkt entfernten Punkt.</li>
+          <li>Wiederhole den Test für beide Beinseiten.</li>
+        </ol>
+      </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Spielbein rechts</th>
-            <th>Spielbein links</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Beinlänge</td>
-            <td><input type="number" id="beinlaengeRechts" required /></td>
-            <td><input type="number" id="beinlaengeLinks" required /></td>
-          </tr>
-          <tr>
-            <td>Reichweite anterior (A)</td>
-            <td><input type="number" id="reichtA" required /></td>
-            <td><input type="number" id="leichtA" required /></td>
-          </tr>
-          <tr>
-            <td>Reichweite posteromedial (B)</td>
-            <td><input type="number" id="reichtB" required /></td>
-            <td><input type="number" id="leichtB" required /></td>
-          </tr>
-          <tr>
-            <td>Reichweite posterolateral (C)</td>
-            <td><input type="number" id="reichtC" required /></td>
-            <td><input type="number" id="leichtC" required /></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="other">
+        <h2>Auswertung:</h2>
+        <p>Fülle die Tabelle mit den Reichweiten (A, B, C) und den Beinlängen für rechts und links aus:</p>
 
-      <button type="button" onclick="berechneGesamtwert()">Auswerten</button>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Spielbein rechts</th>
+              <th>Spielbein links</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Beinlänge</td>
+              <td><input type="number" id="beinlaengeRechts" required /></td>
+              <td><input type="number" id="beinlaengeLinks" required /></td>
+            </tr>
+            <tr>
+              <td>Reichweite anterior (A)</td>
+              <td><input type="number" id="reichtA" required /></td>
+              <td><input type="number" id="leichtA" required /></td>
+            </tr>
+            <tr>
+              <td>Reichweite posteromedial (B)</td>
+              <td><input type="number" id="reichtB" required /></td>
+              <td><input type="number" id="leichtB" required /></td>
+            </tr>
+            <tr>
+              <td>Reichweite posterolateral (C)</td>
+              <td><input type="number" id="reichtC" required /></td>
+              <td><input type="number" id="leichtC" required /></td>
+            </tr>
+          </tbody>
+        </table>
 
-      <h2>Ergebnis:</h2>
-      <p id="ergebnis"></p>
-    </div>
+        <button type="button" onclick="berechneGesamtwert()">Auswerten</button>
+
+        <h2>Ergebnis:</h2>
+        <p id="ergebnis"></p>
+      </div>
+    </main>
+
     <script>
       function berechneGesamtwert() {
         var reichtA = parseFloat(document.getElementById("reichtA").value);

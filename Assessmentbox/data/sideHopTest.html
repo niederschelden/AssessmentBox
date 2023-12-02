@@ -21,11 +21,11 @@
 
   <body>
     <header>
-      <a href="index.html" class="back-link">Zurück</a>
+      <a href="index.html">Zurück</a>
     </header>
 
-    <h1>Side-Hop Test</h1>
-    <div class="instructions">
+    <main>
+      <h1>Side-Hop Test</h1>
       <p>Der Side-Hop-Test dient der Überprüfung der mediolateralen Sprunggelenksstabilität und der Bewertung der Bewegungsqualität.</p>
 
       <h2>Ziel:</h2>
@@ -52,29 +52,42 @@
 
       <h2>Beurteilung und Orientierungswerte:</h2>
       <p>Der Cut-Off-Wert liegt bei 12,88 Sekunden. Ein LSI ≥ 90 im Seitenvergleich wird angestrebt. Der LSI sollte auch nicht größer als 110 sein, um Asymmetrien zu vermeiden.</p>
-    </div>
-    <div class="other">
-      <h2>Messung:</h2>
 
-      <form id="sideHopForm">
-        <div>
-          <label for="timeInjured">Zeit (verletztes Bein) in Sekunden:</label>
-          <input type="text" id="timeInjured" />
-          <button type="button" id="startStopInjured" onclick="toggleTimer('timeInjured', 'startStopInjured')">Start</button>
-        </div>
+      <div class="other">
+        <h2>Messung:</h2>
 
-        <div>
-          <label for="timeUninjured">Zeit (unverletztes Bein) in Sekunden:</label>
-          <input type="text" id="timeUninjured" />
-          <button type="button" id="startStopUninjured" onclick="toggleTimer('timeUninjured', 'startStopUninjured')">Start</button>
-        </div>
+        <form id="sideHopForm">
+          <div>
+            <label for="timeInjured">Zeit (verletztes Bein) in Sekunden:</label>
+            <input type="text" id="timeInjured" />
+            <button type="button" id="startStopInjured" onclick="toggleTimer('timeInjured', 'startStopInjured')">Start</button>
+          </div>
 
-        <button type="button" onclick="evaluateSideHopTest()">Auswertung starten</button>
-      </form>
+          <div>
+            <label for="timeUninjured">Zeit (unverletztes Bein) in Sekunden:</label>
+            <input type="text" id="timeUninjured" />
+            <button type="button" id="startStopUninjured" onclick="toggleTimer('timeUninjured', 'startStopUninjured')">Start</button>
+          </div>
 
-      <h2>Auswertung:</h2>
-      <div id="results"></div>
-    </div>
+          <button type="button" onclick="evaluateSideHopTest()">Auswertung starten</button>
+        </form>
+
+        <h2>Auswertung:</h2>
+        <div id="results"></div>
+      </div>
+    </main>
+
+    <footer>
+      <h2>Quelle</h2>
+      <p>
+        Bloch, H., Klein, C., Kühn, N., Luig, P. (2022). Return to Competition – Testmanual zur Beurteilung der Spielfähigkeit nach akuter lateraler Bandverletzung am Sprunggelenk. Hamburg: VBG, S.
+        37f. Abgerufen am 26. November 2023, von
+        <a href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7"
+          >https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7</a
+        >.
+      </p>
+    </footer>
+
     <script>
       var timers = {};
 
@@ -112,8 +125,8 @@
         // Ausgabe der Ergebnisse
         const resultsDiv = document.getElementById("results");
         resultsDiv.innerHTML = `<p>Zeit (verletztes Bein): ${timeInjured} Sekunden</p>
-                                    <p>Zeit (unverletztes Bein): ${timeUninjured} Sekunden</p>
-                                    <p>LSI: ${lsi.toFixed(2)}</p>`;
+                                        <p>Zeit (unverletztes Bein): ${timeUninjured} Sekunden</p>
+                                        <p>LSI: ${lsi.toFixed(2)}</p>`;
 
         // Überprüfung auf posturale Instabilität
         if (timeInjured > cutOffValue || timeUninjured > cutOffValue || lsi < 90 || lsi > 110) {
@@ -123,16 +136,5 @@
         }
       }
     </script>
-
-    <footer>
-      <h2>Quelle</h2>
-      <p>
-        Bloch, H., Klein, C., Kühn, N., Luig, P. (2022). Return to Competition – Testmanual zur Beurteilung der Spielfähigkeit nach akuter lateraler Bandverletzung am Sprunggelenk. Hamburg: VBG, S.
-        37f. Abgerufen am 26. November 2023, von
-        <a href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7"
-          >https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7</a
-        >.
-      </p>
-    </footer>
   </body>
 </html>

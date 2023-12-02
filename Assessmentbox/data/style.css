@@ -118,7 +118,7 @@ footer a:hover {
   margin-bottom: 20px;
 }
 
-.back-link {
+header a {
   position: absolute;
   top: 10px;
   /* Abstand von oben */

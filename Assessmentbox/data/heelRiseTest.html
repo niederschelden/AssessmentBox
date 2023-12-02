@@ -21,11 +21,11 @@
 
   <body>
     <header>
-      <a href="index.html" class="back-link">Zurück</a>
+      <a href="index.html">Zurück</a>
     </header>
 
-    <h1>Heel-Rise-Test</h1>
-    <div class="instructions">
+    <main>
+      <h1>Heel-Rise-Test</h1>
       <p>Dieser Test erfasst die exzentrische und konzentrische Muskelkraft der Plantarflexoren durch einbeiniges Fersenanheben.</p>
 
       <h2>Ziel:</h2>
@@ -52,7 +52,8 @@
         <li>Nach dem Absetzen hebe die Ferse erneut an.</li>
         <li>Standardisiere den Test mit einem Metronom (Ferse anheben alle 2 Sekunden).</li>
       </ol>
-    </div>
+    </main>
+
     <div class="other">
       <h2>Messung:</h2>
       <form id="heelRiseForm">
@@ -71,6 +72,18 @@
         sollte ebenfalls beurteilt werden (zum Beispiel Vorfuß behält Bodenkontakt, kontinuierliche und kontrollierte Bewegungsausführung).
       </p>
     </div>
+
+    <footer>
+      <h2>Quelle</h2>
+      <p>
+        Bloch, H., Klein, C., Kühn, N., Luig, P. (2022). Return to Competition – Testmanual zur Beurteilung der Spielfähigkeit nach akuter lateraler Bandverletzung am Sprunggelenk. Hamburg: VBG, S.
+        29. Abgerufen am 26. November 2023, von
+        <a href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7"
+          >https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7</a
+        >.
+      </p>
+    </footer>
+
     <script>
       var metronom;
       var isMetronomRunning = false;
@@ -81,9 +94,9 @@
       // Erstelle ein Audio-Element mit der Base64-Daten-URL
       var audio = new Audio(audioDataURL);
       /*
-        var audio = new Audio('metronome.mp3');
-        audio.preload = 'auto';
-        */
+                var audio = new Audio('metronome.mp3');
+                audio.preload = 'auto';
+                */
       document.getElementById("metronomButton").addEventListener("click", toggleMetronom);
 
       function isIOSorSafari() {
@@ -130,16 +143,5 @@
         }
       }
     </script>
-
-    <footer>
-      <h2>Quelle</h2>
-      <p>
-        Bloch, H., Klein, C., Kühn, N., Luig, P. (2022). Return to Competition – Testmanual zur Beurteilung der Spielfähigkeit nach akuter lateraler Bandverletzung am Sprunggelenk. Hamburg: VBG, S.
-        29. Abgerufen am 26. November 2023, von
-        <a href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7"
-          >https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7</a
-        >.
-      </p>
-    </footer>
   </body>
 </html>

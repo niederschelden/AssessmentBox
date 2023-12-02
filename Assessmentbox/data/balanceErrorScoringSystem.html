@@ -21,118 +21,132 @@
 
   <body>
     <header>
-      <a href="index.html" class="back-link">Zurück</a>
+      <a href="index.html">Zurück</a>
     </header>
 
-    <h1>Balance Error Scoring System (BESS)</h1>
+    <main>
+      <h1>Balance Error Scoring System (BESS)</h1>
 
-    <div class="instructions">
-      <h2>Zielsetzung:</h2>
-      <p>Ziel dieses Tests ist es, Deine Gleichgewichtsfähigkeit und Sprunggelenksstabilität zu überprüfen.</p>
+      <div class="instructions">
+        <h2>Zielsetzung:</h2>
+        <p>Ziel dieses Tests ist es, Deine Gleichgewichtsfähigkeit und Sprunggelenksstabilität zu überprüfen.</p>
 
-      <h2>Materialbedarf:</h2>
-      <ul>
-        <li>Ein fester und ein instabiler Untergrund</li>
-        <li>Stoppuhr</li>
-        <li>Dokumentationstabelle für Fehler</li>
-      </ul>
+        <h2>Materialbedarf:</h2>
+        <ul>
+          <li>Ein fester und ein instabiler Untergrund</li>
+          <li>Stoppuhr</li>
+          <li>Dokumentationstabelle für Fehler</li>
+        </ul>
 
-      <h2>Anleitung:</h2>
-      <ul>
-        <li>Führe den Test barfuß und in kurzer Hose durch.</li>
-        <li>Der Test umfasst sechs verschiedene Ausgangspositionen, ausgeführt auf festem und instabilem Untergrund.</li>
-        <li>Der Test sollte idealerweise mit geschlossenen Augen durchgeführt werden. Falls dies nicht möglich ist, dokumentiere dies entsprechend.</li>
-        <li>Halte die Hände während des Tests an der Hüfte.</li>
-        <li>Jede Position soll 20 Sekunden lang gehalten werden, währenddessen werden Fehler gezählt.</li>
-        <li>Die maximale Fehleranzahl pro Position ist auf 10 begrenzt.</li>
-      </ul>
-    </div>
-    <div class="other">
-      <h2>Testdurchführung:</h2>
-      <button type="button" id="startStopButton">Start Countdown</button>
-      <input type="text" id="countdown" value="20" readonly />
-      <h2>Auswertung:</h2>
-    </div>
-    <div class="results-table">
-      <table id="stabilTable">
-        <tr>
-          <th colspan="3">Stabil</th>
-        </tr>
-        <tr>
-          <th>ASTE</th>
-          <th>Fehler</th>
-        </tr>
-        <tr>
-          <td>Beidbeinig</td>
-          <td><input type="number" name="beidbeinig[]" /></td>
-        </tr>
-        <tr>
-          <td>Einbeinig rechts</td>
-          <td><input type="number" name="rechts[]" /></td>
-        </tr>
-        <tr>
-          <td>Einbeinig links</td>
-          <td><input type="number" name="links[]" /></td>
-        </tr>
-        <tr>
-          <td>Tandemstand rechts hinten</td>
-          <td><input type="number" name="rechts[]" /></td>
-        </tr>
-        <tr>
-          <td>Tandemstand links hinten</td>
-          <td><input type="number" name="links[]" /></td>
-        </tr>
-        <!-- ... Weitere Zeilen für die Positionen ... -->
-        <tr>
-          <td>Summe rechts</td>
-          <td><input type="number" name="summeRechts" readonly /></td>
-        </tr>
-        <tr>
-          <td>Summe links</td>
-          <td><input type="number" name="summeLinks" readonly /></td>
-        </tr>
-      </table>
-    </div>
-    <div class="results-table">
-      <table id="instabilTable">
-        <tr>
-          <th colspan="3">Stabil</th>
-        </tr>
-        <tr>
-          <th>ASTE</th>
-          <th>Fehler</th>
-        </tr>
-        <tr>
-          <td>Beidbeinig</td>
-          <td><input type="number" name="beidbeinig[]" /></td>
-        </tr>
-        <tr>
-          <td>Einbeinig rechts</td>
-          <td><input type="number" name="rechts[]" /></td>
-        </tr>
-        <tr>
-          <td>Einbeinig links</td>
-          <td><input type="number" name="links[]" /></td>
-        </tr>
-        <tr>
-          <td>Tandemstand rechts hinten</td>
-          <td><input type="number" name="rechts[]" /></td>
-        </tr>
-        <tr>
-          <td>Tandemstand links hinten</td>
-          <td><input type="number" name="links[]" /></td>
-        </tr>
-        <!-- ... Weitere Zeilen für die Positionen ... -->
-        <tr>
-          <td>Summe rechts</td>
-          <td><input type="number" name="summeRechts" readonly /></td>
-        </tr>
-        <tr>
-          <td>Summe links</td>
-          <td><input type="number" name="summeLinks" readonly /></td>
-        </tr>
-      </table>
-    </div>
+        <h2>Anleitung:</h2>
+        <ul>
+          <li>Führe den Test barfuß und in kurzer Hose durch.</li>
+          <li>Der Test umfasst sechs verschiedene Ausgangspositionen, ausgeführt auf festem und instabilem Untergrund.</li>
+          <li>Der Test sollte idealerweise mit geschlossenen Augen durchgeführt werden. Falls dies nicht möglich ist, dokumentiere dies entsprechend.</li>
+          <li>Halte die Hände während des Tests an der Hüfte.</li>
+          <li>Jede Position soll 20 Sekunden lang gehalten werden, währenddessen werden Fehler gezählt.</li>
+          <li>Die maximale Fehleranzahl pro Position ist auf 10 begrenzt.</li>
+        </ul>
+      </div>
+      <div class="other">
+        <h2>Testdurchführung:</h2>
+        <button type="button" id="startStopButton">Start Countdown</button>
+        <input type="text" id="countdown" value="20" readonly />
+        <h2>Auswertung:</h2>
+      </div>
+      <div class="results-table">
+        <table id="stabilTable">
+          <tr>
+            <th colspan="3">Stabil</th>
+          </tr>
+          <tr>
+            <th>ASTE</th>
+            <th>Fehler</th>
+          </tr>
+          <tr>
+            <td>Beidbeinig</td>
+            <td><input type="number" name="beidbeinig[]" /></td>
+          </tr>
+          <tr>
+            <td>Einbeinig rechts</td>
+            <td><input type="number" name="rechts[]" /></td>
+          </tr>
+          <tr>
+            <td>Einbeinig links</td>
+            <td><input type="number" name="links[]" /></td>
+          </tr>
+          <tr>
+            <td>Tandemstand rechts hinten</td>
+            <td><input type="number" name="rechts[]" /></td>
+          </tr>
+          <tr>
+            <td>Tandemstand links hinten</td>
+            <td><input type="number" name="links[]" /></td>
+          </tr>
+          <!-- ... Weitere Zeilen für die Positionen ... -->
+          <tr>
+            <td>Summe rechts</td>
+            <td><input type="number" name="summeRechts" readonly /></td>
+          </tr>
+          <tr>
+            <td>Summe links</td>
+            <td><input type="number" name="summeLinks" readonly /></td>
+          </tr>
+        </table>
+      </div>
+      <div class="results-table">
+        <table id="instabilTable">
+          <tr>
+            <th colspan="3">Stabil</th>
+          </tr>
+          <tr>
+            <th>ASTE</th>
+            <th>Fehler</th>
+          </tr>
+          <tr>
+            <td>Beidbeinig</td>
+            <td><input type="number" name="beidbeinig[]" /></td>
+          </tr>
+          <tr>
+            <td>Einbeinig rechts</td>
+            <td><input type="number" name="rechts[]" /></td>
+          </tr>
+          <tr>
+            <td>Einbeinig links</td>
+            <td><input type="number" name="links[]" /></td>
+          </tr>
+          <tr>
+            <td>Tandemstand rechts hinten</td>
+            <td><input type="number" name="rechts[]" /></td>
+          </tr>
+          <tr>
+            <td>Tandemstand links hinten</td>
+            <td><input type="number" name="links[]" /></td>
+          </tr>
+          <!-- ... Weitere Zeilen für die Positionen ... -->
+          <tr>
+            <td>Summe rechts</td>
+            <td><input type="number" name="summeRechts" readonly /></td>
+          </tr>
+          <tr>
+            <td>Summe links</td>
+            <td><input type="number" name="summeLinks" readonly /></td>
+          </tr>
+        </table>
+      </div>
+    </main>
+
+    <footer>
+      <h2>Quelle</h2>
+      <p>
+        VBG — Ihre gesetzliche Unfallversicherung. (2015, Mai). Diagnostik und Betreuung im Fußball. Version 1.1. Realisiert von orange cube Werbeagentur. Hamburg: VBG. S. 40f. Abgerufen am 26.
+        November 2023, von
+        <a href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/diagnostik_und_betreuung_im_fussball.pdf?__blob=publicationFile&v=5"
+          >https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/diagnostik_und_betreuung_im_fussball.pdf?__blob=publicationFile&v=5</a
+        >.
+      </p>
+    </footer>
+
     <script>
       // Konstante für die Countdown-Dauer
       const TIME_TO_GO = 20;
@@ -258,16 +272,5 @@
         });
       });
     </script>
-
-    <footer>
-      <h2>Quelle</h2>
-      <p>
-        VBG – Ihre gesetzliche Unfallversicherung. (2015, Mai). Diagnostik und Betreuung im Fußball. Version 1.1. Realisiert von orange cube Werbeagentur. Hamburg: VBG. S. 40f. Abgerufen am 26.
-        November 2023, von
-        <a href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/diagnostik_und_betreuung_im_fussball.pdf?__blob=publicationFile&v=5"
-          >https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/diagnostik_und_betreuung_im_fussball.pdf?__blob=publicationFile&v=5</a
-        >.
-      </p>
-    </footer>
   </body>
 </html>

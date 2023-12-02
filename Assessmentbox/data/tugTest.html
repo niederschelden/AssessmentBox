@@ -20,52 +20,63 @@
   </head>
   <body>
     <header>
-      <a href="index.html" class="back-link">Zurück</a>
+      <a href="index.html">Zurück</a>
     </header>
 
     <h1>Timed Up & Go Test</h1>
 
-    <div class="instructions">
+    <main>
       <h2>Zielsetzung:</h2>
-      <p>Bewertung der Mobilität und Gleichgewichtsfähigkeit des Probanden.</p>
+      <div>
+        <p>Bewertung der Mobilität und Gleichgewichtsfähigkeit des Probanden.</p>
 
-      <h2>Materialbedarf:</h2>
-      <ul>
-        <li>Stuhl mit Armlehne</li>
-        <li>Markierung auf dem Boden in drei Meter Entfernung</li>
-        <li>Stoppuhr</li>
-        <li>Optional: Hilfsmittel wie ein Stock</li>
-      </ul>
+        <h2>Materialbedarf:</h2>
+        <ul>
+          <li>Stuhl mit Armlehne</li>
+          <li>Markierung auf dem Boden in drei Meter Entfernung</li>
+          <li>Stoppuhr</li>
+          <li>Optional: Hilfsmittel wie ein Stock</li>
+        </ul>
 
-      <h2>Anleitung:</h2>
+        <h2>Anleitung:</h2>
+        <p>
+          Der Proband sitzt auf einem Stuhl mit Armlehne. Er darf ein Hilfsmittel benutzen, wenn notwendig. Seine Arme liegen auf der Stuhllehne und der Rücken an der Rücklehne des Stuhles. Du darfst
+          nicht helfen.
+        </p>
+        <p>
+          Auf Dein Kommando soll der Proband bis zu einer Linie in drei Meter Entfernung gehen, sich umdrehen, zurück zum Stuhl gehen und sich wieder hinsetzen. Notiere die benötigte Zeit in Sekunden.
+          Der Proband kann den Bewegungsablauf vor dem Test ausprobieren oder Du demonstrierst ihn.
+        </p>
+
+        <h2>Ergebnisinterpretation:</h2>
+        <ul>
+          <li>
+            <b>Zeit unter 20 Sekunden:</b> Probanden, die weniger als 10 Sekunden benötigen, sind in ihrer alltäglichen Mobilität vollständig unabhängig. 11-19 Sekunden weisen auf eine
+            Mobilitätseinschränkung hin, meist ohne funktionelle Auswirkungen.
+          </li>
+          <li><b>Zeit zwischen 20 und 29 Sekunden:</b> Diese Probanden haben eine Mobilitätseinschränkung, die funktionelle Auswirkungen haben kann. Weiterführende Assessments sind notwendig.</li>
+          <li><b>Zeit über 30 Sekunden:</b> Diese Probanden haben eine ausgeprägte Mobilitätseinschränkung, die oft intensive Betreuung und adäquate Hilfsmittelversorgung erfordert.</li>
+        </ul>
+      </div>
+
+      <div class="other">
+        <h2>Testdurchführung:</h2>
+        <input type="text" id="timeElapsed" placeholder="0.00" />
+        <button type="button" id="startStopButton" onclick="toggleTimer()">Start</button>
+
+        <h2>Auswertung:</h2>
+        <div id="results"></div>
+      </div>
+    </main>
+
+    <footer>
+      <h2>Quelle</h2>
       <p>
-        Der Proband sitzt auf einem Stuhl mit Armlehne. Er darf ein Hilfsmittel benutzen, wenn notwendig. Seine Arme liegen auf der Stuhllehne und der Rücken an der Rücklehne des Stuhles. Du darfst
-        nicht helfen.
+        Pschyrembel Redaktion. (2018, August). Timed-up-and-go-Test. In Pschyrembel Online. Abgerufen am 26. November 2023, von
+        <a href="https://www.pschyrembel.de/Timed-up-and-go-Test/B0A1V">https://www.pschyrembel.de/Timed-up-and-go-Test/B0A1V</a>.
       </p>
-      <p>
-        Auf Dein Kommando soll der Proband bis zu einer Linie in drei Meter Entfernung gehen, sich umdrehen, zurück zum Stuhl gehen und sich wieder hinsetzen. Notiere die benötigte Zeit in Sekunden.
-        Der Proband kann den Bewegungsablauf vor dem Test ausprobieren oder Du demonstrierst ihn.
-      </p>
+    </footer>
 
-      <h2>Ergebnisinterpretation:</h2>
-      <ul>
-        <li>
-          <b>Zeit unter 20 Sekunden:</b> Probanden, die weniger als 10 Sekunden benötigen, sind in ihrer alltäglichen Mobilität vollständig unabhängig. 11-19 Sekunden weisen auf eine
-          Mobilitätseinschränkung hin, meist ohne funktionelle Auswirkungen.
-        </li>
-        <li><b>Zeit zwischen 20 und 29 Sekunden:</b> Diese Probanden haben eine Mobilitätseinschränkung, die funktionelle Auswirkungen haben kann. Weiterführende Assessments sind notwendig.</li>
-        <li><b>Zeit über 30 Sekunden:</b> Diese Probanden haben eine ausgeprägte Mobilitätseinschränkung, die oft intensive Betreuung und adäquate Hilfsmittelversorgung erfordert.</li>
-      </ul>
-    </div>
-
-    <div class="other">
-      <h2>Testdurchführung:</h2>
-      <input type="text" id="timeElapsed" placeholder="0.00" />
-      <button type="button" id="startStopButton" onclick="toggleTimer()">Start</button>
-
-      <h2>Auswertung:</h2>
-      <div id="results"></div>
-    </div>
     <script>
       var timer;
       var isTimerRunning = false;
@@ -105,13 +116,5 @@
         }
       }
     </script>
-
-    <footer>
-      <h2>Quelle</h2>
-      <p>
-        Pschyrembel Redaktion. (2018, August). Timed-up-and-go-Test. In Pschyrembel Online. Abgerufen am 26. November 2023, von
-        <a href="https://www.pschyrembel.de/Timed-up-and-go-Test/B0A1V">https://www.pschyrembel.de/Timed-up-and-go-Test/B0A1V</a>.
-      </p>
-    </footer>
   </body>
 </html>

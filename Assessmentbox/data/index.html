@@ -20,20 +20,11 @@
   </head>
 
   <body>
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/service-worker.js")
-            .then((reg) => console.log("Service Worker: Registered"))
-            .catch((err) => console.log(`Service Worker: Error: ${err}`));
-        });
-      }
-    </script>
     <header></header>
-    <div class="container mt-5">
-      <h1>Physiotherapie Tests</h1>
-      <div class="instructions">
+
+    <main>
+      <div>
+        <h1>Physiotherapie Tests</h1>
         <h2>Orthopädie</h2>
         <ul>
           <li><a href="knieToWallTest.html">Knie to Wall Test</a></li>
@@ -50,10 +41,10 @@
           <li><a href="tugTest.html">Timed Up and Go (TUG) Test</a></li>
           <li><a href="bergBalanceScale.html">Berg Balance Scale</a></li>
           <!--<li><a href="bergBalanceScaleNeuro.html">Berg Balance Scale</a></li>
-            <li><a href="dynamicGaitIndex.html">Dynamic Gait Index</a></li>-->
+                <li><a href="dynamicGaitIndex.html">Dynamic Gait Index</a></li>-->
         </ul>
       </div>
-    </div>
+    </main>
 
     <footer>
       <h2>Quellen im Allgemeinen</h2>
@@ -65,5 +56,16 @@
         willkommen.
       </p>
     </footer>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/service-worker.js")
+            .then((reg) => console.log("Service Worker: Registered"))
+            .catch((err) => console.log(`Service Worker: Error: ${err}`));
+        });
+      }
+    </script>
   </body>
 </html>
