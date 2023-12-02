@@ -1,144 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Heel-Rise-Test</title>
-    <link rel="stylesheet" href="style.css"> <!-- Verlinkung der CSS-Datei -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="AssessmentBox">
-    <link rel="apple-touch-icon" sizes="120x120" href="icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="icon-167x167.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="icon-192x192.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="icon-512x512.png">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="manifest" href="https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/manifest.json">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Verlinkung der CSS-Datei -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="AssessmentBox" />
+    <link rel="apple-touch-icon" sizes="120x120" href="icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="icon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icon-180x180.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512x512.png" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="manifest" href="https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/manifest.json" />
+  </head>
 
-<body>
+  <body>
     <div class="header">
-        <a href="index.html" class="back-link">Zurück</a>
+      <a href="index.html" class="back-link">Zurück</a>
     </div>
     <h1>Heel-Rise-Test</h1>
     <div class="instructions">
-        <p>Dieser Test erfasst die exzentrische und konzentrische Muskelkraft der Plantarflexoren durch einbeiniges
-            Fersenanheben.</p>
+      <p>Dieser Test erfasst die exzentrische und konzentrische Muskelkraft der Plantarflexoren durch einbeiniges Fersenanheben.</p>
 
-        <h2>Ziel:</h2>
-        <ul>
-            <li>Überprüfung der Kraft der Plantarflexoren</li>
-            <li>Überprüfung der Rückfußbewegung</li>
-            <li>Überprüfung des Bodenkontakts des ersten MetaTarso-Phalangeal-Gelenks (MTP I)</li>
-        </ul>
+      <h2>Ziel:</h2>
+      <ul>
+        <li>Überprüfung der Kraft der Plantarflexoren</li>
+        <li>Überprüfung der Rückfußbewegung</li>
+        <li>Überprüfung des Bodenkontakts des ersten MetaTarso-Phalangeal-Gelenks (MTP I)</li>
+      </ul>
 
-        <h2>Materialbedarf:</h2>
-        <ul>
-            <li>Metronom</li>
-            <li>Messprotokoll</li>
-            <li>Gegebenenfalls Videodokumentation</li>
-        </ul>
+      <h2>Materialbedarf:</h2>
+      <ul>
+        <li>Metronom</li>
+        <li>Messprotokoll</li>
+        <li>Gegebenenfalls Videodokumentation</li>
+      </ul>
 
-        <h2>Testdurchführung:</h2>
-        <ol>
-            <li>Stehe barfuß auf einem Bein.</li>
-            <li>Die Wand darf mit einem Finger pro Hand berührt werden.</li>
-            <li>Führe den Test mit gestrecktem Kniegelenk durch.</li>
-            <li>Hebe das andere Bein mit gebeugtem Knie nach hinten an.</li>
-            <li>Hebe die Ferse kontrolliert bis zum maximal möglichen Bewegungsausmaß an und senke sie ebenfalls
-                kontrolliert wieder ab.</li>
-            <li>Nach dem Absetzen hebe die Ferse erneut an.</li>
-            <li>Standardisiere den Test mit einem Metronom (Ferse anheben alle 2 Sekunden).</li>
-        </ol>
+      <h2>Testdurchführung:</h2>
+      <ol>
+        <li>Stehe barfuß auf einem Bein.</li>
+        <li>Die Wand darf mit einem Finger pro Hand berührt werden.</li>
+        <li>Führe den Test mit gestrecktem Kniegelenk durch.</li>
+        <li>Hebe das andere Bein mit gebeugtem Knie nach hinten an.</li>
+        <li>Hebe die Ferse kontrolliert bis zum maximal möglichen Bewegungsausmaß an und senke sie ebenfalls kontrolliert wieder ab.</li>
+        <li>Nach dem Absetzen hebe die Ferse erneut an.</li>
+        <li>Standardisiere den Test mit einem Metronom (Ferse anheben alle 2 Sekunden).</li>
+      </ol>
     </div>
-<div class="other">
-    <h2>Messung:</h2>
-    <form id="heelRiseForm">
+    <div class="other">
+      <h2>Messung:</h2>
+      <form id="heelRiseForm">
         <label for="rechtsWiederholungen">Anzahl der Wiederholungen rechts:</label>
-        <input type="number" id="rechtsWiederholungen" required>
+        <input type="number" id="rechtsWiederholungen" required />
         <br />
         <label for="linksWiederholungen">Anzahl der Wiederholungen links:</label>
-        <input type="number" id="linksWiederholungen" required>
+        <input type="number" id="linksWiederholungen" required />
         <br />
         <button type="button" id="metronomButton">Starte Metronom</button>
-    </form>
+      </form>
 
-    <h2>Beurteilung und Orientierungswerte:</h2>
-    <p>Die Anzahl der Wiederholungen pro Seite wird notiert. Zusätzlich erfolgt ein Seitenvergleich. Als Zielwert
-        sollten mindestens 30 Wiederholungen erreicht werden. Die qualitative Ausführung sollte ebenfalls beurteilt
-        werden (zum Beispiel Vorfuß behält Bodenkontakt, kontinuierliche und kontrollierte Bewegungsausführung).</p>
-</div>
+      <h2>Beurteilung und Orientierungswerte:</h2>
+      <p>
+        Die Anzahl der Wiederholungen pro Seite wird notiert. Zusätzlich erfolgt ein Seitenvergleich. Als Zielwert sollten mindestens 30 Wiederholungen erreicht werden. Die qualitative Ausführung
+        sollte ebenfalls beurteilt werden (zum Beispiel Vorfuß behält Bodenkontakt, kontinuierliche und kontrollierte Bewegungsausführung).
+      </p>
+    </div>
     <script>
-        var metronom;
-        var isMetronomRunning = false;
+      var metronom;
+      var isMetronomRunning = false;
 
-        // Base64-kodierte Audio-Daten
-        var audioDataURL = "data:audio/wav;base64,//uQxAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAACAAAFtQCzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Oz//////////////////////////////////////////////////////////////////8AAAA8TEFNRTMuMTAwBK8AAAAAAAAAABUgJAOBQQABzAAABbVeBCHiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//vAxAAABvgDV/QQAAO5My8/NYJAaMc0MydbWHiqRg+XPsD6gQcJAwifDHLg++IAf/wfeoEHVAgceH5D//DH+H+Xf//rD5dQYLnxOH+/tqqlmNpeXNodXKKQ0IQEpC3YqCCBhgDpnzZWDFSCCAyA4HCzOHniKwBi2YHRiIKYUIArxI8EBxwtFTp5ELJWuEQPLXCyFlK25P04j9yh8Eh2lVJqAVi6bg0x+I2mKjGtV1X0jlVv13fWXYyB5K0rWm50uZGpe4EjiNuHbstd+L5Zv5Sv3Wl9HSahuad3LfNTNS3n9PnX5KJyWd1LqGMQqHLGGf17mMxG7Wf0kjmIpP///3Oni8gnrX//yOir16SrZv2NVP/WH18mbx+1avRd++7vWptqDX1gGVOC3KejkNPf3lS3lrOmu8pe6xvbEpVnN3Z3ZViFvui+JoLAgFQERAgUA0uTa8wDlRj4kWeBoBXMaH2wmBmQcHqql4SyqSiigEK3VapdVJ4HFYM1rJ9nWYXKoi/8YrFylKXhZKwKkcGIT77MuaTFZ+PP0+tC7r7SuifWUR5QJnrmtZqVtWqu6XtbPGrgqZp0apWlRbVzCmmbstlXcs8ccMtfyl5KpVL3J1TZ9xuatVcv5v8tdxlMppefWuXZTrf461lvL9atb5lruO+Za6+0qnqXk8+tWHd9uPtctVfxray//xx13LHHfMtdx3+Wu475V////5YiEwEqTEFNRTMuMTAwqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqr/+3DE0AAcZZth+bwAwAAAP8OAAASqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"; // Vollständige Base64-Daten   
-        // Erstelle ein Audio-Element mit der Base64-Daten-URL
-        var audio = new Audio(audioDataURL);
-        /*
+      // Base64-kodierte Audio-Daten
+      var audioDataURL =
+        "data:audio/wav;base64,//uQxAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAACAAAFtQCzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Oz//////////////////////////////////////////////////////////////////8AAAA8TEFNRTMuMTAwBK8AAAAAAAAAABUgJAOBQQABzAAABbVeBCHiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//vAxAAABvgDV/QQAAO5My8/NYJAaMc0MydbWHiqRg+XPsD6gQcJAwifDHLg++IAf/wfeoEHVAgceH5D//DH+H+Xf//rD5dQYLnxOH+/tqqlmNpeXNodXKKQ0IQEpC3YqCCBhgDpnzZWDFSCCAyA4HCzOHniKwBi2YHRiIKYUIArxI8EBxwtFTp5ELJWuEQPLXCyFlK25P04j9yh8Eh2lVJqAVi6bg0x+I2mKjGtV1X0jlVv13fWXYyB5K0rWm50uZGpe4EjiNuHbstd+L5Zv5Sv3Wl9HSahuad3LfNTNS3n9PnX5KJyWd1LqGMQqHLGGf17mMxG7Wf0kjmIpP///3Oni8gnrX//yOir16SrZv2NVP/WH18mbx+1avRd++7vWptqDX1gGVOC3KejkNPf3lS3lrOmu8pe6xvbEpVnN3Z3ZViFvui+JoLAgFQERAgUA0uTa8wDlRj4kWeBoBXMaH2wmBmQcHqql4SyqSiigEK3VapdVJ4HFYM1rJ9nWYXKoi/8YrFylKXhZKwKkcGIT77MuaTFZ+PP0+tC7r7SuifWUR5QJnrmtZqVtWqu6XtbPGrgqZp0apWlRbVzCmmbstlXcs8ccMtfyl5KpVL3J1TZ9xuatVcv5v8tdxlMppefWuXZTrf461lvL9atb5lruO+Za6+0qnqXk8+tWHd9uPtctVfxray//xx13LHHfMtdx3+Wu475V////5YiEwEqTEFNRTMuMTAwqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqr/+3DE0AAcZZth+bwAwAAAP8OAAASqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"; // Vollständige Base64-Daten
+      // Erstelle ein Audio-Element mit der Base64-Daten-URL
+      var audio = new Audio(audioDataURL);
+      /*
         var audio = new Audio('metronome.mp3');
         audio.preload = 'auto';
         */
-        document.getElementById('metronomButton').addEventListener('click', toggleMetronom);
+      document.getElementById("metronomButton").addEventListener("click", toggleMetronom);
 
-        function isIOSorSafari() {
-            var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-            return isIOS || isSafari;
+      function isIOSorSafari() {
+        var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        return isIOS || isSafari;
+      }
+
+      function startMetronom() {
+        var now = Date.now();
+        var nextTick = 1000 - (now % 1000);
+
+        setTimeout(function () {
+          playMetronom();
+          metronom = setInterval(playMetronom, 1000);
+        }, nextTick);
+      }
+
+      function playMetronom() {
+        if (isIOSorSafari()) {
+          // Für iOS und Safari
+          var audioClone = audio.cloneNode();
+          audioClone.play().catch(function (error) {
+            console.error("Fehler beim Abspielen des Metronoms:", error);
+          });
+        } else {
+          // Für andere Browser
+          audio.currentTime = 0;
+          audio.play().catch(function (error) {
+            console.error("Fehler beim Abspielen des Metronoms:", error);
+          });
         }
+      }
 
-        function startMetronom() {
-            var now = Date.now();
-            var nextTick = 1000 - (now % 1000);
-
-            setTimeout(function () {
-                playMetronom();
-                metronom = setInterval(playMetronom, 1000);
-            }, nextTick);
+      function toggleMetronom() {
+        if (isMetronomRunning) {
+          clearInterval(metronom);
+          isMetronomRunning = false;
+          document.getElementById("metronomButton").textContent = "Starte Metronom";
+        } else {
+          startMetronom();
+          isMetronomRunning = true;
+          document.getElementById("metronomButton").textContent = "Stoppe Metronom";
         }
-
-        function playMetronom() {
-            if (isIOSorSafari()) {
-                // Für iOS und Safari
-                var audioClone = audio.cloneNode();
-                audioClone.play().catch(function (error) {
-                    console.error('Fehler beim Abspielen des Metronoms:', error);
-                });
-            } else {
-                // Für andere Browser
-                audio.currentTime = 0;
-                audio.play().catch(function (error) {
-                    console.error('Fehler beim Abspielen des Metronoms:', error);
-                });
-            }
-        }
-
-        function toggleMetronom() {
-            if (isMetronomRunning) {
-                clearInterval(metronom);
-                isMetronomRunning = false;
-                document.getElementById("metronomButton").textContent = "Starte Metronom";
-            } else {
-                startMetronom();
-                isMetronomRunning = true;
-                document.getElementById("metronomButton").textContent = "Stoppe Metronom";
-            }
-        }
+      }
     </script>
     <div class="footer">
-        <h2>Quelle</h2>
-        <p>
-            Bloch, H., Klein, C., Kühn, N., Luig, P. (2022). Return to Competition – Testmanual zur Beurteilung der
-            Spielfähigkeit
-            nach akuter lateraler Bandverletzung am Sprunggelenk.
-            Hamburg: VBG, S. 29. Abgerufen am 26. November 2023, von <a
-                href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7">https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7</a>.
-        </p>
+      <h2>Quelle</h2>
+      <p>
+        Bloch, H., Klein, C., Kühn, N., Luig, P. (2022). Return to Competition – Testmanual zur Beurteilung der Spielfähigkeit nach akuter lateraler Bandverletzung am Sprunggelenk. Hamburg: VBG, S.
+        29. Abgerufen am 26. November 2023, von
+        <a href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7"
+          >https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7</a
+        >.
+      </p>
     </div>
-</body>
-
+  </body>
 </html>

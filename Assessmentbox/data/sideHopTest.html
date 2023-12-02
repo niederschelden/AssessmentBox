@@ -1,141 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Side-Hop Test</title>
-    <link rel="stylesheet" href="style.css"> <!-- Verlinkung der CSS-Datei -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="AssessmentBox">
-    <link rel="apple-touch-icon" sizes="120x120" href="icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="icon-167x167.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="icon-192x192.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="icon-512x512.png">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="manifest" href="https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/manifest.json">
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Verlinkung der CSS-Datei -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="AssessmentBox" />
+    <link rel="apple-touch-icon" sizes="120x120" href="icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="icon-167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="icon-180x180.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512x512.png" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="manifest" href="https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/manifest.json" />
+  </head>
 
-<body>
+  <body>
     <div class="header">
-        <a href="index.html" class="back-link">Zurück</a>
+      <a href="index.html" class="back-link">Zurück</a>
     </div>
     <h1>Side-Hop Test</h1>
-<div class="instructions"> 
-    <p>
-        Der Side-Hop-Test dient der Überprüfung der mediolateralen Sprunggelenksstabilität und der Bewertung der Bewegungsqualität.
-    </p>
+    <div class="instructions">
+      <p>Der Side-Hop-Test dient der Überprüfung der mediolateralen Sprunggelenksstabilität und der Bewertung der Bewegungsqualität.</p>
 
-    <h2>Ziel:</h2>
-    <ul>
+      <h2>Ziel:</h2>
+      <ul>
         <li>Überprüfung der mediolateralen Sprunggelenksstabilität</li>
         <li>Beurteilung der Bewegungsqualität</li>
-    </ul>
+      </ul>
 
-    <h2>Materialbedarf:</h2>
-    <ul>
+      <h2>Materialbedarf:</h2>
+      <ul>
         <li>Stoppuhr</li>
         <li>Tape</li>
         <li>Videokamera</li>
-    </ul>
+      </ul>
 
-    <h2>Testdurchführung:</h2>
-    <p>
-        Führe den Test in Schuhen durch. Die Testperson soll auf einem Bein über Markierungsstreifen springen, um die mediolaterale Sprunggelenksstabilität zu überprüfen. Es sollen 10 Sprünge hin und zurück so schnell wie möglich durchgeführt werden.
-    </p>
+      <h2>Testdurchführung:</h2>
+      <p>
+        Führe den Test in Schuhen durch. Die Testperson soll auf einem Bein über Markierungsstreifen springen, um die mediolaterale Sprunggelenksstabilität zu überprüfen. Es sollen 10 Sprünge hin und
+        zurück so schnell wie möglich durchgeführt werden.
+      </p>
 
-    <h2>Messung:</h2>
-    <p>
-        Messe die Zeit in Sekunden pro Beinseite für die 10 Sprünge. Der beste Versuch wird gewertet, und der Lower Limb Symmetry Index (LSI) wird berechnet.
-    </p>
+      <h2>Messung:</h2>
+      <p>Messe die Zeit in Sekunden pro Beinseite für die 10 Sprünge. Der beste Versuch wird gewertet, und der Lower Limb Symmetry Index (LSI) wird berechnet.</p>
 
-    <h2>Beurteilung und Orientierungswerte:</h2>
-    <p>
-        Der Cut-Off-Wert liegt bei 12,88 Sekunden. Ein LSI ≥ 90 im Seitenvergleich wird angestrebt. Der LSI sollte auch nicht größer als 110 sein, um Asymmetrien zu vermeiden.
-    </p>
-</div>
-<div class="other">
-    <h2>Messung:</h2>
+      <h2>Beurteilung und Orientierungswerte:</h2>
+      <p>Der Cut-Off-Wert liegt bei 12,88 Sekunden. Ein LSI ≥ 90 im Seitenvergleich wird angestrebt. Der LSI sollte auch nicht größer als 110 sein, um Asymmetrien zu vermeiden.</p>
+    </div>
+    <div class="other">
+      <h2>Messung:</h2>
 
-    <form id="sideHopForm">
+      <form id="sideHopForm">
         <div>
-            <label for="timeInjured">Zeit (verletztes Bein) in Sekunden:</label>
-            <input type="text" id="timeInjured">
-            <button type="button" id="startStopInjured" onclick="toggleTimer('timeInjured', 'startStopInjured')">Start</button>
+          <label for="timeInjured">Zeit (verletztes Bein) in Sekunden:</label>
+          <input type="text" id="timeInjured" />
+          <button type="button" id="startStopInjured" onclick="toggleTimer('timeInjured', 'startStopInjured')">Start</button>
         </div>
 
         <div>
-            <label for="timeUninjured">Zeit (unverletztes Bein) in Sekunden:</label>
-            <input type="text" id="timeUninjured">
-            <button type="button" id="startStopUninjured" onclick="toggleTimer('timeUninjured', 'startStopUninjured')">Start</button>
+          <label for="timeUninjured">Zeit (unverletztes Bein) in Sekunden:</label>
+          <input type="text" id="timeUninjured" />
+          <button type="button" id="startStopUninjured" onclick="toggleTimer('timeUninjured', 'startStopUninjured')">Start</button>
         </div>
 
         <button type="button" onclick="evaluateSideHopTest()">Auswertung starten</button>
-    </form>
+      </form>
 
-
-    <h2>Auswertung:</h2>
-    <div id="results"></div>
-</div>
+      <h2>Auswertung:</h2>
+      <div id="results"></div>
+    </div>
     <script>
-        var timers = {};
+      var timers = {};
 
-function toggleTimer(inputId, buttonId) {
-    var button = document.getElementById(buttonId);
-    if (timers[inputId]) {
-        // Stop den Timer
-        clearInterval(timers[inputId].timer);
-        delete timers[inputId];
-        button.textContent = 'Start';
-    } else {
-        // Start den Timer
-        timers[inputId] = { startTime: Date.now(), timer: setInterval(updateTimer, 10, inputId) };
-        button.textContent = 'Stop';
-    }
-}
+      function toggleTimer(inputId, buttonId) {
+        var button = document.getElementById(buttonId);
+        if (timers[inputId]) {
+          // Stop den Timer
+          clearInterval(timers[inputId].timer);
+          delete timers[inputId];
+          button.textContent = "Start";
+        } else {
+          // Start den Timer
+          timers[inputId] = { startTime: Date.now(), timer: setInterval(updateTimer, 10, inputId) };
+          button.textContent = "Stop";
+        }
+      }
 
-function updateTimer(inputId) {
-    var now = Date.now();
-    var elapsed = now - timers[inputId].startTime;
-    document.getElementById(inputId).value = (elapsed / 1000).toFixed(2);
-}
+      function updateTimer(inputId) {
+        var now = Date.now();
+        var elapsed = now - timers[inputId].startTime;
+        document.getElementById(inputId).value = (elapsed / 1000).toFixed(2);
+      }
 
-        function evaluateSideHopTest() {
-            // Daten aus dem Formular lesen
-            const timeInjured = parseFloat(document.getElementById('timeInjured').value);
-            const timeUninjured = parseFloat(document.getElementById('timeUninjured').value);
+      function evaluateSideHopTest() {
+        // Daten aus dem Formular lesen
+        const timeInjured = parseFloat(document.getElementById("timeInjured").value);
+        const timeUninjured = parseFloat(document.getElementById("timeUninjured").value);
 
-            // Cut-Off-Wert für den Side-Hop-Test
-            const cutOffValue = 12.88;
+        // Cut-Off-Wert für den Side-Hop-Test
+        const cutOffValue = 12.88;
 
-            // Berechnung des Lower Limb Symmetry Index (LSI)
-            const lsi = (timeInjured / timeUninjured) * 100;
+        // Berechnung des Lower Limb Symmetry Index (LSI)
+        const lsi = (timeInjured / timeUninjured) * 100;
 
-            // Ausgabe der Ergebnisse
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = `<p>Zeit (verletztes Bein): ${timeInjured} Sekunden</p>
+        // Ausgabe der Ergebnisse
+        const resultsDiv = document.getElementById("results");
+        resultsDiv.innerHTML = `<p>Zeit (verletztes Bein): ${timeInjured} Sekunden</p>
                                     <p>Zeit (unverletztes Bein): ${timeUninjured} Sekunden</p>
                                     <p>LSI: ${lsi.toFixed(2)}</p>`;
 
-            // Überprüfung auf posturale Instabilität
-            if (timeInjured > cutOffValue || timeUninjured > cutOffValue || lsi < 90 || lsi > 110) {
-                resultsDiv.innerHTML += "<p style='color: red;'>Posturale Instabilität festgestellt!</p>";
-            } else {
-                resultsDiv.innerHTML += "<p style='color: green;'>Gute mediolaterale Sprunggelenksstabilität!</p>";
-            }
+        // Überprüfung auf posturale Instabilität
+        if (timeInjured > cutOffValue || timeUninjured > cutOffValue || lsi < 90 || lsi > 110) {
+          resultsDiv.innerHTML += "<p style='color: red;'>Posturale Instabilität festgestellt!</p>";
+        } else {
+          resultsDiv.innerHTML += "<p style='color: green;'>Gute mediolaterale Sprunggelenksstabilität!</p>";
         }
+      }
     </script>
-     <div class="footer">
-        <h2>Quelle</h2>
-        <p>
-            Bloch, H., Klein, C., Kühn, N., Luig, P. (2022). Return to Competition – Testmanual zur Beurteilung der Spielfähigkeit
-            nach akuter lateraler Bandverletzung am Sprunggelenk.
-            Hamburg: VBG, S. 37f. Abgerufen am 26. November 2023, von <a href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7">https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7</a>.
-        </p>
+    <div class="footer">
+      <h2>Quelle</h2>
+      <p>
+        Bloch, H., Klein, C., Kühn, N., Luig, P. (2022). Return to Competition – Testmanual zur Beurteilung der Spielfähigkeit nach akuter lateraler Bandverletzung am Sprunggelenk. Hamburg: VBG, S.
+        37f. Abgerufen am 26. November 2023, von
+        <a href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7"
+          >https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7</a
+        >.
+      </p>
     </div>
-</body>
-
+  </body>
 </html>
