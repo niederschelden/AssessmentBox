@@ -20,7 +20,14 @@
     <link rel="manifest" href="https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/manifest.json" />
     <template id="timer-template">
       <style>
-        .timer-container {
+        /**
+         * Scoped, private context. No style or javascript collision with main application
+         */
+        body {
+          color: red !important;
+        }
+
+        [data-timer-container] {
           font-family: Arial, sans-serif;
           text-align: center;
           margin: 20px;
@@ -29,7 +36,7 @@
           border-radius: 5px;
         }
       </style>
-      <div class="timer-container">
+      <div data-timer-container>
         <p id="timer">00:00:00</p>
         <button id="startBtn">Start</button>
         <button id="stopBtn">Stop</button>
