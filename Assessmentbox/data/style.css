@@ -48,6 +48,16 @@ table {
   margin-top: 1rem;
 }
 
+input {
+  display: block;
+  width: 100%;
+  padding: 0.25rem;
+}
+
+input[readonly] {
+  background-color: #eeeeee;
+}
+
 th,
 td {
   border: 1px solid #ddd;
