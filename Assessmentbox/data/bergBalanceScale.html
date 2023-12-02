@@ -24,199 +24,203 @@
         <a href="index.html">Zurück</a>
     </header>
 
-    <h1>Berg-Balance-Skala</h1>
-    <div class="instructions">
+    <main>
+        <h1>Berg-Balance-Skala</h1>
+        <div class="instructions">
         <h2>Berg Balance Scale - Einweisung</h2>
-        <p><b>Ziel:</b> Bewertung der Balance und Stabilität des Patienten durch verschiedene Aufgaben.</p>
-
-        <p><b>Anweisungen:</b> Demonstriere jede Aufgabe und/oder gib entsprechende Instruktionen. Bewerte den
+        <b>Ziel:</b>
+        <p>Bewertung der Balance und Stabilität des Patienten durch verschiedene Aufgaben.</p>
+        
+        <b>Anweisungen:</b>
+        <p>
+             Demonstriere jede Aufgabe und/oder gib entsprechende Instruktionen. Bewerte den
             niedrigsten Punktwert, den der Patient sicher erreichen kann. Bei Schwierigkeiten, die Aufgabe eigenständig
             auszuführen, sind entsprechend Punkte abzuziehen.</p>
-
-        <p><b>Beispiele:</b>
-        <ul>
-            <li>Item 1: Kann der Patient nicht ohne Hilfe aufstehen, jedoch sicher mit Unterstützung, ist mit 1 zu
-                bewerten.</li>
-            <li>Item 13: Steht der Patient nicht stabil in Tandemposition, aber sicher mit kleinerem Schritt, ist mit 2
-                zu bewerten.</li>
-        </ul>
-        </p>
-
-        <p><b>Hinweise:</b> Sicherheit geht vor: Mensch vor Punktgewinn!</p>
-
-        <p><b>Materialbedarf:</b></p>
-        <ul>
-            <li>Stoppuhr oder Uhr mit Sekundenzeiger</li>
-            <li>Lineal oder vergleichbares Maß (5, 12,5 und 25 cm)</li>
-            <li>Stuhl mit angemessener Sitzhöhe</li>
-            <li>Stufe oder Fußbank für bestimmte Aufgaben</li>
-        </ul>
-
-        <p><b>Zur Durchführung:</b> Fülle das Formular aus und drücke auf "Berechne Punkte", um das Ergebnis zu
+            
+            <b>Beispiele:</b>
+                <ul>
+                    <li>Item 1: Kann der Patient nicht ohne Hilfe aufstehen, jedoch sicher mit Unterstützung, ist mit 1 zu
+                        bewerten.</li>
+                        <li>Item 13: Steht der Patient nicht stabil in Tandemposition, aber sicher mit kleinerem Schritt, ist mit 2
+                            zu bewerten.</li>
+                        </ul>
+                    </p>
+                    
+                    <p><b>Hinweise:</b> Sicherheit geht vor: Mensch vor Punktgewinn!</p>
+                    
+                    <p><b>Materialbedarf:</b></p>
+                    <ul>
+                        <li>Stoppuhr oder Uhr mit Sekundenzeiger</li>
+                        <li>Lineal oder vergleichbares Maß (5, 12,5 und 25 cm)</li>
+                        <li>Stuhl mit angemessener Sitzhöhe</li>
+                        <li>Stufe oder Fußbank für bestimmte Aufgaben</li>
+                    </ul>
+                    
+                    <p><b>Zur Durchführung:</b> Fülle das Formular aus und drücke auf "Berechne Punkte", um das Ergebnis zu
             erhalten.</p>
-    </div>
+        </div>
+        
+        <div class="other">
+            <form id="bergBalanceForm">
+                <!-- Radiobuttons für Items -->
+                <!-- Hier sind nur die ersten beiden Items als Beispiel -->
+                <h2>Item 1: Vom Sitzen zum Stehen</h2>
+                Instruktionen: Bitte stehen Sie auf. Versuchen Sie, Ihre Hände nicht zur Unterstützung zu benutzen.
+                <label><input type="radio" name="items[0]" value="4">kann aufstehen ohne die Hände einzusetzen und sich
+                    selbstständig stabilisieren</label>
+                    <label><input type="radio" name="items[0]" value="3">kann selbstständig mit Einsatz der Hände
+                        aufstehen</label>
+                        <label><input type="radio" name="items[0]" value="2">kann nach einigen Versuchen mit Einsatz der Hände
+                            aufstehen </label>
+                            <label><input type="radio" name="items[0]" value="1">braucht minimale Hilfe zum Aufstehen oder zum
+                                Stabilisieren </label>
+                                <label><input type="radio" name="items[0]" value="0">braucht mäßige bis maximale Hilfe um
+                                    aufzustehen</label>
+                                    
+                                    <h2>Item 2: Stehen ohne Unterstützung</h2>
+                                    Instruktionen: Bitte stehen sie zwei Minuten ohne sich festzuhalten
+                                    <label><input type="radio" name="items[1]" value="4">kann zwei Minuten sicher stehen</label>
+                                    <label><input type="radio" name="items[1]" value="3">kann zwei Minuten unter Supervision stehen</label>
+                                    <label><input type="radio" name="items[1]" value="2">kann 30 Sek. ohne Unterstützung stehen</label>
+                                    <label><input type="radio" name="items[1]" value="1">braucht einige Versuche, um 30 Sekunden ohne
+                                        Unterstützung zu stehen </label>
+                                        <label><input type="radio" name="items[1]" value="0">kann nicht ohne Unterstützung 30 Sekunden stehen
+                                        </label>
 
-    <div class="other">
-        <form id="bergBalanceForm">
-            <!-- Radiobuttons für Items -->
-            <!-- Hier sind nur die ersten beiden Items als Beispiel -->
-            <h2>Item 1: Vom Sitzen zum Stehen</h2>
-            Instruktionen: Bitte stehen Sie auf. Versuchen Sie, Ihre Hände nicht zur Unterstützung zu benutzen.
-            <label><input type="radio" name="items[0]" value="4">kann aufstehen ohne die Hände einzusetzen und sich
-                selbstständig stabilisieren</label>
-            <label><input type="radio" name="items[0]" value="3">kann selbstständig mit Einsatz der Hände
-                aufstehen</label>
-            <label><input type="radio" name="items[0]" value="2">kann nach einigen Versuchen mit Einsatz der Hände
-                aufstehen </label>
-            <label><input type="radio" name="items[0]" value="1">braucht minimale Hilfe zum Aufstehen oder zum
-                Stabilisieren </label>
-            <label><input type="radio" name="items[0]" value="0">braucht mäßige bis maximale Hilfe um
-                aufzustehen</label>
-
-            <h2>Item 2: Stehen ohne Unterstützung</h2>
-            Instruktionen: Bitte stehen sie zwei Minuten ohne sich festzuhalten
-            <label><input type="radio" name="items[1]" value="4">kann zwei Minuten sicher stehen</label>
-            <label><input type="radio" name="items[1]" value="3">kann zwei Minuten unter Supervision stehen</label>
-            <label><input type="radio" name="items[1]" value="2">kann 30 Sek. ohne Unterstützung stehen</label>
-            <label><input type="radio" name="items[1]" value="1">braucht einige Versuche, um 30 Sekunden ohne
-                Unterstützung zu stehen </label>
-            <label><input type="radio" name="items[1]" value="0">kann nicht ohne Unterstützung 30 Sekunden stehen
-            </label>
-
-            <h2>Item 3: Sitzen ohne Rückenlehne, aber mit beiden Füße auf dem Boden oder auf einer Fußbank</h2>
-            Instruktionen: Bitte sitzen Sie zwei Minuten mit verschränkten Armen.<br />
-            (wichtig ist, dass eine Armhaltung eingenommen wird, bei der die Arme nach Möglichkeit über Kreuz liegen, so
-            dass sie nicht für Gleichgewichtsreaktionen genutzt
-            werden können)
-            <label><input type="radio" name="items[2]" value="4">kann sicher und stabil zwei Minuten sitzen </label>
-            <label><input type="radio" name="items[2]" value="3">kann zwei Minuten unter Supervision sitzen </label>
-            <label><input type="radio" name="items[2]" value="2">kann 30 Sekunden sitzen</label>
-            <label><input type="radio" name="items[2]" value="1">kann 10 Sekunden sitzen</label>
-            <label><input type="radio" name="items[2]" value="0">kann nicht ohne Unterstützung 10 Sekunden
-                sitzen</label>
-
-            <h2>Item 4: Vom Stehen zum Sitzen </h2>
-            Instruktionen: Bitte setzen Sie sich hin
-            <label><input type="radio" name="items[3]" value="4">setzt sich sicher mit minimalem Einsatz der Hände hin
-            </label>
-            <label><input type="radio" name="items[3]" value="3">kontrolliert das Hinsetzen mit den Händen</label>
-            <label><input type="radio" name="items[3]" value="2">berührt mit Rückseite der Beine den Stuhl, um das
-                Hinsetzen zur kontrollieren </label>
-            <label><input type="radio" name="items[3]" value="1">setzt sich selbständig aber unkontrolliert hin</label>
-            <label><input type="radio" name="items[3]" value="0">braucht Hilfe um sich hinzusetzen</label>
-
-            <h2>Item 5: Transfer</h2>
-            Instruktionen: Stühle werden so hingestellt, dass der Transfer von Sitz zu Sitz durch eine Drehung („tiefer
-            Transfer“) erreicht werden kann. Bitten Sie den Probanden, sich in eine Richtung auf einen Stuhl mit
-            Armlehne und in die andere Richtung auf einen Stuhl ohne Armlehne umzusetzen. Sie können zwei Stühle (einer
-            mit, einer ohne Armlehne) oder ein Bett/eine Bank und ein Stuhl benutzen.
-            <label><input type="radio" name="items[4]" value="4">kann den Transfer sicher mit minimalem Einsatz der
-                Hände ausführen</label>
-            <label><input type="radio" name="items[4]" value="3">kann den Transfer sicher ausführen, muss aber die Hände
-                einsetzen </label>
-            <label><input type="radio" name="items[4]" value="2">kann den Transfer mit verbaler Anweisung und/oder unter
+                                        <h2>Item 3: Sitzen ohne Rückenlehne, aber mit beiden Füße auf dem Boden oder auf einer Fußbank</h2>
+                                        Instruktionen: Bitte sitzen Sie zwei Minuten mit verschränkten Armen.<br />
+                                        (wichtig ist, dass eine Armhaltung eingenommen wird, bei der die Arme nach Möglichkeit über Kreuz liegen, so
+                                        dass sie nicht für Gleichgewichtsreaktionen genutzt
+                                        werden können)
+                                        <label><input type="radio" name="items[2]" value="4">kann sicher und stabil zwei Minuten sitzen </label>
+                                        <label><input type="radio" name="items[2]" value="3">kann zwei Minuten unter Supervision sitzen </label>
+                                        <label><input type="radio" name="items[2]" value="2">kann 30 Sekunden sitzen</label>
+                                        <label><input type="radio" name="items[2]" value="1">kann 10 Sekunden sitzen</label>
+                                        <label><input type="radio" name="items[2]" value="0">kann nicht ohne Unterstützung 10 Sekunden
+                                            sitzen</label>
+                                            
+                                            <h2>Item 4: Vom Stehen zum Sitzen </h2>
+                                            Instruktionen: Bitte setzen Sie sich hin
+                                            <label><input type="radio" name="items[3]" value="4">setzt sich sicher mit minimalem Einsatz der Hände hin
+                                            </label>
+                                            <label><input type="radio" name="items[3]" value="3">kontrolliert das Hinsetzen mit den Händen</label>
+                                            <label><input type="radio" name="items[3]" value="2">berührt mit Rückseite der Beine den Stuhl, um das
+                                                Hinsetzen zur kontrollieren </label>
+                                                <label><input type="radio" name="items[3]" value="1">setzt sich selbständig aber unkontrolliert hin</label>
+                                                <label><input type="radio" name="items[3]" value="0">braucht Hilfe um sich hinzusetzen</label>
+                                                
+                                                <h2>Item 5: Transfer</h2>
+                                                Instruktionen: Stühle werden so hingestellt, dass der Transfer von Sitz zu Sitz durch eine Drehung („tiefer
+                                                Transfer“) erreicht werden kann. Bitten Sie den Probanden, sich in eine Richtung auf einen Stuhl mit
+                                                Armlehne und in die andere Richtung auf einen Stuhl ohne Armlehne umzusetzen. Sie können zwei Stühle (einer
+                                                mit, einer ohne Armlehne) oder ein Bett/eine Bank und ein Stuhl benutzen.
+                                                <label><input type="radio" name="items[4]" value="4">kann den Transfer sicher mit minimalem Einsatz der
+                                                    Hände ausführen</label>
+                                                    <label><input type="radio" name="items[4]" value="3">kann den Transfer sicher ausführen, muss aber die Hände
+                                                        einsetzen </label>
+                                                        <label><input type="radio" name="items[4]" value="2">kann den Transfer mit verbaler Anweisung und/oder unter
                 Supervision ausführen</label>
-            <label><input type="radio" name="items[4]" value="1">braucht eine Person zur Hilfestellung </label>
-            <label><input type="radio" name="items[4]" value="0">braucht zwei Personen zur Hilfestellung oder
-                Supervision um sicher zu sein </label>
-
-            <h2>Item 6: Stehen mit geschlossenen Augen ohne Unterstützung </h2>
-            Instruktionen: Bitte schließen Sie Ihre Augen und stehen Sie zehn Sekunden lang still.
-            <label><input type="radio" name="items[5]" value="4">kann zehn Sekunden sicher stehen </label>
-            <label><input type="radio" name="items[5]" value="3">kann zehn Sekunden unter Supervision stehen</label>
-            <label><input type="radio" name="items[5]" value="2">kann drei Sekunden stehen</label>
-            <label><input type="radio" name="items[5]" value="1">kann nicht die Augen drei Sekunden geschlossen halten,
-                steht aber stabil </label>
-            <label><input type="radio" name="items[5]" value="0">braucht Hilfe, um nicht zu fallen </label>
-
-            <h2>Item 7: Stehen ohne Unterstützung mit geschlossenen Füßen</h2>
-            Instruktionen: Stellen Sie die Füße dicht nebeneinander und stehen Sie ohne sich festzuhalten.
-            <label><input type="radio" name="items[6]" value="4">kann selbständig Füße nebeneinander stellen und 1
-                Minute sicher stehen </label>
-            <label><input type="radio" name="items[6]" value="3">kann selbständig Füße nebeneinander stellen und unter
-                Supervision 1 Minute stehen</label>
-            <label><input type="radio" name="items[6]" value="2">kann selbständig Füße nebeneinander stellen und die
-                Position 30 Sekunden halten</label>
-            <label><input type="radio" name="items[6]" value="1">braucht Hilfe um die Position einzunehmen, kann aber 15
-                Sekunden mit geschlossenen Füßen stehen</label>
-            <label><input type="radio" name="items[6]" value="0">braucht Hilfe um die Position einzunehmen, kann diese
-                nicht für 15 Sekunden halten</label>
-
-            <h2>Item 8: Im Stehen mit ausgestrecktem Arm nach vorne reichen/langen</h2>
-            Instruktionen: Heben Sie bitte beide Arme in die Waagrechte. Wenn das nicht geht,
-            strecken Sie nur einen Arm aus). Strecken Sie Ihre Finger aus und langen/reichen
-            Sie so weit wie Sie können nach vorne. (Der Tester/die Testerin hält ein Lineal an
-            den Fingerspitzen, wenn der Arm im 90°-Winkel angehoben ist. Die Finger sollten
-            das Lineal beim vorwärts langen nicht berühren. Gemessen wird die Distanz, die die
-            Finger zurückgelegt haben, wenn der Proband in der am weitesten vorgelehnten Position ist. Bitten Sie den
-            Probanden, möglichst mit beiden Armen nach vorne zu langen, um eine Rumpfrotation zu vermeiden.
-            <label><input type="radio" name="items[7]" value="4">kann sicher mehr als 25 cm nach vorne
-                langen/reichen</label>
-            <label><input type="radio" name="items[7]" value="3">kann sicher mehr als 12,5 cm nach vorne langen/reichen
-            </label>
-            <label><input type="radio" name="items[7]" value="2">kann sicher mehr als 5 cm nach vorne reichen </label>
-            <label><input type="radio" name="items[7]" value="1">reicht nach vorne braucht aber Supervision </label>
-            <label><input type="radio" name="items[7]" value="0">verliert das Gleichgewicht beim Versuch/ braucht
-                externe Unterstützung</label>
-
-            <h2>Item 9: Aus dem Stand Gegenstand vom Boden aufheben </h2>
+                <label><input type="radio" name="items[4]" value="1">braucht eine Person zur Hilfestellung </label>
+                <label><input type="radio" name="items[4]" value="0">braucht zwei Personen zur Hilfestellung oder
+                    Supervision um sicher zu sein </label>
+                    
+                    <h2>Item 6: Stehen mit geschlossenen Augen ohne Unterstützung </h2>
+                    Instruktionen: Bitte schließen Sie Ihre Augen und stehen Sie zehn Sekunden lang still.
+                    <label><input type="radio" name="items[5]" value="4">kann zehn Sekunden sicher stehen </label>
+                    <label><input type="radio" name="items[5]" value="3">kann zehn Sekunden unter Supervision stehen</label>
+                    <label><input type="radio" name="items[5]" value="2">kann drei Sekunden stehen</label>
+                    <label><input type="radio" name="items[5]" value="1">kann nicht die Augen drei Sekunden geschlossen halten,
+                        steht aber stabil </label>
+                        <label><input type="radio" name="items[5]" value="0">braucht Hilfe, um nicht zu fallen </label>
+                        
+                        <h2>Item 7: Stehen ohne Unterstützung mit geschlossenen Füßen</h2>
+                        Instruktionen: Stellen Sie die Füße dicht nebeneinander und stehen Sie ohne sich festzuhalten.
+                        <label><input type="radio" name="items[6]" value="4">kann selbständig Füße nebeneinander stellen und 1
+                            Minute sicher stehen </label>
+                            <label><input type="radio" name="items[6]" value="3">kann selbständig Füße nebeneinander stellen und unter
+                                Supervision 1 Minute stehen</label>
+                                <label><input type="radio" name="items[6]" value="2">kann selbständig Füße nebeneinander stellen und die
+                                    Position 30 Sekunden halten</label>
+                                    <label><input type="radio" name="items[6]" value="1">braucht Hilfe um die Position einzunehmen, kann aber 15
+                                        Sekunden mit geschlossenen Füßen stehen</label>
+                                        <label><input type="radio" name="items[6]" value="0">braucht Hilfe um die Position einzunehmen, kann diese
+                                            nicht für 15 Sekunden halten</label>
+                                            
+                                            <h2>Item 8: Im Stehen mit ausgestrecktem Arm nach vorne reichen/langen</h2>
+                                            Instruktionen: Heben Sie bitte beide Arme in die Waagrechte. Wenn das nicht geht,
+                                            strecken Sie nur einen Arm aus). Strecken Sie Ihre Finger aus und langen/reichen
+                                            Sie so weit wie Sie können nach vorne. (Der Tester/die Testerin hält ein Lineal an
+                                            den Fingerspitzen, wenn der Arm im 90°-Winkel angehoben ist. Die Finger sollten
+                                            das Lineal beim vorwärts langen nicht berühren. Gemessen wird die Distanz, die die
+                                            Finger zurückgelegt haben, wenn der Proband in der am weitesten vorgelehnten Position ist. Bitten Sie den
+                                            Probanden, möglichst mit beiden Armen nach vorne zu langen, um eine Rumpfrotation zu vermeiden.
+                                            <label><input type="radio" name="items[7]" value="4">kann sicher mehr als 25 cm nach vorne
+                                                langen/reichen</label>
+                                                <label><input type="radio" name="items[7]" value="3">kann sicher mehr als 12,5 cm nach vorne langen/reichen
+                                                </label>
+                                                <label><input type="radio" name="items[7]" value="2">kann sicher mehr als 5 cm nach vorne reichen </label>
+                                                <label><input type="radio" name="items[7]" value="1">reicht nach vorne braucht aber Supervision </label>
+                                                <label><input type="radio" name="items[7]" value="0">verliert das Gleichgewicht beim Versuch/ braucht
+                                                    externe Unterstützung</label>
+                                                    
+                                                    <h2>Item 9: Aus dem Stand Gegenstand vom Boden aufheben </h2>
             Instruktionen: Heben Sie bitte den Schuh/Hausschuh auf, der vor Ihren Füßen liegt.
             <label><input type="radio" name="items[8]" value="4">kann den Schuh sicher und mit Leichtigkeit aufheben
             </label>
             <label><input type="radio" name="items[8]" value="3">kann den Schuh aufheben, braucht aber
                 Supervision</label>
-            <label><input type="radio" name="items[8]" value="2">kann den Schuh nicht aufheben, reicht aber bis auf 2-5
-                cm an den Schuh heran und hält selbständig das Gleichgewicht </label>
-            <label><input type="radio" name="items[8]" value="1">kann den Schuh nicht aufheben und braucht bei dem
-                Versuch Supervision </label>
-            <label><input type="radio" name="items[8]" value="0">schon der Versuch scheitert/ braucht Hilfe um das
-                Gleichgewicht nicht zu verlieren bzw. nicht zu fallen </label>
-
-            <h2>Item 10: Sich im Stehen umdrehen, um nach hinten über die rechte und die linke
-                Schulter zu schauen</h2>
-            Instruktionen: Schauen Sie bitte über Ihre linke Schulter direkt nach hinten. Wiederholen Sie dies zur
-            rechten Seite. Der Tester kann einen Gegenstand direkt hinter
-            dem Probanden zum Anschauen auswählen, um eine bessere Körperdrehung zu
-            unterstützen.
-            <label><input type="radio" name="items[9]" value="4">schaut hinter sich über beide Seiten bei guter
-                Gewichtsverlagerung</label>
-            <label><input type="radio" name="items[9]" value="3">schaut nur über eine Seite nach hinten, und zeigt
-                weniger Gewichtsverlagerung auf der anderen Seite</label>
-            <label><input type="radio" name="items[9]" value="2">dreht sich nur zur Seite aber bewahrt das Gleichgewicht
-            </label>
-            <label><input type="radio" name="items[9]" value="1">braucht Supervision beim Umdrehen</label>
-            <label><input type="radio" name="items[9]" value="0">braucht Hilfe um das Gleichgewicht nicht zu verlieren
-                bzw. nicht zu fallen</label>
-
-            <h2>Item 11: Sich um 360° drehen </h2>
-            Instruktionen: Drehen Sie sich bitte einmal um ihre eigene Achse komplett im Kreis.
-            Halten Sie an. Dann drehen Sie sich um die eigene Achse in die andere Richtung.
-            <label><input type="radio" name="items[10]" value="4">kann sich sicher um 360° in vier Sekunden oder weniger
-                drehen</label>
-            <label><input type="radio" name="items[10]" value="3">kann sich nur in einer Richtung sicher um 360° in vier
-                Sekunden oder weniger drehen</label>
-            <label><input type="radio" name="items[10]" value="2">kann sich sicher um 360° drehen, aber langsam</label>
-            <label><input type="radio" name="items[10]" value="1">braucht nahe Supervision oder verbale Hilfestellung
-            </label>
-            <label><input type="radio" name="items[10]" value="0">braucht Hilfe beim Drehen</label>
-
-            <h2>Item 12: Ohne Unterstützung abwechselnd die Füße auf eine Stufe oder Stufe stellen</h2>
-            Instruktionen: Bitte stellen Sie abwechselnd einen Fuß auf die Stufe/auf die Fußbank.
-            Wiederholen Sie dies, bis jeder Fuß viermal auf der Stufe/auf der Fußbank stand
-            <label><input type="radio" name="items[11]" value="4">kann sicher und selbständig stehen und innerhalb von
-                20 Sekunden die acht Schrittfolgen/Stufen absolvieren </label>
-            <label><input type="radio" name="items[11]" value="3">kann sicher und selbständig stehen und in mehr als 20
-                Sekunden die acht Schrittfolgen/Stufen absolvieren </label>
-            <label><input type="radio" name="items[11]" value="2">kann vier Schrittfolgen/Stufen ohne Hilfe unter
-                Supervision </label>
-            <label><input type="radio" name="items[11]" value="1">kann mehr als zwei Stufen/Schrittfolgen mit minimaler
-                Hilfe absolvieren</label>
-            <label><input type="radio" name="items[11]" value="0">braucht Hilfe um nicht zu fallen/ schon der Versuch
-                scheitert </label>
-            Hilfe bedeutet z.B. Festhalten an einer Person, Geländer, Stuhllehne, Rollator etc.
-
-            <h2>Item 13: Stehen ohne Unterstützung mit einem Fuß vor dem anderen (Tandemstand) </h2>
-            Instruktionen: (DEMONSTRIEREN SIE DEM PROBANDEN DIESE AUFGABE). Stellen Sie einen Fuß direkt vor den
+                <label><input type="radio" name="items[8]" value="2">kann den Schuh nicht aufheben, reicht aber bis auf 2-5
+                    cm an den Schuh heran und hält selbständig das Gleichgewicht </label>
+                    <label><input type="radio" name="items[8]" value="1">kann den Schuh nicht aufheben und braucht bei dem
+                        Versuch Supervision </label>
+                        <label><input type="radio" name="items[8]" value="0">schon der Versuch scheitert/ braucht Hilfe um das
+                            Gleichgewicht nicht zu verlieren bzw. nicht zu fallen </label>
+                            
+                            <h2>Item 10: Sich im Stehen umdrehen, um nach hinten über die rechte und die linke
+                                Schulter zu schauen</h2>
+                                Instruktionen: Schauen Sie bitte über Ihre linke Schulter direkt nach hinten. Wiederholen Sie dies zur
+                                rechten Seite. Der Tester kann einen Gegenstand direkt hinter
+                                dem Probanden zum Anschauen auswählen, um eine bessere Körperdrehung zu
+                                unterstützen.
+                                <label><input type="radio" name="items[9]" value="4">schaut hinter sich über beide Seiten bei guter
+                                    Gewichtsverlagerung</label>
+                                    <label><input type="radio" name="items[9]" value="3">schaut nur über eine Seite nach hinten, und zeigt
+                                        weniger Gewichtsverlagerung auf der anderen Seite</label>
+                                        <label><input type="radio" name="items[9]" value="2">dreht sich nur zur Seite aber bewahrt das Gleichgewicht
+                                        </label>
+                                        <label><input type="radio" name="items[9]" value="1">braucht Supervision beim Umdrehen</label>
+                                        <label><input type="radio" name="items[9]" value="0">braucht Hilfe um das Gleichgewicht nicht zu verlieren
+                                            bzw. nicht zu fallen</label>
+                                            
+                                            <h2>Item 11: Sich um 360° drehen </h2>
+                                            Instruktionen: Drehen Sie sich bitte einmal um ihre eigene Achse komplett im Kreis.
+                                            Halten Sie an. Dann drehen Sie sich um die eigene Achse in die andere Richtung.
+                                            <label><input type="radio" name="items[10]" value="4">kann sich sicher um 360° in vier Sekunden oder weniger
+                                                drehen</label>
+                                                <label><input type="radio" name="items[10]" value="3">kann sich nur in einer Richtung sicher um 360° in vier
+                                                    Sekunden oder weniger drehen</label>
+                                                    <label><input type="radio" name="items[10]" value="2">kann sich sicher um 360° drehen, aber langsam</label>
+                                                    <label><input type="radio" name="items[10]" value="1">braucht nahe Supervision oder verbale Hilfestellung
+                                                    </label>
+                                                    <label><input type="radio" name="items[10]" value="0">braucht Hilfe beim Drehen</label>
+                                                    
+                                                    <h2>Item 12: Ohne Unterstützung abwechselnd die Füße auf eine Stufe oder Stufe stellen</h2>
+                                                    Instruktionen: Bitte stellen Sie abwechselnd einen Fuß auf die Stufe/auf die Fußbank.
+                                                    Wiederholen Sie dies, bis jeder Fuß viermal auf der Stufe/auf der Fußbank stand
+                                                    <label><input type="radio" name="items[11]" value="4">kann sicher und selbständig stehen und innerhalb von
+                                                        20 Sekunden die acht Schrittfolgen/Stufen absolvieren </label>
+                                                        <label><input type="radio" name="items[11]" value="3">kann sicher und selbständig stehen und in mehr als 20
+                                                            Sekunden die acht Schrittfolgen/Stufen absolvieren </label>
+                                                            <label><input type="radio" name="items[11]" value="2">kann vier Schrittfolgen/Stufen ohne Hilfe unter
+                                                                Supervision </label>
+                                                                <label><input type="radio" name="items[11]" value="1">kann mehr als zwei Stufen/Schrittfolgen mit minimaler
+                                                                    Hilfe absolvieren</label>
+                                                                    <label><input type="radio" name="items[11]" value="0">braucht Hilfe um nicht zu fallen/ schon der Versuch
+                                                                        scheitert </label>
+                                                                        Hilfe bedeutet z.B. Festhalten an einer Person, Geländer, Stuhllehne, Rollator etc.
+                                                                        
+                                                                        <h2>Item 13: Stehen ohne Unterstützung mit einem Fuß vor dem anderen (Tandemstand) </h2>
+                                                                        Instruktionen: (DEMONSTRIEREN SIE DEM PROBANDEN DIESE AUFGABE). Stellen Sie einen Fuß direkt vor den
             anderen. Wenn Sie das Gefühl haben, dass Sie einen Fuß nicht direkt vor den anderen stellen können,
             versuchen Sie einen Schritt
             weit genug nach vorn zu machen, so dass die Ferse des vorderen Fußes vor den
@@ -225,80 +229,81 @@
             ungefähr der normalen Spurbreite/Schrittbreite entsprechen
             <label><input type="radio" name="items[12]" value="4">kann selbständig die Füße in den Tandemstand bringen
                 und 30 Sekunden halten</label>
-            <label><input type="radio" name="items[12]" value="3">kann selbständig einen Fuß vor den anderen stellen und
-                diese Position 30 Sekunden halten</label>
-            <label><input type="radio" name="items[12]" value="2">kann selbständig einen kleinen Schritt nach vorne
-                machen und diese Position 30 Sekunden halten</label>
-            <label><input type="radio" name="items[12]" value="1">braucht Hilfe für den Schritt, kann aber Position 15
-                Sekunden beibehalten</label>
-            <label><input type="radio" name="items[12]" value="0">verliert Gleichgewicht während des Schritts oder des
-                Stehens</label>
-
-            <h2>Item 14: Auf einem Bein stehen (Einbeinstand) </h2>
-            Instruktionen: Stehen Sie auf einem Bein, solange Sie können, ohne sich festzuhalten.
-            <label><input type="radio" name="items[13]" value="4">kann ein Bein selbständig anheben und Position länger
-                als 10 Sekunden
-                halten </label>
-            <label><input type="radio" name="items[13]" value="3">kann ein Bein selbständig anheben und Position für 5
-                bis 10 Sekunden halten </label>
-            <label><input type="radio" name="items[13]" value="2">kann ein Bein selbständig anheben und die Position
-                drei Sekunden oder
-                länger halten </label>
-            <label><input type="radio" name="items[13]" value="1">versucht ein Bein anzuheben, kann Position nicht drei
-                Sekunden lang beibehalten, bleibt aber selbständig stehen</label>
-            <label><input type="radio" name="items[13]" value="0">schon der Versuch scheitert oder Proband braucht
-                Hilfe, um nicht zu fallen</label>
-
-            <button type="button" onclick="berechnePunkte()">Berechne Punkte</button>
-        </form>
-        <h1>Auswertung</h1>
-        <h2>Summe der Punkte: <span id="punkteSumme">0</span> (Maximum 56)</h2>
-    </div>
-    <script>
-        function berechnePunkte() {
-            var gesamtPunkte = 0;
-            var alleItemsAusgefuellt = true;
-
-            for (var i = 0; i < 14; i++) {
-                var itemResponse = document.querySelector('input[name="items[' + i + ']"]:checked');
-
-                var radioButtons = document.querySelectorAll('input[name="items[' + i + ']"]');
-
-                if (!itemResponse) {
-                    alleItemsAusgefuellt = false;
-                    // Füge roten Rand zu allen Radio-Buttons der aktuellen Item-Gruppe hinzu
-                    radioButtons.forEach(function (radioButton) {
-                        radioButton.style.outline = "2px solid red";
-                    });
-
-                    // Scroll zum ersten Radio-Button der unausgefüllten Gruppe
-                    radioButtons[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    break;
-                } else {
-                    gesamtPunkte += parseInt(itemResponse.value);
-                    // Entferne roten Rand von allen Radio-Buttons der aktuellen Item-Gruppe
-                    radioButtons.forEach(function (radioButton) {
-                        radioButton.style.outline = "";
-                    });
-                }
-            }
+                <label><input type="radio" name="items[12]" value="3">kann selbständig einen Fuß vor den anderen stellen und
+                    diese Position 30 Sekunden halten</label>
+                    <label><input type="radio" name="items[12]" value="2">kann selbständig einen kleinen Schritt nach vorne
+                        machen und diese Position 30 Sekunden halten</label>
+                        <label><input type="radio" name="items[12]" value="1">braucht Hilfe für den Schritt, kann aber Position 15
+                            Sekunden beibehalten</label>
+                            <label><input type="radio" name="items[12]" value="0">verliert Gleichgewicht während des Schritts oder des
+                                Stehens</label>
+                                
+                                <h2>Item 14: Auf einem Bein stehen (Einbeinstand) </h2>
+                                Instruktionen: Stehen Sie auf einem Bein, solange Sie können, ohne sich festzuhalten.
+                                <label><input type="radio" name="items[13]" value="4">kann ein Bein selbständig anheben und Position länger
+                                    als 10 Sekunden
+                                    halten </label>
+                                    <label><input type="radio" name="items[13]" value="3">kann ein Bein selbständig anheben und Position für 5
+                                        bis 10 Sekunden halten </label>
+                                        <label><input type="radio" name="items[13]" value="2">kann ein Bein selbständig anheben und die Position
+                                            drei Sekunden oder
+                                            länger halten </label>
+                                            <label><input type="radio" name="items[13]" value="1">versucht ein Bein anzuheben, kann Position nicht drei
+                                                Sekunden lang beibehalten, bleibt aber selbständig stehen</label>
+                                                <label><input type="radio" name="items[13]" value="0">schon der Versuch scheitert oder Proband braucht
+                                                    Hilfe, um nicht zu fallen</label>
+                                                    
+                                                    <button type="button" onclick="berechnePunkte()">Berechne Punkte</button>
+                                                </form>
+                                                <h1>Auswertung</h1>
+                                                <h2>Summe der Punkte: <span id="punkteSumme">0</span> (Maximum 56)</h2>
+    </main>
+                                            <script>
+                                                function berechnePunkte() {
+                                                    var gesamtPunkte = 0;
+                                                    var alleItemsAusgefuellt = true;
+                                                    
+                                                    for (var i = 0; i < 14; i++) {
+                                                        var itemResponse = document.querySelector('input[name="items[' + i + ']"]:checked');
+                                                        
+                                                        var radioButtons = document.querySelectorAll('input[name="items[' + i + ']"]');
+                                                        
+                                                        if (!itemResponse) {
+                                                            alleItemsAusgefuellt = false;
+                                                            // Füge roten Rand zu allen Radio-Buttons der aktuellen Item-Gruppe hinzu
+                                                            radioButtons.forEach(function (radioButton) {
+                                                                radioButton.style.outline = "2px solid red";
+                                                            });
+                                                            
+                                                            // Scroll zum ersten Radio-Button der unausgefüllten Gruppe
+                                                            radioButtons[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                                            break;
+                                                        } else {
+                                                            gesamtPunkte += parseInt(itemResponse.value);
+                                                            // Entferne roten Rand von allen Radio-Buttons der aktuellen Item-Gruppe
+                                                            radioButtons.forEach(function (radioButton) {
+                                                                radioButton.style.outline = "";
+                                                            });
+                                                        }
+                                                    }
 
             if (alleItemsAusgefuellt) {
                 document.getElementById('punkteSumme').textContent = gesamtPunkte;
             }
         }
-    </script>
+        </script>
     <footer>
         <h2>Quelle</h2>
         <p>Deutsche Version: Scherfer, E., Bohls, C., Freiberger, E., Heise, K. F., & Hogan, D. Berg-Balance-Skala.
             Übersetzt und gefördert durch die Physio-Akademie des ZVK gemeinnützige GmbH. Abgerufen am 26. November
             2023, von <a
-                href="http://test.physio-akademie.de/images/documents/tua_bergbalancescale-deutsch_20051123.pdf">http://test.physio-akademie.de/images/documents/tua_bergbalancescale-deutsch_20051123.pdf</a>.
+            href="http://test.physio-akademie.de/images/documents/tua_bergbalancescale-deutsch_20051123.pdf">http://test.physio-akademie.de/images/documents/tua_bergbalancescale-deutsch_20051123.pdf</a>.
         </p>
         <h2>Originalquelle</h2>
         <p>Berg, K. O., Wood-Dauphinee, S. L., Williams, J. I., & Maki, B. (1992). Measuring balance in the elderly:
             validation of an instrument. Canadian journal of public health = Revue canadienne de sante publique, 83
             Suppl 2, S7–S11.</p>
-    </footer>
-</body>
-</html>
+        </footer>
+    </body>
+    </html>
+    
