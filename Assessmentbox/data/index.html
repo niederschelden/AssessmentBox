@@ -18,10 +18,30 @@
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512x512.png" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="manifest" href="https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/manifest.json" />
+    <template id="timer-template">
+      <style>
+        .timer-container {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          margin: 20px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+        }
+      </style>
+      <div class="timer-container">
+        <p id="timer">00:00:00</p>
+        <button id="startBtn">Start</button>
+        <button id="stopBtn">Stop</button>
+      </div>
+    </template>
+    <script src="./TimerComponent.js"></script>
   </head>
 
   <body>
-    <header></header>
+    <header>
+      <timer-component></timer-component>
+    </header>
 
     <main>
       <h1>Physiotherapie Tests</h1>
