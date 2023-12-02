@@ -3,9 +3,27 @@
  */
 body {
   font-family: Arial, sans-serif;
-  max-width: 800px;
-  margin: 20px auto;
-  line-height: 1.6;
+  /* max-width: 800px; */
+  margin: 1rem auto;
+  line-height: 1.5;
+}
+
+header {
+  background-image: url("./logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: 300px; /* TODO */
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  margin: 1.25rem 0;
 }
 
 h1 {
@@ -19,14 +37,14 @@ h2 {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 1rem;
 }
 
 th,
 td {
   border: 1px solid #ddd;
   text-align: left;
-  padding: 8px;
+  padding: 0.5rem;
 }
 
 td[colspan="2"] {
@@ -38,7 +56,7 @@ label {
 }
 
 button {
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
 
 button:hover {
@@ -46,87 +64,42 @@ button:hover {
   cursor: pointer;
 }
 
-header {
-  background-image: url("./logo.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  /* oder 'cover', je nach Bedarf */
-  background-position: center;
-  height: 300px;
-  margin-bottom: 20px;
-  /* Abstand zum restlichen Inhalt */
-  position: relative;
-  /* Ermöglicht die absolute Positionierung von Elementen innerhalb des Headers */
-}
-
-footer {
-  background-color: #f2f2f2;
-  /* Gleiche Farbe wie die anderen Container */
-  padding: 15px;
-  /* Konsistentes Padding */
-  border: 1px solid #ddd;
-  /* Konsistente Border-Gestaltung */
-  border-radius: 8px;
-  /* Abgerundete Ecken */
-  margin-top: 20px;
-  /* Abstand zum vorherigen Inhalt */
-  margin-bottom: 20px;
-  /* Abstand zum Seitenende */
-  font-size: 0.9em;
-  /* Etwas kleinere Schrift als der Haupttext */
-}
-
 footer h2 {
   color: navy;
-  /* Gleiche Farbe wie andere h2-Überschriften */
-  margin-bottom: 10px;
-  /* Abstand zwischen Überschrift und Text */
+  margin-bottom: 0.625rem;
 }
 
 footer p {
   margin: 0;
-  /* Entfernt Standardmargins für Paragraphen */
-  line-height: 1.4;
-  /* Leichte Anpassung der Zeilenhöhe für bessere Lesbarkeit */
 }
 
 footer a {
   color: #0056b3;
-  /* Linkfarbe, abgestimmt auf das Farbschema */
-  text-decoration: none;
-  /* Keine Unterstreichung für Links */
 }
 
 footer a:hover {
   text-decoration: underline;
-  /* Unterstreichung beim Überfahren mit der Maus */
 }
 
 /**
  * CSS classes for decorative purposes
  */
 .other {
-  padding: 15px;
+  padding: 1rem;
 }
 
 .instructions,
 .results-table {
   background-color: #f2f2f2;
-  padding: 15px;
+  padding: 1rem;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  border-radius: 0.5rem;
+  margin-bottom: 1.25rem;
 }
 
 header a {
   position: absolute;
-  top: 10px;
-  /* Abstand von oben */
-  right: 10px;
-  /* Abstand von rechts */
-  text-decoration: none;
-  /* Optional: Entfernt die Unterstreichung des Links */
+  top: 0.625rem;
+  right: 0.625rem;
   color: #000;
-  /* Farbe des Links */
-  /* Weitere Stilangaben nach Bedarf */
 }
