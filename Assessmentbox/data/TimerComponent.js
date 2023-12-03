@@ -15,17 +15,18 @@ class TimerComponent extends HTMLElement {
 
   // Lifecycle callback when the element is connected to the DOM
   connectedCallback() {
-    // Bind event handlers
-    this.shadowRoot.getElementById("startBtn").addEventListener("click", () => this.startTimer());
-    this.shadowRoot.getElementById("stopBtn").addEventListener("click", () => this.stopTimer());
+    this.startButton = this.shadowRoot.getElementById("startBtn");
+    this.stopButton = this.shadowRoot.getElementById("stopBtn");
+    this.timerOutput = this.shadowRoot.getElementById("timer");
 
-    console.log("Timer component connected to the DOM");
+    this.startButton.addEventListener("click", () => this.startTimer());
+    this.stopButton.addEventListener("click", () => this.stopTimer());
   }
 
   // Lifecycle callback when the element is removed from the DOM
   disconnectedCallback() {
-    this.shadowRoot.getElementById("startBtn").removeEventListener("click", () => this.startTimer());
-    this.shadowRoot.getElementById("stopBtn").removeEventListener("click", () => this.stopTimer());
+    this.startButton.removeEventListener("click", () => this.startTimer());
+    this.stopButton.removeEventListener("click", () => this.stopTimer());
 
     console.log("Timer component disconnected from the DOM");
     this.stopTimer(); // Make sure to stop the timer when the component is removed
@@ -56,9 +57,8 @@ class TimerComponent extends HTMLElement {
     const currentTime = Math.floor(Date.now() / 1000);
     const elapsedTime = currentTime - this.startTime;
     const formattedTime = this.formatTime(elapsedTime);
-    this.shadowRoot.getElementById("timer").textContent = formattedTime;
+    this.timerOutput.textContent = formattedTime;
   }
 }
 
-// Define the custom element 'timer-component'
 customElements.define("timer-component", TimerComponent);
