@@ -30,7 +30,8 @@ html {
  * HTML elements for semantic purposes
  */
 body {
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
   line-height: 1.5;
   margin: 0;
   padding: 1rem;
@@ -64,6 +65,10 @@ h2 {
 
 fieldset {
   margin-bottom: 3.5rem;
+}
+
+fieldset:has(:required:invalid) {
+  border-color: red;
 }
 
 fieldset div {
@@ -150,6 +155,7 @@ button {
   font-family: inherit;
   font-size: inherit;
   will-change: background-color;
+  width: 100%;
   contain: auto;
 }
 
