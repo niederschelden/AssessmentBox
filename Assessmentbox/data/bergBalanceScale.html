@@ -17,24 +17,39 @@
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512x512.png" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="manifest" href="mainfest.json" />
+    <script src="./scrollspy-nav.js"></script>
   </head>
   <body>
-    <header>
+    <!-- <header>
       <img src="./logo.png" alt="Logo von…" />
       <a href="index.html">Zurück</a>
-    </header>
+    </header> -->
+
+    <scrollspy-nav role="navigation" aria-label="Page section navigation">
+      <ul>
+        <li>
+          <a href="#briefing">Einweisung</a>
+        </li>
+        <li>
+          <a href="#goal">Ziel</a>
+        </li>
+        <li>
+          <a href="#example">Beispiele</a>
+        </li>
+      </ul>
+    </scrollspy-nav>
 
     <main>
       <h1>Berg-Balance-Skala</h1>
-      <h2>Berg Balance Scale - Einweisung</h2>
-      <h3>Ziel:</h3>
+      <h2 id="briefing">Berg Balance Scale - Einweisung</h2>
+      <h3 id="#goal">Ziel:</h3>
       <p>Bewertung der Balance und Stabilität des Patienten durch verschiedene Aufgaben.</p>
       <h3>Anweisungen:</h3>
       <p>
         Demonstriere jede Aufgabe und/oder gib entsprechende Instruktionen. Bewerte den niedrigsten Punktwert, den der Patient sicher erreichen kann. Bei Schwierigkeiten, die Aufgabe eigenständig
         auszuführen, sind entsprechend Punkte abzuziehen.
       </p>
-      <h3>Beispiele:</h3>
+      <h3 id="example">Beispiele:</h3>
       <ul>
         <li>Item 1: Kann der Patient nicht ohne Hilfe aufstehen, jedoch sicher mit Unterstützung, ist mit 1 zu bewerten.</li>
         <li>Item 13: Steht der Patient nicht stabil in Tandemposition, aber sicher mit kleinerem Schritt, ist mit 2 zu bewerten.</li>
