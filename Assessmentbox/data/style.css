@@ -68,6 +68,15 @@ fieldset {
 
 fieldset div {
   display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+fieldset p {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 legend {
