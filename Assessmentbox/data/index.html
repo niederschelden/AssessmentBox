@@ -17,7 +17,7 @@
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192x192.png" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512x512.png" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="manifest" href="https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/manifest.json" />
+    <link rel="manifest" href="mainfest.json" />
     <!-- The <template> contains markup and styles, if not externalized. It does not render until it is used by the Web Component. Content will be cloned, so can be reused. -->
     <template id="timer-template">
       <style>
@@ -38,7 +38,7 @@
         }
       </style>
       <div data-timer-container>
-        <p id="timer">00:00:00</p>
+        <output id="timer">00:00:00</output>
         <button id="startBtn">Start</button>
         <button id="stopBtn">Stop</button>
       </div>
@@ -84,15 +84,6 @@
       </p>
     </footer>
 
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/service-worker.js")
-            .then((reg) => console.log("Service Worker: Registered"))
-            .catch((err) => console.log(`Service Worker: Error: ${err}`));
-        });
-      }
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>
