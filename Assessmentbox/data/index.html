@@ -16,38 +16,10 @@
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192x192.png" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512x512.png" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="manifest" href="mainfest.json" />
-    <!-- The <template> contains markup and styles, if not externalized. It does not render until it is used by the Web Component. Content will be cloned, so can be reused. -->
-    <template id="timer-template">
-      <style>
-        /**
-         * Scoped, private context. No style or javascript collision with main application
-         */
-        body {
-          color: red !important;
-        }
-
-        [data-timer-container] {
-          font-family: Arial, sans-serif;
-          text-align: center;
-          margin: 20px;
-          padding: 10px;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-        }
-      </style>
-      <div data-timer-container>
-        <output id="timer">00:00:00</output>
-        <button id="startBtn">Start</button>
-        <button id="stopBtn">Stop</button>
-      </div>
-    </template>
-    <script src="./TimerComponent.js"></script>
-  </head>
-
+    <link rel="manifest" href="mainfest.json" />  
   <body>
     <header>
-      <timer-component></timer-component>
+      &nbsp;
     </header>
 
     <main>
