@@ -18,13 +18,15 @@ class MeineStoppUhr extends HTMLElement {
           }
         </style>
         <div class="stoppUhr">
-          <input id="zeitAnzeige" value="00:00:00"></input>
-          <button id="startStopp">Start</button>
+          <input class="zeitAnzeige" value="00:00:00"></input>
+          <button class="startStopp">Start</button>
         </div>
       `;
 
-        this.querySelector('#startStopp').addEventListener('click', () => this.startOderStop());
-        this.zeitAnzeige = this.querySelector('#zeitAnzeige');
+        this.startStoppButton = this.querySelector('.startStopp');
+        this.zeitAnzeige = this.querySelector('.zeitAnzeige');
+
+        this.startStoppButton.addEventListener('click', () => this.startOderStop());
     }
 
     getZeit() {
@@ -44,7 +46,7 @@ class MeineStoppUhr extends HTMLElement {
         this.zeit = 0;
         this.startZeit = Date.now();
         this.aktualisiereAnzeige();
-        this.querySelector('#startStopp').textContent = 'Stop';
+        this.startStoppButton.textContent = 'Stop'; // Verwende die Klassenvariable
         this.interval = setInterval(() => {
             this.zeit++;
             this.aktualisiereAnzeige();
@@ -55,9 +57,10 @@ class MeineStoppUhr extends HTMLElement {
         this.laeuft = false;
         clearInterval(this.interval);
         this.zeit = Math.floor((Date.now() - this.startZeit) / 10);
-        this.querySelector('#startStopp').textContent = 'Start';
+        this.startStoppButton.textContent = 'Start'; // Verwende die Klassenvariable
         this.aktualisiereAnzeige();
     }
+
 
     aktualisiereAnzeige() {
         const minuten = Math.floor(this.zeit / 6000);
