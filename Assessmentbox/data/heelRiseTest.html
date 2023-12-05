@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Heel-Rise-Test</title>
     <script src="browserCheck.js" defer></script>
+    <script src="meinMetronom.js" defer></script>  
     <meta name="view-transition" content="same-origin" />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -54,7 +55,7 @@
           <label for="linksWiederholungen">Anzahl der Wiederholungen links:</label>
           <input type="number" id="linksWiederholungen" required min="0" />
           <br />
-          <button type="button" id="metronomButton">Starte Metronom</button>
+          <mein-metronom takt="1000"></mein-metronom>
         </form>
 
         <h2>Beurteilung und Orientierungswerte:</h2>
@@ -75,65 +76,5 @@
         >.
       </p>
     </footer>
-
-    <script>
-      var metronom;
-      var isMetronomRunning = false;
-
-      // Base64-kodierte Audio-Daten
-      var audioDataURL =
-        "data:audio/wav;base64,//uQxAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAACAAAFtQCzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Oz//////////////////////////////////////////////////////////////////8AAAA8TEFNRTMuMTAwBK8AAAAAAAAAABUgJAOBQQABzAAABbVeBCHiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//vAxAAABvgDV/QQAAO5My8/NYJAaMc0MydbWHiqRg+XPsD6gQcJAwifDHLg++IAf/wfeoEHVAgceH5D//DH+H+Xf//rD5dQYLnxOH+/tqqlmNpeXNodXKKQ0IQEpC3YqCCBhgDpnzZWDFSCCAyA4HCzOHniKwBi2YHRiIKYUIArxI8EBxwtFTp5ELJWuEQPLXCyFlK25P04j9yh8Eh2lVJqAVi6bg0x+I2mKjGtV1X0jlVv13fWXYyB5K0rWm50uZGpe4EjiNuHbstd+L5Zv5Sv3Wl9HSahuad3LfNTNS3n9PnX5KJyWd1LqGMQqHLGGf17mMxG7Wf0kjmIpP///3Oni8gnrX//yOir16SrZv2NVP/WH18mbx+1avRd++7vWptqDX1gGVOC3KejkNPf3lS3lrOmu8pe6xvbEpVnN3Z3ZViFvui+JoLAgFQERAgUA0uTa8wDlRj4kWeBoBXMaH2wmBmQcHqql4SyqSiigEK3VapdVJ4HFYM1rJ9nWYXKoi/8YrFylKXhZKwKkcGIT77MuaTFZ+PP0+tC7r7SuifWUR5QJnrmtZqVtWqu6XtbPGrgqZp0apWlRbVzCmmbstlXcs8ccMtfyl5KpVL3J1TZ9xuatVcv5v8tdxlMppefWuXZTrf461lvL9atb5lruO+Za6+0qnqXk8+tWHd9uPtctVfxray//xx13LHHfMtdx3+Wu475V////5YiEwEqTEFNRTMuMTAwqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqr/+3DE0AAcZZth+bwAwAAAP8OAAASqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq"; // Vollständige Base64-Daten
-      // Erstelle ein Audio-Element mit der Base64-Daten-URL
-      var audio = new Audio(audioDataURL);
-      /*
-                var audio = new Audio('metronome.mp3');
-                audio.preload = 'auto';
-                */
-      document.getElementById("metronomButton").addEventListener("click", toggleMetronom);
-
-      function isIOSorSafari() {
-        var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-        return isIOS || isSafari;
-      }
-
-      function startMetronom() {
-        var now = Date.now();
-        var nextTick = 1000 - (now % 1000);
-
-        setTimeout(function () {
-          playMetronom();
-          metronom = setInterval(playMetronom, 1000);
-        }, nextTick);
-      }
-
-      function playMetronom() {
-        if (isIOSorSafari()) {
-          // Für iOS und Safari
-          var audioClone = audio.cloneNode();
-          audioClone.play().catch(function (error) {
-            console.error("Fehler beim Abspielen des Metronoms:", error);
-          });
-        } else {
-          // Für andere Browser
-          audio.currentTime = 0;
-          audio.play().catch(function (error) {
-            console.error("Fehler beim Abspielen des Metronoms:", error);
-          });
-        }
-      }
-
-      function toggleMetronom() {
-        if (isMetronomRunning) {
-          clearInterval(metronom);
-          isMetronomRunning = false;
-          document.getElementById("metronomButton").textContent = "Starte Metronom";
-        } else {
-          startMetronom();
-          isMetronomRunning = true;
-          document.getElementById("metronomButton").textContent = "Stoppe Metronom";
-        }
-      }
-    </script>
   </body>
 </html>
