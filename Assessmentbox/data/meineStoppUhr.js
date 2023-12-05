@@ -1,9 +1,9 @@
-
 class MeineStoppUhr extends HTMLElement {
     constructor() {
         super();
         this.interval;
         this.laeuft = false;
+        this.startZeit = 0;
         this.zeit = 0;
     }
 
@@ -11,12 +11,15 @@ class MeineStoppUhr extends HTMLElement {
         this.innerHTML = `
         <style>
           .stoppUhr {
+            /* Stilisierung der Stoppuhr */
           }
           .stoppUhr button {
+            /* Stilisierung des Buttons */
           }
         </style>
         <div class="stoppUhr">
-          <input id="zeitAnzeige" value="00:00:00"></input><button id="startStopp">Start</button>
+          <input id="zeitAnzeige" value="00:00:00"></input>
+          <button id="startStopp">Start</button>
         </div>
       `;
 
@@ -24,7 +27,6 @@ class MeineStoppUhr extends HTMLElement {
         this.zeitAnzeige = this.querySelector('#zeitAnzeige');
     }
 
-    // Methode, um die aktuelle Zeit zu erhalten
     getZeit() {
         return this.zeit;
     }
@@ -40,6 +42,7 @@ class MeineStoppUhr extends HTMLElement {
     start() {
         this.laeuft = true;
         this.zeit = 0;
+        this.startZeit = Date.now();
         this.aktualisiereAnzeige();
         this.querySelector('#startStopp').textContent = 'Stop';
         this.interval = setInterval(() => {
@@ -50,17 +53,18 @@ class MeineStoppUhr extends HTMLElement {
 
     stop() {
         this.laeuft = false;
-        this.querySelector('#startStopp').textContent = 'Start';
         clearInterval(this.interval);
+        this.zeit = Math.floor((Date.now() - this.startZeit) / 10);
+        this.querySelector('#startStopp').textContent = 'Start';
+        this.aktualisiereAnzeige();
     }
 
     aktualisiereAnzeige() {
-        const minuten = Math.floor(this.zeit / 6000); // 6000 Hundertstel pro Minute
-        const sekunden = Math.floor((this.zeit % 6000) / 100); // 100 Hundertstel pro Sekunde
+        const minuten = Math.floor(this.zeit / 6000);
+        const sekunden = Math.floor((this.zeit % 6000) / 100);
         const hundertstel = this.zeit % 100;
         this.zeitAnzeige.value = `${minuten.toString().padStart(2, '0')}:${sekunden.toString().padStart(2, '0')}:${hundertstel.toString().padStart(2, '0')}`;
     }
 }
 
 window.customElements.define('meine-stoppuhr', MeineStoppUhr);
-
