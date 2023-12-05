@@ -4,12 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Berg-Balance-Skala</title>
-    <script src="browserCheck.js" defer></script>
     <meta name="view-transition" content="same-origin" />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.json" />
-    <script src="./scrollspy-nav.js"></script>
   </head>
   <body>
     <!-- <header>
@@ -40,10 +38,9 @@
       <h3 id="#goal">Ziel:</h3>
       <p>Bewertung der Balance und Stabilität des Patienten durch verschiedene Aufgaben.</p>
       <h3>Anweisungen:</h3>
-      <p>
-        Demonstriere jede Aufgabe und/oder gib entsprechende Instruktionen. Bewerte den niedrigsten Punktwert, den der Patient sicher erreichen kann. Bei Schwierigkeiten, die Aufgabe eigenständig
-        auszuführen, sind entsprechend Punkte abzuziehen.
-      </p>
+      <p>Demonstriere jede Aufgabe und/oder gib entsprechende Instruktionen. Bewerte den niedrigsten Punktwert, den der Patient sicher erreichen kann.</p>
+
+      <p>Bei Schwierigkeiten, die Aufgabe eigenständig auszuführen, sind entsprechend Punkte abzuziehen.</p>
       <h3 id="example">Beispiele:</h3>
       <ul>
         <li>Item 1: Kann der Patient nicht ohne Hilfe aufstehen, jedoch sicher mit Unterstützung, ist mit 1 zu bewerten.</li>
@@ -57,13 +54,14 @@
         <li>Stuhl mit angemessener Sitzhöhe</li>
         <li>Stufe oder Fußbank für bestimmte Aufgaben</li>
       </ul>
-      <p class="notification"><strong>Zur Durchführung:</strong> Fülle das Formular aus und drücke auf "Berechne Punkte", um das Ergebnis zu erhalten.</p>
+
+      <p><strong>Zur Durchführung:</strong> Fülle das Formular aus und drücke auf "Berechne Punkte", um das Ergebnis zu erhalten.</p>
 
       <form id="bergBalanceForm">
         <fieldset>
           <legend>Item 1: Vom Sitzen zum Stehen</legend>
 
-          <p>Instruktionen: Bitte stehen Sie auf. Versuchen Sie, Ihre Hände nicht zur Unterstützung zu benutzen.</p>
+          <p><strong>Instruktionen:</strong> Bitte stehen Sie auf. Versuchen Sie, Ihre Hände nicht zur Unterstützung zu benutzen.</p>
 
           <div>
             <input type="radio" name="items[0]" value="4" id="id01" />
@@ -93,7 +91,7 @@
 
         <fieldset>
           <legend>Item 2: Stehen ohne Unterstützung</legend>
-          <p>Instruktionen: Bitte stehen sie zwei Minuten ohne sich festzuhalten</p>
+          <p><strong>Instruktionen:</strong> Bitte stehen sie zwei Minuten ohne sich festzuhalten</p>
 
           <div>
             <input type="radio" name="items[1]" value="4" id="id06" />
@@ -124,7 +122,7 @@
         <fieldset>
           <legend>Item 3: Sitzen ohne Rückenlehne, aber mit beiden Füße auf dem Boden oder auf einer Fußbank</legend>
           <p>
-            Instruktionen: Bitte sitzen Sie zwei Minuten mit verschränkten Armen.<br />
+            <strong>Instruktionen:</strong> Bitte sitzen Sie zwei Minuten mit verschränkten Armen.<br />
             (wichtig ist, dass eine Armhaltung eingenommen wird, bei der die Arme nach Möglichkeit über Kreuz liegen, so dass sie nicht für Gleichgewichtsreaktionen genutzt werden können)
           </p>
 
@@ -156,7 +154,7 @@
 
         <fieldset>
           <legend>Item 4: Vom Stehen zum Sitzen</legend>
-          <p>Instruktionen: Bitte setzen Sie sich hin</p>
+          <p><strong>Instruktionen:</strong> Bitte setzen Sie sich hin</p>
 
           <div>
             <input type="radio" name="items[3]" value="4" id="id16" />
@@ -187,9 +185,9 @@
         <fieldset>
           <legend>Item 5: Transfer</legend>
           <p>
-            Instruktionen: Stühle werden so hingestellt, dass der Transfer von Sitz zu Sitz durch eine Drehung („tiefer Transfer“) erreicht werden kann. Bitten Sie den Probanden, sich in eine Richtung
-            auf einen Stuhl mit Armlehne und in die andere Richtung auf einen Stuhl ohne Armlehne umzusetzen. Sie können zwei Stühle (einer mit, einer ohne Armlehne) oder ein Bett/eine Bank und ein
-            Stuhl benutzen.
+            <strong>Instruktionen:</strong> Stühle werden so hingestellt, dass der Transfer von Sitz zu Sitz durch eine Drehung („tiefer Transfer“) erreicht werden kann. Bitten Sie den Probanden, sich
+            in eine Richtung auf einen Stuhl mit Armlehne und in die andere Richtung auf einen Stuhl ohne Armlehne umzusetzen. Sie können zwei Stühle (einer mit, einer ohne Armlehne) oder ein
+            Bett/eine Bank und ein Stuhl benutzen.
           </p>
 
           <div>
@@ -220,7 +218,7 @@
 
         <fieldset>
           <legend>Item 6: Stehen mit geschlossenen Augen ohne Unterstützung</legend>
-          <p>Instruktionen: Bitte schließen Sie Ihre Augen und stehen Sie zehn Sekunden lang still.</p>
+          <p><strong>Instruktionen:</strong> Bitte schließen Sie Ihre Augen und stehen Sie zehn Sekunden lang still.</p>
 
           <div>
             <input type="radio" name="items[5]" value="4" id="id26" />
@@ -250,7 +248,7 @@
 
         <fieldset>
           <legend>Item 7: Stehen ohne Unterstützung mit geschlossenen Füßen</legend>
-          <p>Instruktionen: Stellen Sie die Füße dicht nebeneinander und stehen Sie ohne sich festzuhalten.</p>
+          <p><strong>Instruktionen:</strong> Stellen Sie die Füße dicht nebeneinander und stehen Sie ohne sich festzuhalten.</p>
 
           <div>
             <input type="radio" name="items[6]" value="4" id="id31" />
@@ -282,10 +280,10 @@
           <legend>Item 8: Im Stehen mit ausgestrecktem Arm nach vorne reichen/langen</legend>
           <p>
             <!-- TODO Check braces -->
-            Instruktionen: Heben Sie bitte beide Arme in die Waagrechte. Wenn das nicht geht, strecken Sie nur einen Arm aus). Strecken Sie Ihre Finger aus und langen/reichen Sie so weit wie Sie
-            können nach vorne. (Der Tester/die Testerin hält ein Lineal an den Fingerspitzen, wenn der Arm im 90°-Winkel angehoben ist. Die Finger sollten das Lineal beim vorwärts langen nicht
-            berühren. Gemessen wird die Distanz, die die Finger zurückgelegt haben, wenn der Proband in der am weitesten vorgelehnten Position ist. Bitten Sie den Probanden, möglichst mit beiden Armen
-            nach vorne zu langen, um eine Rumpfrotation zu vermeiden.
+            <strong>Instruktionen:</strong> Heben Sie bitte beide Arme in die Waagrechte. Wenn das nicht geht, strecken Sie nur einen Arm aus). Strecken Sie Ihre Finger aus und langen/reichen Sie so
+            weit wie Sie können nach vorne. (Der Tester/die Testerin hält ein Lineal an den Fingerspitzen, wenn der Arm im 90°-Winkel angehoben ist. Die Finger sollten das Lineal beim vorwärts langen
+            nicht berühren. Gemessen wird die Distanz, die die Finger zurückgelegt haben, wenn der Proband in der am weitesten vorgelehnten Position ist. Bitten Sie den Probanden, möglichst mit beiden
+            Armen nach vorne zu langen, um eine Rumpfrotation zu vermeiden.
           </p>
 
           <div>
@@ -316,7 +314,7 @@
 
         <fieldset>
           <legend>Item 9: Aus dem Stand Gegenstand vom Boden aufheben</legend>
-          <p>Instruktionen: Heben Sie bitte den Schuh/Hausschuh auf, der vor Ihren Füßen liegt.</p>
+          <p><strong>Instruktionen:</strong> Heben Sie bitte den Schuh/Hausschuh auf, der vor Ihren Füßen liegt.</p>
 
           <div>
             <input type="radio" name="items[8]" value="4" id="id41" />
@@ -347,8 +345,8 @@
         <fieldset>
           <legend>Item 10: Sich im Stehen umdrehen, um nach hinten über die rechte und die linke Schulter zu schauen</legend>
           <p>
-            Instruktionen: Schauen Sie bitte über Ihre linke Schulter direkt nach hinten. Wiederholen Sie dies zur rechten Seite. Der Tester kann einen Gegenstand direkt hinter dem Probanden zum
-            Anschauen auswählen, um eine bessere Körperdrehung zu unterstützen.
+            <strong>Instruktionen:</strong> Schauen Sie bitte über Ihre linke Schulter direkt nach hinten. Wiederholen Sie dies zur rechten Seite. Der Tester kann einen Gegenstand direkt hinter dem
+            Probanden zum Anschauen auswählen, um eine bessere Körperdrehung zu unterstützen.
           </p>
 
           <div>
@@ -379,7 +377,7 @@
 
         <fieldset>
           <legend>Item 11: Sich um 360° drehen</legend>
-          <p>Instruktionen: Drehen Sie sich bitte einmal um ihre eigene Achse komplett im Kreis. Halten Sie an. Dann drehen Sie sich um die eigene Achse in die andere Richtung.</p>
+          <p><strong>Instruktionen:</strong> Drehen Sie sich bitte einmal um ihre eigene Achse komplett im Kreis. Halten Sie an. Dann drehen Sie sich um die eigene Achse in die andere Richtung.</p>
 
           <div>
             <input type="radio" name="items[10]" value="4" id="id51" />
@@ -409,7 +407,7 @@
 
         <fieldset>
           <legend>Item 12: Ohne Unterstützung abwechselnd die Füße auf eine Stufe oder Stufe stellen</legend>
-          <p>Instruktionen: Bitte stellen Sie abwechselnd einen Fuß auf die Stufe/auf die Fußbank. Wiederholen Sie dies, bis jeder Fuß viermal auf der Stufe/auf der Fußbank stand</p>
+          <p><strong>Instruktionen:</strong> Bitte stellen Sie abwechselnd einen Fuß auf die Stufe/auf die Fußbank. Wiederholen Sie dies, bis jeder Fuß viermal auf der Stufe/auf der Fußbank stand</p>
 
           <div>
             <input type="radio" name="items[11]" value="4" id="id56" />
@@ -441,9 +439,9 @@
         <fieldset>
           <legend>Item 13: Stehen ohne Unterstützung mit einem Fuß vor dem anderen (Tandemstand)</legend>
           <p>
-            Instruktionen: (DEMONSTRIEREN SIE DEM PROBANDEN DIESE AUFGABE). Stellen Sie einen Fuß direkt vor den anderen. Wenn Sie das Gefühl haben, dass Sie einen Fuß nicht direkt vor den anderen
-            stellen können, versuchen Sie einen Schritt weit genug nach vorn zu machen, so dass die Ferse des vorderen Fußes vor den Zehen des hinteren Fußes steht. (Um die drei Punkte zu erreichen
-            sollte die Länge des Schrittes die Länge des anderen Fußes übertreffen und die Standbreite sollte ungefähr der normalen Spurbreite/Schrittbreite entsprechen
+            <strong>Instruktionen:</strong> (DEMONSTRIEREN SIE DEM PROBANDEN DIESE AUFGABE). Stellen Sie einen Fuß direkt vor den anderen. Wenn Sie das Gefühl haben, dass Sie einen Fuß nicht direkt
+            vor den anderen stellen können, versuchen Sie einen Schritt weit genug nach vorn zu machen, so dass die Ferse des vorderen Fußes vor den Zehen des hinteren Fußes steht. (Um die drei Punkte
+            zu erreichen sollte die Länge des Schrittes die Länge des anderen Fußes übertreffen und die Standbreite sollte ungefähr der normalen Spurbreite/Schrittbreite entsprechen
           </p>
 
           <div>
@@ -474,7 +472,7 @@
 
         <fieldset>
           <legend>Item 14: Auf einem Bein stehen (Einbeinstand)</legend>
-          <p>Instruktionen: Stehen Sie auf einem Bein, solange Sie können, ohne sich festzuhalten.</p>
+          <p><strong>Instruktionen:</strong> Stehen Sie auf einem Bein, solange Sie können, ohne sich festzuhalten.</p>
 
           <div>
             <input type="radio" name="items[13]" value="4" id="id66" />
@@ -523,6 +521,9 @@
         sante publique, 83 Suppl 2, S7–S11.
       </p>
     </footer>
+
+    <script src="browserCheck.js" defer></script>
+    <script src="./scrollspy-nav.js"></script>
 
     <script>
       function berechnePunkte() {

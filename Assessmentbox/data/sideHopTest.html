@@ -1,114 +1,107 @@
 <!DOCTYPE html>
 <html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Side-Hop Test</title>
+    <meta name="view-transition" content="same-origin" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="manifest" href="mainfest.json" />
+  </head>
+  <body>
+    <header>
+      <img src="./logo.png" alt="Logo von…" />
+      <a href="index.html">Zurück</a>
+    </header>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Side-Hop Test</title>
-    <script src="browserCheck.js" defer></script>
-  <meta name="view-transition" content="same-origin" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="manifest" href="mainfest.json" />
-</head>
+    <main>
+      <h1>Side-Hop Test</h1>
+      <p>Der Side-Hop-Test dient der Überprüfung der mediolateralen Sprunggelenksstabilität und der Bewertung der Bewegungsqualität.</p>
 
-<body>
-  <header>
-    <img src="./logo.png" alt="Logo von…" />
-    <a href="index.html">Zurück</a>
-  </header>
+      <h2>Ziel:</h2>
+      <ul>
+        <li>Überprüfung der mediolateralen Sprunggelenksstabilität</li>
+        <li>Beurteilung der Bewegungsqualität</li>
+      </ul>
 
-  <main>
-    <h1>Side-Hop Test</h1>
-    <p>Der Side-Hop-Test dient der Überprüfung der mediolateralen Sprunggelenksstabilität und der Bewertung der
-      Bewegungsqualität.</p>
+      <h2>Materialbedarf:</h2>
+      <ul>
+        <li>Stoppuhr</li>
+        <li>Tape</li>
+        <li>Videokamera</li>
+      </ul>
 
-    <h2>Ziel:</h2>
-    <ul>
-      <li>Überprüfung der mediolateralen Sprunggelenksstabilität</li>
-      <li>Beurteilung der Bewegungsqualität</li>
-    </ul>
+      <h2>Testdurchführung:</h2>
+      <p>
+        Führe den Test in Schuhen durch. Die Testperson soll auf einem Bein über Markierungsstreifen springen, um die mediolaterale Sprunggelenksstabilität zu überprüfen. Es sollen 10 Sprünge hin und
+        zurück so schnell wie möglich durchgeführt werden.
+      </p>
 
-    <h2>Materialbedarf:</h2>
-    <ul>
-      <li>Stoppuhr</li>
-      <li>Tape</li>
-      <li>Videokamera</li>
-    </ul>
-
-    <h2>Testdurchführung:</h2>
-    <p>
-      Führe den Test in Schuhen durch. Die Testperson soll auf einem Bein über Markierungsstreifen springen, um die
-      mediolaterale Sprunggelenksstabilität zu überprüfen. Es sollen 10 Sprünge hin und
-      zurück so schnell wie möglich durchgeführt werden.
-    </p>
-
-    <h2>Messung:</h2>
-    <p>Messe die Zeit in Sekunden pro Beinseite für die 10 Sprünge. Der beste Versuch wird gewertet, und der Lower Limb
-      Symmetry Index (LSI) wird berechnet.</p>
-
-    <h2>Beurteilung und Orientierungswerte:</h2>
-    <p>Der Cut-Off-Wert liegt bei 12,88 Sekunden. Ein LSI ≥ 90 im Seitenvergleich wird angestrebt. Der LSI sollte auch
-      nicht größer als 110 sein, um Asymmetrien zu vermeiden.</p>
-
-    <div class="other">
       <h2>Messung:</h2>
-      <script src="meineStoppUhr.js"></script>
-      Zeit (verletztes Bein) in Sekunden: <meine-stoppuhr id="verletzt"></meine-stoppuhr>
-      Zeit (unverletztes Bein) in Sekunden:<meine-stoppuhr id="unverletzt"></meine-stoppuhr>
-      <button type="button" onclick="evaluateSideHopTest()">Auswertung starten</button>
-      <script>
-        function evaluateSideHopTest() {
-          // Daten aus dem Formular lesen
-          var verletzt = document.getElementById('verletzt');
+      <p>Messe die Zeit in Sekunden pro Beinseite für die 10 Sprünge. Der beste Versuch wird gewertet, und der Lower Limb Symmetry Index (LSI) wird berechnet.</p>
+
+      <h2>Beurteilung und Orientierungswerte:</h2>
+      <p>Der Cut-Off-Wert liegt bei 12,88 Sekunden. Ein LSI ≥ 90 im Seitenvergleich wird angestrebt. Der LSI sollte auch nicht größer als 110 sein, um Asymmetrien zu vermeiden.</p>
+
+      <div class="other">
+        <h2>Messung:</h2>
+        <script src="meineStoppUhr.js"></script>
+        Zeit (verletztes Bein) in Sekunden: <meine-stoppuhr id="verletzt"></meine-stoppuhr> Zeit (unverletztes Bein) in Sekunden:<meine-stoppuhr id="unverletzt"></meine-stoppuhr>
+        <button type="button" onclick="evaluateSideHopTest()">Auswertung starten</button>
+        <script>
+          function evaluateSideHopTest() {
+            // Daten aus dem Formular lesen
+            var verletzt = document.getElementById("verletzt");
             if (!verletzt) {
-              console.error('Stoppuhr-Komponente verletzt nicht gefunden');
+              console.error("Stoppuhr-Komponente verletzt nicht gefunden");
               return;
             }
-          var unverletzt = document.getElementById('unverletzt');
+            var unverletzt = document.getElementById("unverletzt");
             if (!unverletzt) {
-              console.error('Stoppuhr-Komponente unverletzt nicht gefunden');
+              console.error("Stoppuhr-Komponente unverletzt nicht gefunden");
               return;
-            }  
-           // Zeit von der Stoppuhr abrufen und in Sekunden umwandeln
-          var timeInjured = parseFloat(verletzt.getZeit()/100).toFixed(2);
-          var timeUninjured = parseFloat(unverletzt.getZeit()/100).toFixed(2);
-    
-          // Cut-Off-Wert für den Side-Hop-Test
-          const cutOffValue = 12.88;
-    
-          // Berechnung des Lower Limb Symmetry Index (LSI)
-          const lsi = ((timeInjured / timeUninjured) * 100);
-    
-          // Ausgabe der Ergebnisse
-          const resultsDiv = document.getElementById("results");
-          resultsDiv.innerHTML = `<p>Zeit (verletztes Bein): ${timeInjured} Sekunden</p>
+            }
+            // Zeit von der Stoppuhr abrufen und in Sekunden umwandeln
+            var timeInjured = parseFloat(verletzt.getZeit() / 100).toFixed(2);
+            var timeUninjured = parseFloat(unverletzt.getZeit() / 100).toFixed(2);
+
+            // Cut-Off-Wert für den Side-Hop-Test
+            const cutOffValue = 12.88;
+
+            // Berechnung des Lower Limb Symmetry Index (LSI)
+            const lsi = (timeInjured / timeUninjured) * 100;
+
+            // Ausgabe der Ergebnisse
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = `<p>Zeit (verletztes Bein): ${timeInjured} Sekunden</p>
                                             <p>Zeit (unverletztes Bein): ${timeUninjured} Sekunden</p>
                                             <p>LSI: ${lsi.toFixed(2)}</p>`;
-    
-          // Überprüfung auf posturale Instabilität
-          if (timeInjured > cutOffValue || timeUninjured > cutOffValue || lsi < 90 || lsi > 110) {
-            resultsDiv.innerHTML += "<p style='color: red;'>Posturale Instabilität festgestellt!</p>";
-          } else {
-            resultsDiv.innerHTML += "<p style='color: green;'>Gute mediolaterale Sprunggelenksstabilität!</p>";
+
+            // Überprüfung auf posturale Instabilität
+            if (timeInjured > cutOffValue || timeUninjured > cutOffValue || lsi < 90 || lsi > 110) {
+              resultsDiv.innerHTML += "<p style='color: red;'>Posturale Instabilität festgestellt!</p>";
+            } else {
+              resultsDiv.innerHTML += "<p style='color: green;'>Gute mediolaterale Sprunggelenksstabilität!</p>";
+            }
           }
-        }
-      </script>
-      <h2>Auswertung:</h2>
-      <div id="results"></div>
-    </div>
-  </main>
+        </script>
+        <h2>Auswertung:</h2>
+        <div id="results"></div>
+      </div>
+    </main>
 
-  <footer>
-    <h2>Quelle</h2>
-    <p>
-      Bloch, H., Klein, C., Kühn, N., Luig, P. (2022). Return to Competition – Testmanual zur Beurteilung der
-      Spielfähigkeit nach akuter lateraler Bandverletzung am Sprunggelenk. Hamburg: VBG, S.
-      37f. Abgerufen am 26. November 2023, von
-      <a
-        href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7">https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7</a>.
-    </p>
-  </footer>
-</body>
+    <footer>
+      <h2>Quelle</h2>
+      <p>
+        Bloch, H., Klein, C., Kühn, N., Luig, P. (2022). Return to Competition – Testmanual zur Beurteilung der Spielfähigkeit nach akuter lateraler Bandverletzung am Sprunggelenk. Hamburg: VBG, S.
+        37f. Abgerufen am 26. November 2023, von
+        <a href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7"
+          >https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7</a
+        >.
+      </p>
+    </footer>
 
+    <script src="browserCheck.js" defer></script>
+  </body>
 </html>
