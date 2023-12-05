@@ -81,6 +81,7 @@
 
             // Überprüfung auf posturale Instabilität
             if (timeInjured > cutOffValue || timeUninjured > cutOffValue || lsi < 90 || lsi > 110) {
+              // TODO innerHTML is potentially dangerous, we got better was to manipulate the DOM
               resultsDiv.innerHTML += "<p style='color: red;'>Posturale Instabilität festgestellt!</p>";
             } else {
               resultsDiv.innerHTML += "<p style='color: green;'>Gute mediolaterale Sprunggelenksstabilität!</p>";
