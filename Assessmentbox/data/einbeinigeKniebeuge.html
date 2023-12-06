@@ -1,76 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Einbeinige Kniebeuge Test</title>
-    <link rel="stylesheet" href="style.css"> <!-- Verlinkung der CSS-Datei -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="AssessmentBox">
-    <link rel="apple-touch-icon" sizes="120x120" href="icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="icon-167x167.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="icon-192x192.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="icon-512x512.png">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="manifest" href="https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/manifest.json">
-</head>
+    <meta name="view-transition" content="same-origin" />
+    <script src="browserCheck.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <header>
+      <!-- TODO Clarify logo and alt attribute -->
+      <img src="./logo.png" alt="Logo von…" />
+      <a href="index.html">Zurück</a>
+    </header>
 
-<body>
-    <div class="header">
-        <a href="index.html" class="back-link">Zurück</a>
-    </div>
-    <h1>Einbeinige Kniebeuge Test</h1>
-    <div class="instructions">
-        <p>
-            Der Einbeinige Kniebeuge Test prüft die Bewegungsqualität und ermöglicht Einblicke in die Kraft der Hüftabduktoren.
-        </p>
-    
-        <h2>Ziel:</h2>
-        <ul>
-            <li>Überprüfung der Bewegungsqualität einer einbeinigen Kniebeuge</li>
-            <li>Aufdecken von muskulären Defiziten, die zu Asymmetrien und Kompensationsbewegungen führen können</li>
-        </ul>
-    
-        <h2>Materialbedarf:</h2>
-        <ul>
-            <li>Bank oder Hocker</li>
-            <li>Videokamera</li>
-            <li>Messprotokoll</li>
-            <li>Metronom</li>
-        </ul>
-    
-        <h2>Testdurchführung:</h2>
-        <p>
-            Auf einer Bank oder einem Hocker führst Du im Einbeinstand mit überkreuzten Armen vor der Brust 5 Kniebeugen pro Beinseite in langsamer und kontrollierter Ausführung durch. Das Bewegungstempo kann mit einem Metronom standardisiert werden. Führe den Test barfuß durch.
-        </p>
-    
-        <h2>Messung:</h2>
-        <p>
-            Die Ausführung der einbeinigen Kniebeuge wird videodokumentiert und im Anschluss anhand eines Beurteilungsbogens bewertet.
-        </p>
-    </div>    
+    <main>
+      <h1>Einbeinige Kniebeuge Test</h1>
+      <p>Der Einbeinige Kniebeuge Test prüft die Bewegungsqualität und ermöglicht Einblicke in die Kraft der Hüftabduktoren.</p>
 
-    <h2>Beurteilung und Orientierungswerte:</h2>
-    <table>
+      <h2>Ziel:</h2>
+      <ul>
+        <li>Überprüfung der Bewegungsqualität einer einbeinigen Kniebeuge</li>
+        <li>Aufdecken von muskulären Defiziten, die zu Asymmetrien und Kompensationsbewegungen führen können</li>
+      </ul>
+
+      <h2>Materialbedarf:</h2>
+      <ul>
+        <li>Bank oder Hocker</li>
+        <li>Videokamera</li>
+        <li>Messprotokoll</li>
+        <li>Metronom</li>
+      </ul>
+
+      <h2>Testdurchführung:</h2>
+      <p>
+        Auf einer Bank oder einem Hocker führst Du im Einbeinstand mit überkreuzten Armen vor der Brust 5 Kniebeugen pro Beinseite in langsamer und kontrollierter Ausführung durch. Das Bewegungstempo
+        kann mit einem Metronom standardisiert werden. Führe den Test barfuß durch.
+      </p>
+
+      <h2>Messung:</h2>
+      <p>Die Ausführung der einbeinigen Kniebeuge wird videodokumentiert und im Anschluss anhand eines Beurteilungsbogens bewertet.</p>
+
+      <h2>Beurteilung und Orientierungswerte:</h2>
+      <table>
         <tr>
-            <th>Kategorie</th>
-            <th>Gut</th>
-            <th>Schlecht</th>
+          <th>Kategorie</th>
+          <th>Gut</th>
+          <th>Schlecht</th>
         </tr>
         <!-- ... Checkbuttons für die Bewertungskategorien ... -->
-    </table>
-    <div class="footer">
-        <h2>Quelle</h2>
-        <p>
-            Bloch, H., Klein, C., Kühn, N., Luig, P. (2022). Return to Competition – Testmanual zur Beurteilung der Spielfähigkeit
-            nach akuter lateraler Bandverletzung am Sprunggelenk.
-            Hamburg: VBG, S. 30. Abgerufen am 26. November 2023, von <a href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7">https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7</a>.
-        </p>
-    </div>
-</body>
+      </table>
+    </main>
 
+    <footer>
+      <h2>Quelle</h2>
+      <p>
+        Bloch, H., Klein, C., Kühn, N., Luig, P. (2022). Return to Competition — Testmanual zur Beurteilung der Spielfähigkeit nach akuter lateraler Bandverletzung am Sprunggelenk. Hamburg: VBG, S.
+        30. Abgerufen am 26. November 2023, von
+        <a href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7"
+          >https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/return_to_competition_Sprunggelenksverletzungen.pdf?__blob=publicationFile&v=7</a
+        >.
+      </p>
+    </footer>
+  </body>
 </html>

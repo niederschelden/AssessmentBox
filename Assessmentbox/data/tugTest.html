@@ -1,104 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Timed Up & Go Test</title>
-    <link rel="stylesheet" href="style.css"> <!-- Verlinkung der CSS-Datei -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="AssessmentBox">
-    <link rel="apple-touch-icon" sizes="120x120" href="icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="icon-167x167.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="icon-180x180.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="icon-192x192.png">
-    <link rel="apple-touch-icon" sizes="512x512" href="icon-512x512.png">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="manifest" href="https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/manifest.json">
-</head>
-<body>
-    <div class="header">
-        <a href="index.html" class="back-link">Zurück</a>
-    </div>
-    <h1>Timed Up & Go Test</h1>
+    <meta name="view-transition" content="same-origin" />
+    <script src="browserCheck.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <header>
+      <img src="./logo.png" alt="Logo von…" />
+      <a href="index.html">Zurück</a>
+    </header>
 
-<div class="instructions">
-    <h2>Zielsetzung:</h2>
-    <p>Bewertung der Mobilität und Gleichgewichtsfähigkeit des Probanden.</p>
+    <main>
+      <h1>Timed Up & Go Test</h1>
+      <h2>Zielsetzung:</h2>
+      <div>
+        <p>Bewertung der Mobilität und Gleichgewichtsfähigkeit des Probanden.</p>
 
-    <h2>Materialbedarf:</h2>
-    <ul>
-        <li>Stuhl mit Armlehne</li>
-        <li>Markierung auf dem Boden in drei Meter Entfernung</li>
-        <li>Stoppuhr</li>
-        <li>Optional: Hilfsmittel wie ein Stock</li>
-    </ul>
+        <h2>Materialbedarf:</h2>
+        <ul>
+          <li>Stuhl mit Armlehne</li>
+          <li>Markierung auf dem Boden in drei Meter Entfernung</li>
+          <li>Stoppuhr</li>
+          <li>Optional: Hilfsmittel wie ein Stock</li>
+        </ul>
 
-    <h2>Anleitung:</h2>
-    <p>Der Proband sitzt auf einem Stuhl mit Armlehne. Er darf ein Hilfsmittel benutzen, wenn notwendig. Seine Arme liegen auf der Stuhllehne und der Rücken an der Rücklehne des Stuhles. Du darfst nicht helfen.</p>
-    <p>Auf Dein Kommando soll der Proband bis zu einer Linie in drei Meter Entfernung gehen, sich umdrehen, zurück zum Stuhl gehen und sich wieder hinsetzen. Notiere die benötigte Zeit in Sekunden. Der Proband kann den Bewegungsablauf vor dem Test ausprobieren oder Du demonstrierst ihn.</p>
-
-    <h2>Ergebnisinterpretation:</h2>
-    <ul>
-        <li><b>Zeit unter 20 Sekunden:</b> Probanden, die weniger als 10 Sekunden benötigen, sind in ihrer alltäglichen Mobilität vollständig unabhängig. 11-19 Sekunden weisen auf eine Mobilitätseinschränkung hin, meist ohne funktionelle Auswirkungen.</li>
-        <li><b>Zeit zwischen 20 und 29 Sekunden:</b> Diese Probanden haben eine Mobilitätseinschränkung, die funktionelle Auswirkungen haben kann. Weiterführende Assessments sind notwendig.</li>
-        <li><b>Zeit über 30 Sekunden:</b> Diese Probanden haben eine ausgeprägte Mobilitätseinschränkung, die oft intensive Betreuung und adäquate Hilfsmittelversorgung erfordert.</li>
-    </ul>
-</div>
-
-<div class="other">
-    <h2>Testdurchführung:</h2>
-    <input type="text" id="timeElapsed" placeholder="0.00">
-    <button type="button" id="startStopButton" onclick="toggleTimer()">Start</button>
-
-    <h2>Auswertung:</h2>
-    <div id="results"></div>
-</div>
-    <script>
-        var timer;
-        var isTimerRunning = false;
-        var startTime;
-
-        function toggleTimer() {
-            if (isTimerRunning) {
-                // Stop Timer
-                clearInterval(timer);
-                isTimerRunning = false;
-                document.getElementById("startStopButton").textContent = "Start";
-                evaluateTest();
-            } else {
-                // Start Timer
-                startTime = Date.now();
-                timer = setInterval(updateTimer, 10);
-                isTimerRunning = true;
-                document.getElementById("startStopButton").textContent = "Stop";
-            }
-        }
-
-        function updateTimer() {
-            var elapsed = (Date.now() - startTime) / 1000;
-            document.getElementById("timeElapsed").value = elapsed.toFixed(2);
-        }
-
-        function evaluateTest() {
-            var time = parseFloat(document.getElementById("timeElapsed").value);
-            var resultsDiv = document.getElementById('results');
-
-            if (time < 20) {
-                resultsDiv.innerHTML = "<p style='color: green;'>Vollständige Unabhängigkeit in der Mobilität.</p>";
-            } else if (time >= 20 && time <= 29) {
-                resultsDiv.innerHTML = "<p style='color: orange;'>Mögliche Mobilitätseinschränkung (weiterführendes Assessment notwendig).</p>";
-            } else {
-                resultsDiv.innerHTML = "<p style='color: red;'>Ausgeprägte Mobilitätseinschränkung (intensive Betreuung erforderlich).</p>";
-            }
-        }
-    </script>
-    <div class="footer">
-        <h2>Quelle</h2>
+        <h2>Anleitung:</h2>
         <p>
-            Pschyrembel Redaktion. (2018, August). Timed-up-and-go-Test. In Pschyrembel Online. Abgerufen am 26. November 2023, von <a href="https://www.pschyrembel.de/Timed-up-and-go-Test/B0A1V">https://www.pschyrembel.de/Timed-up-and-go-Test/B0A1V</a>.
+          Der Proband sitzt auf einem Stuhl mit Armlehne. Er darf ein Hilfsmittel benutzen, wenn notwendig. Seine Arme liegen auf der Stuhllehne und der Rücken an der Rücklehne des Stuhles. Du darfst
+          nicht helfen.
         </p>
-    </div>    
-</body>
+        <p>
+          Auf Dein Kommando soll der Proband bis zu einer Linie in drei Meter Entfernung gehen, sich umdrehen, zurück zum Stuhl gehen und sich wieder hinsetzen. Notiere die benötigte Zeit in Sekunden.
+          Der Proband kann den Bewegungsablauf vor dem Test ausprobieren oder Du demonstrierst ihn.
+        </p>
+
+        <h2>Ergebnisinterpretation:</h2>
+        <ul>
+          <li>
+            <b>Zeit unter 20 Sekunden:</b> Probanden, die weniger als 10 Sekunden benötigen, sind in ihrer alltäglichen Mobilität vollständig unabhängig. 11-19 Sekunden weisen auf eine
+            Mobilitätseinschränkung hin, meist ohne funktionelle Auswirkungen.
+          </li>
+          <li><b>Zeit zwischen 20 und 29 Sekunden:</b> Diese Probanden haben eine Mobilitätseinschränkung, die funktionelle Auswirkungen haben kann. Weiterführende Assessments sind notwendig.</li>
+          <li><b>Zeit über 30 Sekunden:</b> Diese Probanden haben eine ausgeprägte Mobilitätseinschränkung, die oft intensive Betreuung und adäquate Hilfsmittelversorgung erfordert.</li>
+        </ul>
+      </div>
+
+      <div class="other">
+        <h2>Testdurchführung:</h2>
+        <script src="meineStoppUhr.js"></script>
+        <meine-stoppuhr id="TUGtimer"></meine-stoppuhr>
+        <button id="evaluateButton">Auswertung generieren</button>
+        <!-- Button hinzufügen -->
+
+        <h2>Auswertung:</h2>
+        <div id="results"></div>
+      </div>
+    </main>
+    <script>
+      function evaluateTest() {
+        var meineStoppuhr = document.getElementById("TUGtimer");
+        if (!meineStoppuhr) {
+          console.error("Stoppuhr-Komponente nicht gefunden");
+          return;
+        }
+        // Zeit von der Stoppuhr abrufen und in Sekunden umwandeln
+        var time = meineStoppuhr.getZeit() / 100;
+        var resultsDiv = document.getElementById("results");
+
+        if (time < 20) {
+          resultsDiv.innerHTML = "<p style='color: green;'>Vollständige Unabhängigkeit in der Mobilität.</p>";
+        } else if (time >= 20 && time <= 29) {
+          resultsDiv.innerHTML = "<p style='color: orange;'>Mögliche Mobilitätseinschränkung (weiterführendes Assessment notwendig).</p>";
+        } else {
+          resultsDiv.innerHTML = "<p style='color: red;'>Ausgeprägte Mobilitätseinschränkung (intensive Betreuung erforderlich).</p>";
+        }
+      }
+
+      // Event-Listener für den Button
+      document.getElementById("evaluateButton").addEventListener("click", evaluateTest);
+    </script>
+    <footer>
+      <h2>Quelle</h2>
+      <p>
+        Pschyrembel Redaktion. (2018, August). Timed-up-and-go-Test. In Pschyrembel Online. Abgerufen am 26. November 2023, von
+        <a href="https://www.pschyrembel.de/Timed-up-and-go-Test/B0A1V">https://www.pschyrembel.de/Timed-up-and-go-Test/B0A1V</a>.
+      </p>
+    </footer>
+  </body>
 </html>
