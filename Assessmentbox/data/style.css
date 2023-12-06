@@ -1,12 +1,4 @@
 html {
-  /**
- * Setting the box-model globally.
- * 
- * The box-sizing CSS property sets how the total width and height 
- * of an element is calculated.
- * 
- * @see https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
- */
   box-sizing: border-box;
 
   --color-01: rgb(111, 110, 110);
@@ -19,10 +11,6 @@ html {
 *,
 *::before,
 *::after {
-  /**
-   * All child elements and their respective pseudo-elements inherit
-   * global setting of the box-model explicitly.
-   */
   box-sizing: inherit;
 }
 
@@ -41,6 +29,13 @@ header {
   position: sticky;
   top: 0;
   background-color: #eeeeee;
+}
+
+header a {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  color: #000;
 }
 
 main,
@@ -103,7 +98,7 @@ table {
   margin-top: 1rem;
 }
 
-input:not([type="radio",type="checkbox"]) {
+input:not([type="radio"]) {
   display: block;
   width: 100%;
   padding: 0.25rem;
@@ -125,29 +120,14 @@ td[colspan="2"] {
 }
 
 label {
-  /* font-weight: bolder; */
-  /* display: block; */
 }
 
-/**
- * Styles for <button>
- */
-input[type="file"],
 input[type="submit"],
 button {
   transition: background-color 0.5s;
   border: none;
   box-shadow: none;
   background-color: var(--color-01);
-
-  /**
-	 * Using logical properties to be prepared for internationalization.
-	 * @see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Logical_Properties/Margins_borders_padding
-	 */
-  padding-block-start: var(--spacing-01, 0.5rem);
-  padding-block-end: var(--spacing-01, 0.5rem);
-  padding-inline-start: var(--spacing-02, 1rem);
-  padding-inline-end: var(--spacing-02, 1rem);
   line-height: 1.5;
   word-break: normal;
   word-wrap: break-word;
@@ -156,51 +136,13 @@ button {
   font-size: inherit;
   will-change: background-color;
   width: 100%;
-  contain: auto;
 }
 
-/**
- * Differ between touch enabled device class ad keyboard operated ones.
- * Current media query does not fit here/should be extended!
- */
 @media (hover: hover) {
   button:hover,
   button:focus-within {
     background-color: var(--color-03);
   }
-}
-
-@supports (display: flex) {
-  button,
-  [type="button"] {
-    display: inline-flex;
-    gap: var(--spacing-01, 0.5rem);
-    align-items: center;
-    justify-content: center;
-  }
-
-  [type="submit"] {
-    align-self: flex-end;
-  }
-}
-
-input[type="file"]::file-selector-button {
-  /**
-	 * touch-action: manipulation
-	 * to make clicks not need to wait and observe a potential 
-	 * double click, making the buttons feel faster.
-	 * Is not required if the HTML document has 
-	 * <meta name="viewport" content="width=device-width">.
-	 */
-  touch-action: manipulation;
-}
-
-button svg {
-  transform-origin: center center;
-  margin: auto;
-  block-size: 1.5rem;
-  inline-size: 1.5rem;
-  vertical-align: middle;
 }
 
 footer h2 {
@@ -234,11 +176,4 @@ footer a:hover {
   border: 1px solid #ddd;
   border-radius: 0.5rem;
   margin-bottom: 1.25rem;
-}
-
-header a {
-  position: absolute;
-  top: 0.625rem;
-  right: 0.625rem;
-  color: #000;
 }
