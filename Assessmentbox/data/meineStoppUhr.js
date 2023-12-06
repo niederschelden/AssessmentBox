@@ -5,36 +5,32 @@ class MeineStoppUhr extends HTMLElement {
     this.laeuft = false;
     this.startZeit = 0;
     this.zeit = 0;
+    this.handleStartStopClick = this.startOderStop.bind(this);
   }
 
   connectedCallback() {
     this.innerHTML = `
-        <style>
-          .stoppUhr {
-            /* Stilisierung der Stoppuhr */
-          }
-          .stoppUhr button {
-            /* Stilisierung des Buttons */
-          }
-        </style>
-        <div class="stoppUhr">
-          <input class="zeitAnzeige" value="00:00:00"></input>
-          <button class="startStopp">Start</button>
-        </div>
-      `;
+      <style>
+        .stoppUhr {
+          /* Stilisierung der Stoppuhr */
+        }
+        .stoppUhr button {
+          /* Stilisierung des Buttons */
+        }
+      </style>
+      <div class="stoppUhr">
+        <input class="zeitAnzeige" value="00:00:00" readonly></input>
+        <button class="startStopp">Start</button>
+      </div>
+    `;
 
     this.startStoppButton = this.querySelector(".startStopp");
     this.zeitAnzeige = this.querySelector(".zeitAnzeige");
-
-    this.startStoppButton.addEventListener("click", () => this.startOderStop());
+    this.startStoppButton.addEventListener("click", this.handleStartStopClick);
   }
 
-  connectedCallback() {
-    this.startStoppButton.removeEventListener("click", () => this.startOderStop());
-  }
-
-  getZeit() {
-    return this.zeit;
+  disconnectedCallback() {
+    this.startStoppButton.removeEventListener("click", this.handleStartStopClick);
   }
 
   startOderStop() {
@@ -47,10 +43,9 @@ class MeineStoppUhr extends HTMLElement {
 
   start() {
     this.laeuft = true;
-    this.zeit = 0;
     this.startZeit = Date.now();
-    this.aktualisiereAnzeige();
-    this.startStoppButton.textContent = "Stop"; // Verwende die Klassenvariable
+    this.zeit = 0;
+    this.startStoppButton.textContent = "Stop";
     this.interval = setInterval(() => {
       this.zeit++;
       this.aktualisiereAnzeige();
@@ -61,7 +56,7 @@ class MeineStoppUhr extends HTMLElement {
     this.laeuft = false;
     clearInterval(this.interval);
     this.zeit = Math.floor((Date.now() - this.startZeit) / 10);
-    this.startStoppButton.textContent = "Start"; // Verwende die Klassenvariable
+    this.startStoppButton.textContent = "Start";
     this.aktualisiereAnzeige();
   }
 
@@ -70,6 +65,10 @@ class MeineStoppUhr extends HTMLElement {
     const sekunden = Math.floor((this.zeit % 6000) / 100);
     const hundertstel = this.zeit % 100;
     this.zeitAnzeige.value = `${minuten.toString().padStart(2, "0")}:${sekunden.toString().padStart(2, "0")}:${hundertstel.toString().padStart(2, "0")}`;
+  }
+
+  getZeit() {
+    return this.zeit;
   }
 }
 
