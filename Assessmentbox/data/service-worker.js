@@ -1,4 +1,4 @@
-const cacheName = 'v1';
+const cacheName = 'v0.1.2';
 const cacheAssets = [
     'balanceErrorScoringSystem.html',
     'bergBalanceScale.html',
