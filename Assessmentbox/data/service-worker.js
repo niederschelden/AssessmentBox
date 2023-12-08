@@ -1,21 +1,33 @@
-const cacheName = 'v0.1.2';
+const cacheName = 'v0.1.3';
 const cacheAssets = [
+    'app.js',
     'balanceErrorScoringSystem.html',
     'bergBalanceScale.html',
+    'browserCheck.js',
     'einbeinigeKniebeuge.html',
     'favicon.ico',
     'heelRiseTest.html',
+    'icon-120x120.png',
+    'icon-152x152.png',
+    'icon-167x167.png',
+    'icon-180x180.png',
     'icon-192x192.png',
     'icon-512x512.png',
     'index.html',
     'knieToWallTest.html',
+    'list.txt',
     'logo.png',
     'manifest.json',
+    'meinCountdown.js',
+    'meinMetronom.js',
+    'meineStoppUhr.js',
+    'service-worker.js',
     'sideHopTest.html',
     'style.css',
     'tugTest.html',
     'yBalanceTest.html'
 ];
+
 
 // Call Install Event
 self.addEventListener('install', e => {
