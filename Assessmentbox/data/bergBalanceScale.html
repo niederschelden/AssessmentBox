@@ -567,6 +567,8 @@
 
       if (alleItemsAusgefuellt) {
         document.getElementById("punkteSumme").textContent = gesamtPunkte;
+        // Scroll zum Ergebnis
+        document.getElementById("punkteSumme").scrollIntoView({ behavior: "smooth", block: "center" });
       }
     }
   </script>
