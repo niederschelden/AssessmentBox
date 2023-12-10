@@ -36,7 +36,12 @@ class MeinMetronom extends HTMLElement {
     if (!this.audioContext) {
       this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
     }
-  
+    
+    // Hier wird die Audioausgabe aktiviert, auch im Stummschaltungsmodus
+    if (this.audioContext.state === 'suspended') {
+      this.audioContext.resume();
+    }
+    
     this.startStopButton.textContent = "Metronom Stop";
 
     this.interval = setInterval(() => {
