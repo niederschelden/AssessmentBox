@@ -47,7 +47,13 @@ class MeinCountdown extends HTMLElement {
     this.startStopButton.textContent = "Stop";
     this.zeit = this.initialZeit;
     this.countdownAnzeige.value = this.zeit;
-    this.buzzerSource = this.createBuzzerSound(); // Erstellen Sie eine neue Instanz für den nächsten Countdown
+    
+    this.buzzerSource = this.audioContext.createOscillator();
+    this.buzzerSource.type = "sine";
+    this.buzzerSource.frequency.setValueAtTime(1000, this.audioContext.currentTime); // Frequenz des Buzzers
+    
+    this.buzzerSource.connect(this.audioContext.destination);
+  
     this.playing = true;
     if (this.audioContext.state === 'suspended') this.audioContext.resume();
   
@@ -63,6 +69,7 @@ class MeinCountdown extends HTMLElement {
     }, 1000);
   }
   
+  
 
   stopCountdown() {
     clearInterval(this.interval);
@@ -70,28 +77,6 @@ class MeinCountdown extends HTMLElement {
     this.startStopButton.textContent = "Start";
     this.countdownAnzeige.value = this.initialZeit;
     this.playing = false;
-  }
-  
-
-  createBuzzerSound() {
-    const sampleRate = this.audioContext.sampleRate;
-    const duration = this.soundDauer; // Dauer des Buzzer-Sounds in Sekunden
-    const frequency = 1000; // Frequenz des Buzzer-Sounds in Hz
-  
-    const frameCount = Math.floor(sampleRate * duration);
-    const buffer = this.audioContext.createBuffer(1, frameCount, sampleRate);
-    const data = buffer.getChannelData(0);
-  
-    // Füllen Sie den Puffer mit dem Buzzer-Sound
-    for (let i = 0; i < frameCount; i++) {
-      data[i] = Math.sin((2 * Math.PI * frequency * i) / sampleRate);
-    }
-  
-    const source = this.audioContext.createBufferSource();
-    source.buffer = buffer;
-    source.connect(this.audioContext.destination);
-  
-    return source;
   }
   
 }
