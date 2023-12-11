@@ -5,10 +5,6 @@ class MeinCountdown extends HTMLElement {
     this.initialZeit = parseInt(this.getAttribute("zeit")) || 20;
     this.zeit = this.initialZeit;
     this.soundDauer = parseFloat(this.getAttribute("sound-dauer")) || 0.5; // Standardmäßig 0.5 Sekunden
-
-    // Erzeugen Sie einen AudioContext
-    this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
-
     this.playing = false;
   }
 
@@ -44,6 +40,11 @@ class MeinCountdown extends HTMLElement {
   }
 
   startCountdown() {
+    
+    if (!this.audioContext) {
+      this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    }
+
     this.startStopButton.textContent = "Stop";
     this.zeit = this.initialZeit;
     this.countdownAnzeige.value = this.zeit;
