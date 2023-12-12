@@ -6,7 +6,9 @@ class BrowserCheck {
     }
   
     static addAppleMetaTags() {
+      //console.log("Apple");
       if (this.isIOSorSafari()) {
+        console.log("Apple ja");
         const tags = [
           { name: 'apple-mobile-web-app-capable', content: 'yes' },
           { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
@@ -37,6 +39,7 @@ class BrowserCheck {
           document.head.appendChild(link);
         });
       }
+    //else console.log("Apple nein");
     }
   }
 //Das Skript muss mit defer eingebunden sein, damit nach dem Laden und Parsen des Dokuments ausgeführt wird.
