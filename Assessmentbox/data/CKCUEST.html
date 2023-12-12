@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de" class="back-transition">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Physiotherapie Tests</title>
+    <meta name="view-transition" content="same-origin" />
+    <script src="browserCheck.js" defer></script>
+    <script src="meinCountdown.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.json" />
+</head>
+<header>
+    <img src="./logo.png" alt="AssessmentBox" />
+    <a href="index.html">Zurück</a>
+</header>
+
+<main>
+    <h1>Closed-Kinetic-Chain-Upper-Extremity-Stability-Test (CKCUEST)</h1>
+
+    <div class="instructions">
+        <h2>Zielsetzung:</h2>
+        <ul>
+            <li>Beurteilung der dynamischen Schulterstabilität und Kraftausdauer des Schultergürtels.</li>
+            <li>Vergleich der Schulterkraft und -stabilität bei verschiedenen Personen.</li>
+        </ul>
+
+        <h2>Materialbedarf:</h2>
+        <ul>
+            <li>Markierungsstreifen</li>
+            <li>Maßband</li>
+            <li>Stoppuhr oder Timer (meineStoppUhr)</li>
+            <li>Kamera für Videodokumentation (optional)</li>
+        </ul>
+
+        <h2>Anleitung:</h2>
+        <ul>
+            <li>Beginne in der oberen Liegestützposition.</li>
+            <li>Platziere zwei Markierungsstreifen im Abstand von 91,4 Zentimetern.</li>
+            <li>Berühre abwechselnd mit jeder Hand den Handrücken der anderen Hand.</li>
+            <li>Führe so viele Wiederholungen wie möglich in 15 Sekunden durch.</li>
+            <li>Realisiere einen Probedurchgang und drei gewertete Durchgänge mit 45 Sekunden Pause.</li>
+        </ul>
+    </div>
+
+    <div class="other">
+        <h2>Testdurchführung:</h2>
+        <mein-countdown zeit="15"></mein-countdown><br>
+        <form id="ckcuestForm">
+            <!--<label for="koerperhoehe">Körperhöhe (cm):</label>
+            <input type="number" id="koerperhoehe" name="koerperhoehe" required><br>-->
+
+            <label for="koerpergewicht">Körpergewicht (kg):</label>
+            <input type="number" id="koerpergewicht" name="koerpergewicht" required><br>
+
+            <label for="geschlecht">Geschlecht:</label>
+            <select id="geschlecht" name="geschlecht" required>
+                <option value="m">Mann</option>
+                <option value="f">Frau</option>
+            </select><br><br>
+
+            <label for="wiederholungen1">Anzahl der Wiederholungen (Durchgang 1):</label>
+            <input type="number" id="wiederholungen1" name="wiederholungen1" required>
+            <label for="wiederholungen2">Anzahl der Wiederholungen (Durchgang 2):</label>
+            <input type="number" id="wiederholungen2" name="wiederholungen2" required>
+            <label for="wiederholungen3">Anzahl der Wiederholungen (Durchgang 3):</label>
+            <input type="number" id="wiederholungen3" name="wiederholungen3" required><br>
+
+            <button type="button" id="berechnenButton">Berechnen</button>
+        </form>
+        <h2>Ergebnis:</h2>
+        <p id="ergebnis">Mittelwert: -, Power Score: -</p>
+    </div>
+</main>
+
+<footer>
+    <h2>Quelle</h2>
+    <p>
+        Pietzonka, M., Kühn, N., Klein, C., & Bloch, H. (2022). <i>Diagnostik und Betreuung im Basketball – Praktikable Tests und Tools zur Leistungssteigerung und Verletzungsprävention</i>. Hamburg: VBG, Seiten 76ff. Verfügbar unter <a href="https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/diagnostik_und_betreuung_im_basketball.pdf?__blob=publicationFile&v=2">https://www.vbg.de/SharedDocs/Medien-Center/DE/Broschuere/Branchen/Sport/diagnostik_und_betreuung_im_basketball.pdf?__blob=publicationFile&v=2</a> (abgerufen am 12.12.2023).
+    </p>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('berechnenButton').addEventListener('click', function () {
+            // Sammelt die Daten aus dem Formular
+            let koerpergewicht = parseFloat(document.getElementById('koerpergewicht').value);
+            let geschlecht = document.getElementById('geschlecht').value;
+            let wiederholungen1 = parseInt(document.getElementById('wiederholungen1').value);
+            let wiederholungen2 = parseInt(document.getElementById('wiederholungen2').value);
+            let wiederholungen3 = parseInt(document.getElementById('wiederholungen3').value);
+
+            // Berechnet den Mittelwert der Wiederholungen
+            let mittelwert = (wiederholungen1 + wiederholungen2 + wiederholungen3) / 3;
+
+            // Berechnet den Power Score
+            let powerScore = (mittelwert * 0.68 * koerpergewicht) / 15;
+
+            // Bewertet den Power Score basierend auf dem Geschlecht
+            let bewertung = '';
+            if (geschlecht === 'm') {
+                if (powerScore < 66.83) bewertung = 'unterdurchschnittlich';
+                else if (powerScore <= 99.29) bewertung = 'durchschnittlich';
+                else bewertung = 'überdurchschnittlich';
+            } else if (geschlecht === 'f') {
+                if (powerScore < 55.82) bewertung = 'unterdurchschnittlich';
+                else if (powerScore <= 89.92) bewertung = 'durchschnittlich';
+                else bewertung = 'überdurchschnittlich';
+            }
+
+            // Zeigt das Ergebnis und die Bewertung an
+            document.getElementById('ergebnis').textContent = `Mittelwert: ${mittelwert.toFixed(2)}, Power Score: ${powerScore.toFixed(2)} (${bewertung})`;
+        });
+    });
+</script>
+</body>
+
+</html>
