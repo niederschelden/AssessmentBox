@@ -2,7 +2,7 @@
   "name": "Assessment Box",
   "short_name": "AssessBox",
   "description": "Essential, Compact Toolbox for Streamlined Physiotherapy Assessments",
-  "version": "0.1.4",
+  "version": "0.2.4",
   "author": "Leif Eickhoff",
   "start_url": "https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/index.html",
   "display": "standalone",

@@ -25,7 +25,8 @@ const cacheAssets = [
     'sideHopTest.html',
     'style.css',
     'tugTest.html',
-    'yBalanceTest.html'
+    'yBalanceTest.html',
+    'CKCUEST.html'
 ];
 
 
