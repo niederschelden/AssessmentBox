@@ -30,6 +30,9 @@ class MeineStoppUhr extends HTMLElement {
   }
 
   disconnectedCallback() {
+    if (this.laeuft) {
+      this.stop();
+    }
     this.startStoppButton.removeEventListener("click", this.handleStartStopClick);
   }
 
@@ -47,7 +50,7 @@ class MeineStoppUhr extends HTMLElement {
     this.zeit = 0;
     this.startStoppButton.textContent = "Stop";
     this.interval = setInterval(() => {
-      this.zeit++;
+      this.zeit = Math.floor((Date.now() - this.startZeit) / 10);
       this.aktualisiereAnzeige();
     }, 10);
   }
