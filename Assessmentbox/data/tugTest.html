@@ -70,7 +70,7 @@
           return;
         }
         // Zeit von der Stoppuhr abrufen und in Sekunden umwandeln
-        var time = meineStoppuhr.getZeit() / 100;
+        var time = meineStoppuhr.getZeit() / 1000;
         var resultsDiv = document.getElementById("results");
 
         if (time < 20) {

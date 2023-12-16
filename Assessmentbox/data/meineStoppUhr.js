@@ -58,8 +58,8 @@ class MeineStoppUhr extends HTMLElement {
   stop() {
     this.laeuft = false;
     clearInterval(this.interval);
-    this.zeit = Math.floor((Date.now() - this.startZeit) / 10);
-    this.startStoppButton.textContent = "Start";
+    this.zeit = Math.floor((Date.now() - this.startZeit));
+    this.startStoppButton.textContent = "Neustart";
     this.aktualisiereAnzeige();
   }
 
@@ -72,6 +72,7 @@ class MeineStoppUhr extends HTMLElement {
   
 
   getZeit() {
+    console.log(this.zeit);
     return this.zeit;
   }
 }

@@ -64,8 +64,8 @@
               return;
             }
             // Zeit von der Stoppuhr abrufen und in Sekunden umwandeln
-            var timeInjured = parseFloat(verletzt.getZeit() / 100).toFixed(2);
-            var timeUninjured = parseFloat(unverletzt.getZeit() / 100).toFixed(2);
+            var timeInjured = parseFloat(verletzt.getZeit() / 1000).toFixed(2);
+            var timeUninjured = parseFloat(unverletzt.getZeit() / 1000).toFixed(2);
 
             // Cut-Off-Wert für den Side-Hop-Test
             const cutOffValue = 12.88;
