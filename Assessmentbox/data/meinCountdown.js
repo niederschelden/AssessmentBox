@@ -44,10 +44,9 @@ class MeinCountdown extends HTMLElement {
     if (!this.audioContext) {
       this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
     }
-
+  
     this.startStopButton.textContent = "Stop";
-    this.zeit = this.initialZeit;
-    this.countdownAnzeige.value = this.zeit;
+    this.zielZeit = Date.now() + this.initialZeit * 1000;
     
     this.buzzerSource = this.audioContext.createOscillator();
     this.buzzerSource.type = "sine";
@@ -59,16 +58,20 @@ class MeinCountdown extends HTMLElement {
     if (this.audioContext.state === 'suspended') this.audioContext.resume();
   
     this.interval = setInterval(() => {
-      this.zeit--;
-      this.countdownAnzeige.value = this.zeit;
+      let jetzt = Date.now();
+      let verbleibendeZeit = this.zielZeit - jetzt;
   
-      if (this.zeit <= 0) {
+      if (verbleibendeZeit <= 0) {
           this.buzzerSource.start();
           this.buzzerSource.stop(this.audioContext.currentTime + this.soundDauer);
           this.stopCountdown();
+      } else {
+          this.zeit = Math.ceil(verbleibendeZeit / 1000);
+          this.countdownAnzeige.value = this.zeit;
       }
-    }, 1000);
+    }, 100); // Intervall auf 100 Millisekunden setzen
   }
+  
   
   
 

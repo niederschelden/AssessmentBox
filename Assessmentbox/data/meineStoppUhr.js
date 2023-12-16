@@ -19,7 +19,7 @@ class MeineStoppUhr extends HTMLElement {
         }
       </style>
       <div class="stoppUhr">
-        <input class="zeitAnzeige" value="00:00:00" readonly></input>
+        <input class="zeitAnzeige" value="00:00:0" readonly></input>
         <button class="startStopp">Start</button>
       </div>
     `;
@@ -50,10 +50,10 @@ class MeineStoppUhr extends HTMLElement {
     this.zeit = 0;
     this.startStoppButton.textContent = "Stop";
     this.interval = setInterval(() => {
-      this.zeit = Math.floor((Date.now() - this.startZeit) / 10);
+      this.zeit = Date.now() - this.startZeit; 
       this.aktualisiereAnzeige();
-    }, 10);
-  }
+    }, 100); // Das Intervall beträgt 100 Millisekunden
+  }  
 
   stop() {
     this.laeuft = false;
@@ -64,11 +64,12 @@ class MeineStoppUhr extends HTMLElement {
   }
 
   aktualisiereAnzeige() {
-    const minuten = Math.floor(this.zeit / 6000);
-    const sekunden = Math.floor((this.zeit % 6000) / 100);
-    const hundertstel = this.zeit % 100;
-    this.zeitAnzeige.value = `${minuten.toString().padStart(2, "0")}:${sekunden.toString().padStart(2, "0")}:${hundertstel.toString().padStart(2, "0")}`;
+    const minuten = Math.floor(this.zeit / 60000);
+    const sekunden = Math.floor((this.zeit % 60000) / 1000);
+    const zehntel = Math.floor((this.zeit % 1000) / 100); 
+    this.zeitAnzeige.value = `${minuten.toString().padStart(2, "0")}:${sekunden.toString().padStart(2, "0")}:${zehntel.toString().padStart(1, "0")}`;
   }
+  
 
   getZeit() {
     return this.zeit;
