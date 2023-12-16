@@ -72,7 +72,7 @@ class MeineStoppUhr extends HTMLElement {
   
 
   getZeit() {
-    console.log(this.zeit);
+    //console.log(this.zeit);
     return this.zeit;
   }
 }
