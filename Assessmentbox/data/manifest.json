@@ -4,23 +4,23 @@
   "description": "Essential, Compact Toolbox for Streamlined Physiotherapy Assessments",
   "version": "0.2.5",
   "author": "Leif Eickhoff",
-  "start_url": "https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#f2f2f2",
   "theme_color": "navy",
   "icons": [
     {
-      "src": "https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/icon-192x192.png",
+      "src": "icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/icon-512x512.png",
+      "src": "icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "scope": "https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/",
+  "scope": "./",
   "orientation": "portrait-primary",
   "lang": "de",
   "dir": "ltr",
