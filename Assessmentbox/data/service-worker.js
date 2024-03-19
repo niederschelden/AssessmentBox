@@ -1,8 +1,9 @@
-const cacheName = 'v0.1.6';
+const cacheName = 'v0.1.8';
 const cacheAssets = [
     'app.js',
     'balanceErrorScoringSystem.html',
     'bergBalanceScale.html',
+    'dynamicGaitIndex.html'
     'browserCheck.js',
     'einbeinigeKniebeuge.html',
     'favicon.ico',

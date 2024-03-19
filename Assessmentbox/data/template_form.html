@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Berg-Balance-Skala</title>
+  <meta name="view-transition" content="same-origin" />
+  <script src="browserCheck.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+
+<body>
+  <header>
+    <img src="./logo.png" alt="AssessmentBox" />
+    <a href="index.html">Zurück</a><br>
+            <script src="meineStoppUhr.js"></script>
+        <meine-stoppuhr id="TUGtimer"></meine-stoppuhr>
+  </header>
+  <main>
+    <h1>Testname</h1>
+    <h2 id="briefing">Einweisung</h2>
+    <h3 id="#goal">Ziel:</h3>
+    <p>Ziele</p>
+    <h3>Durchführung:</h3>
+    <p>Durchführung</p>
+    <h3>Bewertung:</h3>
+    <ul>
+      <li>1 </li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <p>Weitere Sicherheitsanweisungen:</p>
+    <p>Achten Sie darauf, dass der Testraum frei von Gefahren ist, um Verletzungen zu vermeiden.</p>
+    <h3 id="example">Beispiele:</h3>
+    <ul>
+      <li>Beispiel Auswertung</li>
+      <li>Beispiel Auswertung</li>
+    </ul>
+    <p class="notification"><strong>Hinweise:</strong> Sicherheit geht vor: Mensch vor Punktgewinn!</p>
+    <h3>Materilalliste:</h3>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+    
+    <p><strong>Zur Durchführung:</strong> Durchführung</p>
+
+
+    <form id="DGIform">
+      <fieldset id="id0">
+        <legend>Item 1: </legend>
+        <p><strong>Instruktionen:</strong> Instruktionen</p>
+
+        <div>
+          <input type="radio" name="items[0]" value="4" id="id01" />
+          <label for="id01"></label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[0]" value="3" id="id02" />
+          <label for="id02"></label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[0]" value="2" id="id03" />
+          <label for="id03"></label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[0]" value="1" id="id04" />
+          <label for="id04"></label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[0]" value="0" id="id05" />
+          <label for="id05"></label>
+        </div>
+      </fieldset>
+
+      <fieldset id="id1">
+        <legend></legend>
+        <p><strong>Instruktionen:</strong> Instruktionen</p>
+
+        <div>
+          <input type="radio" name="items[1]" value="4" id="id06" />
+          <label for="id06"></label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[1]" value="3" id="id07" />
+          <label for="id07"></label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[1]" value="2" id="id08" />
+          <label for="id08"></label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[1]" value="1" id="id09" />
+          <label for="id09"></label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[1]" value="0" id="id10" />
+          <label for="id10"></label>
+        </div>
+      </fieldset>
+      <!--weitere fieldset-->
+
+      <button type="button" onclick="berechnePunkte()">Berechne Punkte</button>
+    </form>
+
+    <h1>Auswertung</h1>
+    <h2>Summe der Punkte: <output id="punkteSumme">0</output> (Maximum 56)</h2>
+  </main>
+
+  <footer>
+    <h2>Quelle</h2>
+    <blockquote>
+      <p>
+        <b>Deutsche Version:</b> (Abgerufen am 26. November 2023):<br />
+        Quelle
+        </a>
+        <br />
+        Übersetzt und gefördert durch die
+        Quelle
+      </p>
+      <p>
+        <b>Originalquelle:</b><br />
+        Quelle
+      </p>
+    </blockquote>
+  </footer>
+
+  <script>
+    function berechnePunkte() {
+      var gesamtPunkte = 0;
+      var alleItemsAusgefuellt = true;
+      var datensaetze = document.getElementById("DGIform").elements;
+      console.log(datensaetze);
+
+      for (var i = 0; i < 14; i++) {
+        var itemResponse = document.querySelector('input[name="items[' + i + ']"]:checked');
+        var fieldset = document.getElementById('id' + i);
+
+        if (!itemResponse) {
+          alleItemsAusgefuellt = false;
+          // Füge roten Rand zum Fieldset hinzu
+          fieldset.style.border = "2px solid red";
+
+          // Scroll zum ersten unausgefüllten Fieldset
+          fieldset.scrollIntoView({ behavior: "smooth", block: "center" });
+          break;
+        } else {
+          gesamtPunkte += parseInt(itemResponse.value);
+          // Entferne roten Rand vom Fieldset
+          fieldset.style.border = "";
+        }
+      }
+
+      if (alleItemsAusgefuellt) {
+        document.getElementById("punkteSumme").textContent = gesamtPunkte;
+        // Scroll zum Ergebnis
+        document.getElementById("punkteSumme").scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
+  </script>
+</body>
+
+</html>

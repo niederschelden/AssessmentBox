@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Berg-Balance-Skala</title>
+  <meta name="view-transition" content="same-origin" />
+  <script src="browserCheck.js" defer></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+
+<body>
+  <header>
+    <img src="./logo.png" alt="AssessmentBox" />
+    <a href="index.html">Zurück</a><br>
+  </header>
+  <main>
+    <h1>Dynamic gait index</h1>
+    <h2 id="briefing">Einweisung</h2>
+    <h3 id="#goal">Ziel:</h3>
+    <p>Entwickelt, um die Wahrscheinlichkeit von Stürzen bei älteren Erwachsenen zu bewerten. Konzipiert, um acht Aspekte des Gangs zu testen.</p>
+    <h3>Durchführung:</h3>
+    <p>Der Zeitbedarf beträgt etwa 10 Minuten</p>
+    <h3>Bewertung:</h3>
+    <ul>
+      <li>Es wird eine vierstufige ordinalskala von 0-3 verwendet. </li>
+      <li>"0" steht für die niedrigste Funktionsebene und "3" für die höchste Funktionsebene.</li>
+      <li> Die Gesamtpunktzahl beträgt 24.</li>
+    </ul>
+    <!--
+    <p>Weitere Sicherheitsanweisungen:</p>
+    <p>Achten Sie darauf, dass der Testraum frei von Gefahren ist, um Verletzungen zu vermeiden.</p>
+    <h3 id="example">Beispiele:</h3>
+    <ul>
+      <li>Beispiel Auswertung</li>
+      <li>Beispiel Auswertung</li>
+    </ul>
+    <p class="notification"><strong>Hinweise:</strong> Sicherheit geht vor: Mensch vor Punktgewinn!</p>
+    -->
+    <h3>Materilalliste:</h3>
+    <ul>
+      <li>Schuhkarton</li>
+      <li>Zwei Kegel</li>
+      <li>Treppe</li>
+      <li>6 Meter lange Gehstrecke, 40 cm breit</li>
+    </ul>
+    
+    <p><strong>Interpretation:</strong> 
+      Weniger als 19/24 Punkten weisen auf ein erhöhtes Sturzrisiko bei älteren Menschen hin. 
+      Mehr als 22/24 Punkten zeigen sichere Gehfähigkeiten an.
+    </p>
+
+
+    <form id="DGIform">
+      <fieldset id="id0">
+        <legend>Item 1: Ganganalyse auf ebener Fläche</legend>
+        <p><strong>Instruktionen:</strong> Gehen Sie mit Ihrer normalen Geschwindigkeit von hier bis zur nächsten Markierung (6 Meter).</p>
+
+        <div>
+          <input type="radio" name="items[0]" value="3" id="id01" />
+          <label for="id01">(3) Normal: Geht 6 Meter, ohne Hilfsmittel, gute Geschwindigkeit, keine Anzeichen für Ungleichgewicht, normales Gangmuster.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[0]" value="2" id="id02" />
+          <label for="id02">(2) Leichte Beeinträchtigung: Geht 6 Meter, verwendet Hilfsmittel, langsamere Geschwindigkeit, leichte Gangabweichungen.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[0]" value="1" id="id03" />
+          <label for="id03">(1) Mäßige Beeinträchtigung: Geht 6 Meter, langsame Geschwindigkeit, abnormales Gangmuster, Anzeichen für Ungleichgewicht.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[0]" value="0" id="id04" />
+          <label for="id04">(0) Schwere Beeinträchtigung: Kann 6 Meter nicht ohne Hilfe gehen, schwere Gangabweichungen oder Ungleichgewicht.</label>
+        </div>
+      </fieldset>
+
+      <fieldset id="id1">
+        <legend>Item 2: Veränderung der Ganggeschwindigkeit</legend>
+        <p><strong>Instruktionen:</strong> Beginnen Sie mit Ihrem normalen Tempo zu gehen (für 1,5 Meter), 
+          wenn ich "los" sage, gehen Sie so schnell wie möglich (für 1,5 Meter). 
+          Wenn ich "langsam" sage, gehen Sie so langsam wie möglich (für 1,5 Meter).</p>
+
+        <div>
+          <input type="radio" name="items[1]" value="3" id="id07" />
+          <label for="id07">(3) Normal: Kann die Gehgeschwindigkeit problemlos ändern, ohne das Gleichgewicht zu verlieren oder Gangabweichungen zu zeigen. Zeigt einen signifikanten Unterschied in den Gehgeschwindigkeiten zwischen normaler, schneller und langsamer Geschwindigkeit.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[1]" value="2" id="id08" />
+          <label for="id08">(2) Leichte Beeinträchtigung: Kann die Geschwindigkeit ändern, zeigt jedoch leichte Gangabweichungen oder keine Gangabweichungen, ist jedoch nicht in der Lage, eine signifikante Geschwindigkeitsänderung zu erreichen, oder verwendet ein Hilfsmittel.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[1]" value="1" id="id09" />
+          <label for="id09">(1) Mäßige Beeinträchtigung: Macht nur geringfügige Anpassungen an die Gehgeschwindigkeit oder erreicht eine Änderung der Geschwindigkeit mit signifikanten Gangabweichungen oder ändert die Geschwindigkeit, weist jedoch signifikante Gangabweichungen auf oder ändert die Geschwindigkeit, verliert jedoch das Gleichgewicht, kann sich jedoch erholen und weitergehen.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[1]" value="0" id="id10" />
+          <label for="id10">(0) Schwere Beeinträchtigung: Kann die Geschwindigkeiten nicht ändern, verliert das Gleichgewicht und muss sich an der Wand festhalten oder aufgefangen werden.</label>
+        </div>
+      </fieldset>
+      <!--weitere fieldset-->
+      <fieldset id="id2">
+        <legend>Item 3: Gang mit horizontalen Kopfdrehungen</legend>
+        <p><strong>Instruktionen:</strong> Beginnen Sie mit Ihrem normalen Tempo zu gehen. Wenn ich Ihnen sage, 
+          "nach rechts schauen", gehen Sie geradeaus weiter und drehen Sie Ihren Kopf nach rechts. 
+          Schauen Sie weiter nach rechts, bis ich Ihnen sage, "nach links schauen", 
+          dann gehen Sie geradeaus weiter und drehen Sie Ihren Kopf nach links. 
+          Schauen Sie weiter nach links, bis ich Ihnen sage "geradeaus schauen", 
+          dann gehen Sie geradeaus weiter, drehen Sie jedoch Ihre Kopf in die Mitte zurück.</p>
+
+        <div>
+          <input type="radio" name="items[2]" value="3" id="id11" />
+          <label for="id11">(3) Normal: Führt Kopfdrehungen reibungslos durch, ohne Änderung des Gangs.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[2]" value="2" id="id12" />
+          <label for="id12">(2) Leichte Beeinträchtigung: Führt Kopfdrehungen reibungslos durch, 
+            mit geringfügiger Veränderung der Ganggeschwindigkeit, 
+            d.h. geringfügige Unterbrechung des gleichmäßigen Gangwegs oder verwendet Gehhilfen.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[2]" value="1" id="id13" />
+          <label for="id13">(1) Mäßige Beeinträchtigung: Führt Kopfdrehungen mit moderater Veränderung der Ganggeschwindigkeit durch, 
+            verlangsamt sich, schwankt, kann sich jedoch erholen und weitergehen.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[2]" value="0" id="id14" />
+          <label for="id14">(0) Schwere Beeinträchtigung: Führt die Aufgabe mit schwerer Beeinträchtigung des Gangs durch, 
+            d.h. schwankt außerhalb des 15-Zoll-Pfades, verliert das Gleichgewicht, bleibt stehen, greift nach der Wand.</label>
+        </div>
+      </fieldset>
+      <fieldset id="id3">
+        <legend>Item 4: Gang mit vertikalen Kopfdrehungen</legend>
+        <p><strong>Instruktionen:</strong> Neigen Sie Ihren Kopf nach oben. 
+          Schauen Sie nach oben, bis ich Ihnen sage, "nach unten schauen", 
+          dann gehen Sie geradeaus weiter und neigen Sie Ihren Kopf nach unten. 
+          Halten Sie Ihren Kopf unten, bis ich Ihnen sage "geradeaus schauen", 
+          dann gehen Sie geradeaus weiter, kehren Sie jedoch Ihren Kopf in die Mitte zurück.</p>
+
+        <div>
+          <input type="radio" name="items[3]" value="3" id="id15" />
+          <label for="id15">(3) Normal: Führt Kopfdrehungen reibungslos durch, ohne Änderung des Gangs.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[3]" value="2" id="id16" />
+          <label for="id16">(2) Leichte Beeinträchtigung: Führt Kopfdrehungen reibungslos durch, 
+            mit geringfügiger Veränderung der Ganggeschwindigkeit, 
+            d.h. geringfügige Unterbrechung des gleichmäßigen Gangwegs oder verwendet Gehhilfen.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[3]" value="1" id="id17" />
+          <label for="id17">(1) Mäßige Beeinträchtigung: Führt Kopfdrehungen mit moderater Veränderung der Ganggeschwindigkeit durch, 
+            verlangsamt sich, schwankt, kann sich jedoch erholen und weitergehen.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[3]" value="0" id="id18" />
+          <label for="id18">(0) Schwere Beeinträchtigung: Führt die Aufgabe mit schwerer Beeinträchtigung des Gangs durch, d.h. 
+            schwankt außerhalb des 15-Zoll-Pfades, verliert das Gleichgewicht, bleibt stehen, greift nach der Wand.</label>
+        </div>
+      </fieldset>
+      <fieldset id="id4">
+        <legend>Item 5: Gang und Drehung auf der Stelle</legend>
+        <p><strong>Instruktionen:</strong> Anweisungen: Beginnen Sie mit Ihrem normalen Tempo zu gehen. 
+          Wenn ich Ihnen sage "drehen und stoppen", drehen Sie sich so schnell wie möglich um 180° und stoppen Sie.</p>
+
+        <div>
+          <input type="radio" name="items[4]" value="3" id="id19" />
+          <label for="id19">(3) Normal: Drehungen auf der Stelle sicher innerhalb von 3 Sekunden und schnelles Anhalten ohne Gleichgewichtsverlust.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[4]" value="2" id="id20" />
+          <label for="id20">(2) Leichte Beeinträchtigung: Drehungen auf der Stelle sicher in > 3 Sekunden und Anhalten ohne Gleichgewichtsverlust.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[4]" value="1" id="id21" />
+          <label for="id21">(1) Mäßige Beeinträchtigung: Dreht sich langsam, benötigt verbale Anweisungen, 
+            benötigt mehrere kleine Schritte, um nach der Drehung und dem Anhalten das Gleichgewicht zu finden.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[4]" value="0" id="id22" />
+          <label for="id22">(0) Schwere Beeinträchtigung: Kann sich nicht sicher drehen, benötigt Hilfe, um sich zu drehen und anzuhalten.</label>
+        </div>
+        </fieldset>
+      <fieldset id="id5"> 
+        <legend>Item 6: Übersteigen eines Hindernisses</legend>
+        <p><strong>Instruktionen:</strong> Beginnen Sie mit Ihrem normalen Tempo zu gehen. 
+          Wenn Sie auf den Schuhkarton treffen, treten Sie darüber hinweg, nicht darum herum, und gehen Sie weiter.</p>
+
+        <div>
+          <input type="radio" name="items[5]" value="3" id="id23" />
+          <label for="id23">(3) Normal: Kann über den Karton treten, ohne die Ganggeschwindigkeit zu ändern, 
+            keine Anzeichen von Ungleichgewicht.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[5]" value="2" id="id24" />
+          <label for="id24">(2) Leichte Beeinträchtigung: Kann über den Karton treten, 
+            muss jedoch langsamer werden und Schritte anpassen, um den Karton sicher zu überqueren.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[5]" value="1" id="id25" />
+          <label for="id25">(1) Mäßige Beeinträchtigung: Kann über den Karton treten, 
+            muss jedoch anhalten und dann darüber treten. Kann verbale Anweisungen benötigen.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[5]" value="0" id="id26" />
+          <label for="id26">(0) Schwere Beeinträchtigung: Kann die Aufgabe nicht ohne Hilfe ausführen.</label>
+        </div>
+      </fieldset>
+      <fieldset id="id6">
+        <legend>Item 7: Umgehen von Hindernissen</legend>
+        <p><strong>Instruktionen:</strong> Anweisungen: Beginnen Sie mit Ihrem normalen Tempo zu gehen. 
+          Wenn Sie zum ersten Kegel kommen (ungefähr 2 Meter entfernt), gehen Sie auf der rechten Seite daran vorbei. 
+          Wenn Sie zum zweiten Kegel kommen (2 Meter nach dem ersten Kegel), gehen Sie links daran vorbei.</p>
+
+        <div>
+          <input type="radio" name="items[6]" value="3" id="id27" />
+          <label for="id27">(3) Normal: Kann sicher um die Kegel herumgehen, 
+            ohne die Ganggeschwindigkeit zu ändern; keine Anzeichen von Ungleichgewicht.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[6]" value="2" id="id28" />
+          <label for="id28">(2) Leichte Beeinträchtigung: Kann um beide Kegel herumgehen, 
+            muss jedoch langsamer werden und Schritte anpassen, um die Kegel sicher zu umgehen.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[6]" value="1" id="id29" />
+          <label for="id29">(1) Mäßige Beeinträchtigung: Kann die Kegel umgehen, 
+            muss jedoch die Geschwindigkeit deutlich verlangsamen, um die Aufgabe zu erledigen, 
+            oder benötigt verbale Anweisungen.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[6]" value="0" id="id30" />
+          <label for="id30">(0) Schwere Beeinträchtigung: Kann die Kegel nicht umgehen, 
+            läuft in einen oder beide Kegel hinein oder benötigt physische Unterstützung.</label>
+        </div>
+        </fieldset>
+        <fieldset id="id7">
+        <legend>Item 8: Treppenstufen</legend>
+        <p><strong>Instruktionen:</strong> Gehen Sie diese Treppe hinauf, wie Sie es zu Hause tun würden, 
+          d.h. verwenden Sie bei Bedarf das Geländer. Oben angekommen, 
+          drehen Sie sich um und gehen Sie hinunter.</p>
+
+        <div>
+          <input type="radio" name="items[7]" value="3" id="id31" />
+          <label for="id31">(3) Normal: Abwechselndes Treppensteigen, ohne Geländer.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[7]" value="2" id="id32" />
+          <label for="id32">(2) Leichte Beeinträchtigung: Abwechselndes Treppensteigen, muss das Geländer benutzen.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[7]" value="1" id="id33" />
+          <label for="id33">(1) Mäßige Beeinträchtigung: Zwei Füße auf einer Stufe, muss das Geländer benutzen.</label>
+        </div>
+
+        <div>
+          <input type="radio" name="items[7]" value="0" id="id34" />
+          <label for="id34">(0) Schwere Beeinträchtigung: Kann dies nicht sicher durchführen.</label>
+        </div>
+      </fieldset>
+      <button type="button" onclick="berechnePunkte()">Berechne Punkte</button>
+    </form>
+
+    <h1>Auswertung</h1>
+    <h2>Summe der Punkte: <output id="punkteSumme">0</output> (Maximum 24)</h2>
+    <p>Interpretation: Weniger als 19/24 Punkten weisen auf ein erhöhtes Sturzrisiko bei älteren Menschen hin. Mehr als 22/24 Punkten zeigen sichere Gehfähigkeiten an.</p>
+  </main>
+
+  
+<footer>
+  <h2>Quelle</h2>
+  <blockquote>
+    <p>
+      <b>Referenzen:</b><br />
+      1. Herdman SJ. Vestibular Rehabilitation. 2nd ed. Philadelphia, PA: F.A.Davis Co; 2000.<br />
+      2. Shumway-Cook A, Woollacott M. Motor Control Theory and Applications, Williams and Wilkins Baltimore, 1995: 323-324
+    </p>
+    <p>
+      <b>Online Quelle:</b><br />
+      Autor unbekannt. (Abrufdatum: [19.03.2024]) <a href="https://eoa.umontreal.ca/wp-content/uploads/sites/32/doc_DPC_augers_problemesEquilibre_16_04_29-30_DynamicGaitIndex.pdf">
+        Link zur Quelle</a>
+    </p>
+    <p>
+      <b>Eigene Übersetzung</b>
+    </p>
+  </blockquote>
+</footer>
+  <script>
+    function berechnePunkte() {
+      var gesamtPunkte = 0;
+      var alleItemsAusgefuellt = true;
+
+      for (var i = 0; i < 8; i++) {
+        var itemResponse = document.querySelector('input[name="items[' + i + ']"]:checked');
+        var fieldset = document.getElementById('id' + i);
+
+        if (!itemResponse) {
+          alleItemsAusgefuellt = false;
+          // Füge roten Rand zum Fieldset hinzu
+          fieldset.style.border = "2px solid red";
+
+          // Scroll zum ersten unausgefüllten Fieldset
+          fieldset.scrollIntoView({ behavior: "smooth", block: "center" });
+          break;
+        } else {
+          gesamtPunkte += parseInt(itemResponse.value);
+          // Entferne roten Rand vom Fieldset
+          fieldset.style.border = "";
+        }
+      }
+
+      if (alleItemsAusgefuellt) {
+        document.getElementById("punkteSumme").textContent = gesamtPunkte;
+        // Scroll zum Ergebnis
+        document.getElementById("punkteSumme").scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
+  </script>
+</body>
+
+</html>
