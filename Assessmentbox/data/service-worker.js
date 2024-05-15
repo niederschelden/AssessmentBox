@@ -1,4 +1,4 @@
-const cacheName = 'v0.1.8';
+const cacheName = 'v0.1.9';
 const cacheAssets = [
     'app.js',
     'balanceErrorScoringSystem.html',

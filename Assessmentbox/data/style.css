@@ -25,16 +25,33 @@ body {
 }
 
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
   background-color: #eeeeee;
+  width: 100%;
+  display: flex; /* Verwende Flexbox */
+  justify-content: space-between; /* Elemente verteilen: links und rechts */
+  align-items: center; /* Vertikal zentrieren */
+  padding: 10px; /* Füge etwas Abstand hinzu */
+  z-index: 1000;
+}
+
+header img {
+  margin-right: auto; /* Das Logo wird linksbündig sein */
+}
+
+header div {
+  margin-left: auto; /* Der Container für die Links wird rechtsbündig sein */
 }
 
 header a {
-  position: absolute;
-  top: 0.625rem;
-  right: 0.625rem;
   color: #000;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+header meine-stoppuhr {
+  margin: 0 auto; /* Zentriert die Stoppuhr horizontal */
 }
 
 main,
@@ -87,7 +104,7 @@ p {
 }
 
 img[src="./logo.png"] {
-  aspect-ratio: 1;
+  aspect-ratio: 350/170;
   height: 5rem;
 }
 
