@@ -27,6 +27,7 @@ body {
 header {
   position: fixed;
   top: 0;
+  left: 0; /*hinzugefügt am 15.5.24 von Leif*/
   background-color: #eeeeee;
   width: 100%;
   display: flex; /* Verwende Flexbox */
@@ -64,6 +65,10 @@ footer {
   background-color: #f2f2f2;
   padding: 1rem;
   border: 1px solid #ddd;
+}
+
+main {
+  margin-top: 6rem; /* Hinzugefügt: von Leif am 15.5.24*/
 }
 
 h1 {

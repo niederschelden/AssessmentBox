@@ -1,4 +1,4 @@
-const cacheName = 'v0.1.9';
+const cacheName = 'v0.1.10';
 const cacheAssets = [
     'app.js',
     'balanceErrorScoringSystem.html',
@@ -27,7 +27,8 @@ const cacheAssets = [
     'style.css',
     'tugTest.html',
     'yBalanceTest.html',
-    'CKCUEST.html'
+    'CKCUEST.html',
+    'wiederholungsrechner.html'
 ];
 
 

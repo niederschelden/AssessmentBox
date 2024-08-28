@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1RM Zielgewicht Berechnung für Wiederholungsbereiche</title>
+    <meta name="view-transition" content="same-origin" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+<header>
+    <img src="./logo.png" alt="AssessmentBox" />
+    <div>
+        <a href="https://movendus-kaltenkirchen.de/datenschutz/">Datenschutz</a><br>
+        <a href="https://movendus-kaltenkirchen.de/impressum/">Impressum</a><br>
+        <a href="index.html">Zurück</a>
+    </div>
+</header>
+
+<main>
+    <h1>1RM Zielgewicht Berechnung für Wiederholungsbereiche</h1>
+    <div class="instructions">
+        <h2>Zielsetzung:</h2>
+        <p>Berechnung des Zielgewichts für verschiedene Wiederholungsbereiche basierend auf dem 1RM.</p>
+        
+        <h2>Daten eingeben:</h2>
+        <form id="1rmForm">
+            <label for="weight">Verwendetes Gewicht (in kg):</label>
+            <input type="number" id="weight" name="weight" required><br><br>
+
+            <label for="reps">Geschaffte Wiederholungen:</label>
+            <input type="number" id="reps" name="reps" required><br><br>
+
+            <button type="button" id="calculateButton">Berechnen</button>
+        </form>
+    </div>
+
+    <div class="results">
+        <h2>Ergebnisse:</h2>
+        <div id="results"></div>
+    </div>
+</main>
+
+<script>
+    function calculate1RMPercentage(reps) {
+        const a = -14.071685435756567;
+        const b = 0.4602995476905447;
+        const c = 116.53362184762572;
+        const percentage = a * Math.pow(reps, b) + c;
+        return percentage / 100;
+    }
+
+    function calculateTargetWeight(rm, reps) {
+        const percentage = calculate1RMPercentage(reps);
+        return (rm * percentage).toFixed(2);
+    }
+
+    function calculateTargetWeights() {
+        const weight = parseFloat(document.getElementById("weight").value);
+        const reps = parseInt(document.getElementById("reps").value);
+        const resultsDiv = document.getElementById("results");
+
+        if (isNaN(weight) || isNaN(reps)) {
+            resultsDiv.innerHTML = "<p style='color: red;'>Bitte geben Sie gültige Werte ein.</p>";
+            return;
+        }
+
+        const percentage = calculate1RMPercentage(reps);
+        const rm = weight / percentage;
+
+        const repRanges = [
+            { range: "6-8", minReps: 6, maxReps: 8 },
+            { range: "8-12", minReps: 8, maxReps: 12 },
+            { range: "10-15", minReps: 10, maxReps: 15 },
+            { range: "15-20", minReps: 15, maxReps: 20 },
+            { range: "20-25", minReps: 20, maxReps: 25 }
+        ];
+
+        let resultHTML = "";
+
+        repRanges.forEach(range => {
+            const minWeight = calculateTargetWeight(rm, range.minReps);
+            const maxWeight = calculateTargetWeight(rm, range.maxReps);
+            resultHTML += `<p>Gewicht für ${range.range} Wiederholungen: Von ${maxWeight} kg bis ${minWeight}kg</p>`;
+        });
+
+        resultsDiv.innerHTML = resultHTML;
+    }
+
+    document.getElementById("calculateButton").addEventListener("click", calculateTargetWeights);
+</script>
+
+<footer>
+    <h2>Quelle</h2>
+    <p>
+        Literaturquellen zur 1RM-Berechnung:
+        <ul>
+            <li>Schmidtbleicher, D. (2009). Krafttraining: Leistung und Gesundheit. Vias Verlag.</li>
+            <li>Baechle, T. R., & Earle, R. W. (2008). Essentials of Strength Training and Conditioning (3rd ed.). Human Kinetics.</li>
+            <li>Brzycki, M. (1993). Strength Testing—Predicting a One-Rep Max from Reps-to-Fatigue. Journal of Physical Education, Recreation & Dance, 64(1), 88-90.</li>
+            <li>Epley, B. (1985). Poundage Chart. Boyd Epley Workout. Lincoln: University of Nebraska.</li>
+            <li>Lombardi, V. P. (1989). Beginning weight training: The safe and effective way. Wm. C. Brown Publishers.</li>
+            <li>O'Conner, F. G., et al. (1996). ACSM's Resources for Clinical Exercise Physiology. Lippincott Williams & Wilkins.</li>
+            <li>Strength Level. (2024). One-Rep Max Rechner. Abgerufen am 10. August 2024 von <a href="https://strengthlevel.de/one-rep-max-rechner" traget="_blank">link</a></li>
+        </ul>
+    </p>
+    <p>
+        Die verwendete Formel wurde von Dr. Leif Arne Eickhoff basierend auf einer Analyse von Werten aus der einschlägigen Literatur bei grellem Sonnenlicht nach einem harten Arbeitstag lieblos zusammengedängelt. Die Formel ist nicht wissenschaftlich validiert und daher mit Vorsicht einzusetzen. Es wird eine Residualanalyse und dann ggf. Updates geben, sobald er Winter da ist und ich etwas Ruhe habe.
+    </p>
+</footer>
+</body>
+</html>
