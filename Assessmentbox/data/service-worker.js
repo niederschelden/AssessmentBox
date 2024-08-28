@@ -1,9 +1,9 @@
-const cacheName = 'v0.1.10';
+const cacheName = 'v0.1.11'; // Erhöhe die Versionsnummer bei jedem Update
 const cacheAssets = [
     'app.js',
     'balanceErrorScoringSystem.html',
     'bergBalanceScale.html',
-    'dynamicGaitIndex.html'
+    'dynamicGaitIndex.html',
     'browserCheck.js',
     'einbeinigeKniebeuge.html',
     'favicon.ico',
@@ -31,26 +31,26 @@ const cacheAssets = [
     'wiederholungsrechner.html'
 ];
 
-
 // Call Install Event
 self.addEventListener('install', e => {
     console.log('Service Worker: Installed');
-
+    
+    // Skip waiting to activate the new service worker immediately
+    self.skipWaiting();
+    
     e.waitUntil(
-        caches
-            .open(cacheName)
-            .then(cache => {
-                console.log('Service Worker: Caching Files');
-                cache.addAll(cacheAssets);
-            })
-            .then(() => self.skipWaiting())
+        caches.open(cacheName).then(cache => {
+            console.log('Service Worker: Caching Files');
+            return cache.addAll(cacheAssets);
+        })
     );
 });
 
 // Call Activate Event
 self.addEventListener('activate', e => {
     console.log('Service Worker: Activated');
-    // Remove unwanted caches
+    
+    // Remove old caches
     e.waitUntil(
         caches.keys().then(cacheNames => {
             return Promise.all(
