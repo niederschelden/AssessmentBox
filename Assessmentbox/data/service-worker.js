@@ -16,7 +16,6 @@ const cacheAssets = [
     'icon-512x512.png',
     'index.html',
     'knieToWallTest.html',
-    'list.txt',
     'logo.png',
     'manifest.json',
     'meinCountdown.js',
@@ -34,14 +33,25 @@ const cacheAssets = [
 // Call Install Event
 self.addEventListener('install', e => {
     console.log('Service Worker: Installed');
-    
-    // Skip waiting to activate the new service worker immediately
-    self.skipWaiting();
-    
+
     e.waitUntil(
         caches.open(cacheName).then(cache => {
             console.log('Service Worker: Caching Files');
-            return cache.addAll(cacheAssets);
+            return Promise.all(
+                cacheAssets.map(asset => {
+                    return fetch(asset).then(response => {
+                        if (!response.ok) {
+                            throw new Error('Failed to fetch ' + asset);
+                        }
+                        return cache.put(asset, response);
+                    }).catch(error => {
+                        console.error('Failed to cache ' + asset + ':', error);
+                    });
+                })
+            );
+        }).then(() => {
+            console.log('Service Worker: Caching Complete');
+            return self.skipWaiting();
         })
     );
 });
