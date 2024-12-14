@@ -2,6 +2,7 @@
 
 ## Überblick
 Die Assesment Box ist ein innovatives Werkzeug für Physiotherapeuten, das die Nutzung digitaler Assesment-Anleitungen und Hilfsmittel in lokalen Netzwerken ermöglicht. Das System ist ideal für den Einsatz mit Smartphones, Tablets oder Computern und bietet eine Vielzahl von Funktionen, die den Anforderungen von Physiotherapeuten entsprechen.
+[Preview/Webversion](https://niederschelden.github.io/AssessmentBox/Assessmentbox/data/index.html)
 
 ## Hauptmerkmale
 - **Digitale Assesment-Anleitungen**: Einfacher Zugriff auf eine Vielzahl von Assesment-Anleitungen in HTML/JavaScript.
